@@ -2,9 +2,10 @@
  * フッター全体
  *----------------------------------*/
  #footer {
-  background-color: #f8f8f8;
+  background-color: #ff9933; /* 背景色を調整 */
   padding: 20px 0;
   text-align: center;
+  color: #fff; /* テキストを白に変更 */
 }
 
 /*----------------------------------
@@ -44,8 +45,9 @@
 }
 
 .footer-menu li a {
-  color: #333;
+  color: #fff; /* リンクの色を白に調整 */
   text-decoration: none;
+  font-weight: bold;
 }
 
 .footer-menu li a:hover {
@@ -57,6 +59,6 @@
 *----------------------------------*/
 .footer-copyright {
   font-size: 12px;
-  color: #666;
-  margin-top: 10px;
+  color: #fff; /* 著作権表示も白に */
+  margin-top: 15px; /* 上の間隔を少し広く */
 }

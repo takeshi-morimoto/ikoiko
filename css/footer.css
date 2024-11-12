@@ -1,26 +1,21 @@
-/* フッター全体のスタイル */
+/* フッター全体 */
 #footer {
   background-color: #f8f8f8;
   padding: 20px 0;
   text-align: center;
 }
 
-/* フッター内のバナーエリア */
-.footer-banner {
-  text-align: center;
-  padding-bottom: 10px;
-}
-
+/* フッターのバナー */
 .footer-banner ul {
-  display: inline-block; /* ul自体を中央揃え */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: 0;
   margin: 10px 0;
   list-style: none;
-  text-align: center;
 }
 
 .footer-banner li {
-  display: inline-block; /* liを横に並べる */
   margin: 10px;
 }
 
@@ -30,18 +25,15 @@
 }
 
 /* フッターメニュー */
-#footerInner {
-  text-align: center;
-}
-
 .footer-menu {
-  display: inline-block; /* メニュー全体を中央揃え */
+  display: flex;
+  justify-content: center;
+  list-style: none;
   padding: 0;
   margin: 20px 0;
 }
 
 .footer-menu li {
-  display: inline; /* リンクを横並びにする */
   margin: 0 10px;
 }
 

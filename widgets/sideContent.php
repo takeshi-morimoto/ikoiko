@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>サイドバー - こいこい</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- アニメコン以外を探す -->

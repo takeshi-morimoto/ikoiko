@@ -1,0 +1,139 @@
+/* [目次]
+/*----------------------------------
+/* 初期化
+/*----------------------------------
+/* 汎用クラスの定義
+/*----------------------------------
+/* Extra
+/*----------------------------------
+/* 
+/*----------------------------------
+/* 
+/*----------------------------------
+/* 
+/*----------------------------------*/
+
+
+/* 開発用
+---------------------------------------------------*/
+
+
+
+/* 初期化
+/*----------------------------------*/
+
+
+
+ul {
+
+	list-style: none;
+
+}
+
+img {
+
+	max-width: 100%;
+}
+
+
+
+div, th, td, section, header, nav, article {
+
+	box-sizing: border-box;
+}
+
+
+/* 汎用クラスの定義
+/*----------------------------------*/
+
+
+	/* 横幅 */
+
+	.w_100 {
+
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+
+	/* センタリング */
+
+	.centering_text {
+
+		text-align: center;
+	}
+
+	.centering_box {
+
+		margin: auto;
+	}
+
+
+	.txta_right {
+
+		text-align: right;
+	}
+
+
+	/* テキストカラー */
+
+	.txtc_red {
+
+		color: red;
+	}
+
+	.txtc_blue {
+
+		color: blue;
+	}
+
+	.txtc_green {
+
+		color: green;
+	}
+
+	/* フォント */
+
+	.bold {
+
+		font-weight: bold;
+	}
+
+	/* テーブル */
+
+
+	.table {
+
+		display: table;
+		border-spacing: 0;
+	}
+
+	.td {
+
+		display: table-cell;
+	}
+
+	/* 非表示 */
+
+	@media screen and (max-width:660px){
+
+		.mb_none {
+
+			display: none!important;
+		}
+
+	}
+
+	@media screen and (min-width:661px){
+
+		.pc_none {
+
+			display: none!important;
+		}
+
+	}
+
+
+/* Extra
+/*---------------------------------*/
+

@@ -1,0 +1,246 @@
+/* [目次]
+/*----------------------------------
+/* 初期化
+/*----------------------------------
+/* 汎用クラスの定義
+/*----------------------------------
+/* Extra
+/*----------------------------------
+/* 
+/*----------------------------------
+/* 
+/*----------------------------------
+/* 
+/*----------------------------------*/
+
+
+/* 開発用
+---------------------------------------------------*/
+
+
+
+/* 初期化
+/*----------------------------------*/
+
+
+
+ul {
+
+	list-style: none;
+
+}
+
+
+
+
+
+div, th, td, section, header, nav, article {
+
+	box-sizing: border-box;
+}
+
+
+/* 汎用クラスの定義
+/*----------------------------------*/
+
+
+	/* 横幅 */
+
+	.w_100 {
+
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+
+	/* センタリング */
+
+	.centering_text {
+
+		text-align: center;
+	}
+
+	.centering_box {
+
+		margin: auto;
+	}
+
+
+	.txta_right {
+
+		text-align: right;
+	}
+
+
+	/* テキストカラー */
+
+	.txtc_red {
+
+		color: red;
+	}
+
+	.txtc_blue {
+
+		color: blue;
+	}
+
+	.txtc_green {
+
+		color: green;
+	}
+
+	/* フォント */
+
+	.bold {
+
+		font-weight: bold;
+	}
+
+	/* テーブル */
+
+
+	.table {
+
+		display: table;
+		border-spacing: 0;
+	}
+
+	.td {
+
+		display: table-cell;
+	}
+
+	/* 非表示 */
+
+	@media screen and (max-width:660px){
+
+		.mb_none {
+
+			display: none!important;
+		}
+
+	}
+
+	@media screen and (min-width:661px){
+
+		.pc_none {
+
+			display: none!important;
+		}
+
+	}
+
+
+/* Extra
+/*---------------------------------*/
+
+
+
+	#r_new .lims table ,
+	#r_recommend .lims table,
+	#recent table {
+
+		height: 280px!important;
+	}
+
+
+	#r_new .lims table tr:nth-of-type(1) td,
+	#r_recommend .lims table tr:nth-of-type(1) td,
+	#recent table tr:nth-of-type(1) td {
+
+		height: 150px!important;
+
+	}
+
+
+	#r_new .lims table img,
+	#r_recommend .lims table img,
+	#recent table tr:nth-of-type(1) td {
+
+		max-width: 100%!important;
+		margin: 0!important;
+	}
+
+
+	#r_new .lims table tr:nth-of-type(2) td,
+	#r_recommend .lims table tr:nth-of-type(2) td,
+	#recent table tr:nth-of-type(2) td{
+
+		height: 80px!important;
+		text-align: left;
+		border-bottom: solid 1px #ccc;
+		padding: 5px 0;
+	}
+
+	#r_new .lims table tr:nth-of-type(3) td,
+	#r_recommend .lims table tr:nth-of-type(3) td ,
+	#recent table tr:nth-of-type(3) td {
+
+		font-weight: bold;
+		vertical-align: middle;
+	}
+
+
+
+
+	#recent table {
+
+
+	}
+
+
+	#r_subGroup table table td{
+
+		height: 60px;
+		padding-top: 0;
+		padding-bottom: 10px;
+		vertical-align: top;
+	}
+
+	p.price {
+
+		text-align: center!important;
+		font-size: 110%;
+		font-weight: bold;
+	}
+
+	#r_searchList .else {
+
+		text-align: center!important;
+
+	}
+
+	#r_recent #recent .itemBox{
+
+	    width:25%;
+	}
+
+	#r_recent #recent .itemBox table{
+
+        margin: 10px auto;
+	    width: 170px;
+
+	}
+
+	#r_recent #recent .itemBox tr:nth-of-type(1) td	{
+
+		padding: 0px!important;
+	    height: 150px!important;
+	    overflow: hidden;
+
+	}
+
+
+
+	#r_recent #recent .itemBox tr:nth-of-type(2) td	{
+
+		padding: 0px!important;
+	    height: 130px!important;
+	}
+
+		#r_recent #recent .itemBox tr:nth-of-type(2) td p.name	{
+
+	    height: 50px!important;
+	    overflow: hidden;
+	}
+

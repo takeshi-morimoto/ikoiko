@@ -1,0 +1,730 @@
+@charset "utf-8";
+
+
+
+/* 基本
+-------------------------------------------*/
+
+.BoxCenter {
+
+	margin: 0 auto;
+}
+
+
+
+
+
+h2 {
+
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+
+/*-------------------------------------------*/
+/*	汎用クラス
+/*-------------------------------------------*/
+
+
+
+	/* 横幅 */
+
+	.w_100 {
+
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+	.w_80 {
+
+		box-sizing: border-box;
+		width: 80%;
+	}
+
+	.w_50 {
+
+		box-sizing: border-box;
+		width: 50%;
+	}
+
+	.w_30 {
+
+		box-sizing: border-box;
+		width: 30%;
+	}
+
+	.w_25 {
+
+		box-sizing: border-box;
+		width: 25%;
+	}
+
+
+	/* センタリング */
+
+	.centering_text {
+
+		text-align: center;
+	}
+
+	.centering_box {
+
+		margin: auto;
+	}
+
+
+	.txta_right {
+
+		text-align: right;
+	}
+
+
+	/* テキストカラー */
+
+	.txtc_red {
+
+		color: red;
+	}
+
+	.txtc_blue {
+
+		color: blue;
+	}
+
+	.txtc_green {
+
+		color: green;
+	}
+
+	/* フォント */
+
+	.bold {
+
+		font-weight: bold;
+	}
+
+	/* テーブル */
+
+
+	.table {
+
+		display: table;
+		border-spacing: 0;
+	}
+
+	.td {
+
+		display: table-cell;
+	}
+
+
+
+
+/* Insert Ad
+-------------------------------------------*/
+
+#insertAdForm {
+
+	width: 60%;
+	border: solid 1px #555;
+	padding: 5%;
+	font-size: x-large;
+	margin: 0 auto;
+
+}
+
+
+#insertAdForm p {
+
+	text-align: center;
+}
+
+
+#insertAdForm_result {
+
+	width: 60%;
+	border: solid 1px #555;
+	padding: 5%;
+	font-size: x-large;
+	margin: 0 auto;
+
+}
+
+
+
+
+
+/* Totalテーブル
+-------------------------------------------*/
+
+table#total {
+
+	width: 70%;
+	margin: auto;
+}
+
+
+
+table#total th {
+
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 140%;
+	background-color: #222;
+	color: #fff;
+	width: 50%;
+}
+
+table#total td {
+
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	height: 60px;
+}
+
+
+table#total span.act {
+
+	color: blue;
+}
+
+
+table#total span.wait {
+
+	color: #660000;
+}
+
+
+table#total span.can {
+
+	color: red;
+}
+
+
+table#total span.veryBig {
+
+	font-size: 50px;
+}
+
+
+
+
+/* 参加者テーブル
+-------------------------------------------*/
+
+
+
+div#participant {
+
+	width: 99%;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+div#participant:after {
+
+	content: "";
+	clear: both;
+	display: block;
+}
+
+table#participant_m , table#participant_w {
+
+	float: left;
+}
+
+
+table#participant_m {
+
+	width: 49.5%;
+	border: solid 2px blue;
+	margin-right: 1px;
+	margin-left: auto;
+
+}
+
+
+table#participant_w {
+
+	width: 49.5%;
+	border: solid 2px #ff0033;
+	margin-left: 1px;
+	margin-right: auto;
+
+}
+
+
+
+div#participant .td01 {
+
+	width: 4%;
+}
+
+
+div#participant .td02 {
+
+	width: 2%;
+}
+
+
+div#participant .td03 {
+
+	width: 2%;
+}
+
+
+div#participant .td04 {
+
+	width: 9%;
+}
+
+
+div#participant .td05 {
+
+	width: 2%;
+}
+
+
+
+div#participant .td06 {
+
+	width: 12%;
+}
+
+
+
+div#participant .td07 {
+
+	width: 12%;
+}
+
+
+
+div#participant .td08 {
+
+	width: 33%;
+}
+
+
+
+div#participant .td09 {
+
+	width: 18%;
+}
+
+
+
+div#participant .td01 {
+
+	width: 6%;
+}
+
+
+
+/* イベントリストのテーブル
+-------------------------------------------*/
+
+
+
+table#eventsTable {
+
+	width: 80%;
+	margin-right: auto;
+	margin-left:  auto;
+}
+
+
+table#eventsTable .td01 {
+
+	width: 10%;
+
+}
+
+
+table#eventsTable .td02 {
+
+	width: 7%;
+
+}
+
+
+table#eventsTable .td03 {
+
+	width: 10%;
+	text-align: left;
+
+}
+
+
+table#eventsTable .td04 {
+
+	width: 10%;
+	text-align: left;
+
+}
+
+
+table#eventsTable .td05 {
+
+	width: 8%;
+	text-align: left;
+
+}
+
+
+table#eventsTable .td06 {
+
+	width: 8%;
+	text-align: left;
+
+}
+
+
+table#eventsTable .td07 {
+
+	width: 2%;
+
+}
+
+
+table#eventsTable .td08 {
+
+	width: 2%;
+
+}
+
+
+table#eventsTable span.accent {
+
+	font-size: xx-large;
+
+}
+
+
+
+
+/* 検索結果のテーブル
+-------------------------------------------*/
+
+table#searchResult {
+
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table#searchResult .td01 {
+
+	width: 2%;
+}
+
+
+table#searchResult .td02 {
+
+	width: 4%;
+}
+
+table#searchResult .td03 {
+
+	width: 5%;
+}
+
+table#searchResult .td04 {
+
+	width: 3%;
+}
+
+
+table#searchResult .td05 {
+
+	width: 1%;
+}
+
+
+table#searchResult .td06 {
+
+	width: 1%;
+}
+
+
+table#searchResult .td07 {
+
+	width: 4%;
+}
+
+
+table#searchResult .td08 {
+
+	width: 2%;
+}
+
+
+table#searchResult .td09 {
+
+	width: 1%;
+}
+
+
+table#searchResult .td10 {
+
+	width: 5%;
+}
+
+
+table#searchResult .td11 {
+
+	width: 5%;
+}
+
+
+table#searchResult .td12 {
+
+	width: 1%;
+}
+
+
+table#searchResult .td13 {
+
+	width: 5%;
+}
+
+
+table#searchResult .td14 {
+
+	width: 5%;
+}
+
+
+table#searchResult .td15 {
+
+	width: 5%;
+}
+
+
+table#searchResult .td16 {
+
+	width: 5%;
+}
+
+
+table#searchResult .td17 {
+
+	width: 9%;
+	
+}
+
+table#searchResult .td17 * {
+
+	display: inline-block;
+	
+}
+table#searchResult .td18 {
+
+	width: 2%;
+}
+
+
+
+
+
+/* TR要素の色を
+-------------------------------------------*/
+
+tr:hover {
+
+	background-color: #eee!important;
+}
+
+
+tr.complete {
+
+	background-color: #e5eefa;
+}
+
+
+tr.cancel {
+
+	background-color: #dcc;
+}
+
+
+tr.wait {
+
+	background-color: #fffdd0;
+}
+
+
+/* TH要素
+-------------------------------------------*/
+
+
+#participant_m thead th {
+
+
+	border: solid 2px blue;
+	background-color: #f0f8ff;
+	color: blue;
+
+}
+
+
+#participant_w thead th {
+
+
+	border: solid 2px #ff0033;
+	background-color: #fff0f5;
+	color: #ff0033;
+
+}
+
+
+
+th {
+
+	border: solid 1px black;
+}
+
+
+
+/* TD要素
+-------------------------------------------*/
+
+
+td {
+
+	border: solid 1px black;
+	margin: 0px;
+
+}
+
+
+div#participant .td06 , div#participant .td07 , div#participant .td08 {
+
+	text-align: left;
+
+}
+
+/* フォームパーツのインライン化 */
+input {
+
+	display: inline;
+}
+
+
+.manageButton {
+
+	display: none;
+
+}
+
+.clickField {
+
+	position: relative;
+	width: 100%;
+	height: 30px;
+
+}
+
+.click {
+
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+}
+
+/* フォント
+-------------------------------------------*/
+
+
+
+.fontWeight_nomal {
+
+	font-weight: normal!important;
+}
+
+.fontWeight_bold {
+
+	font-weight: bold!important;
+}
+
+
+
+.blue {
+
+	color: blue;
+}
+
+
+/* 手動登録の入力フォーム
+-------------------------------------------*/
+
+#form_addition div.center {
+
+
+
+}
+
+#form_addition table {
+
+	border-spacing: 0;
+	width: 60%;
+	margin: 0 auto;
+	margin-bottom: 2%;
+
+}
+
+#form_addition th {
+
+	padding: 1% 3%;
+}
+
+#form_addition td {
+
+	padding: 1% 3% ;
+
+}
+
+#form_addition input[type="checkbox"] {
+
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+}
+
+#form_addition input[type="submit"] {
+
+	width: 100px;
+	height: 40px;
+	font-size: 120%;
+}
+
+
+
+
+/* フッター
+-------------------------------------------*/
+
+#footer {
+
+	width: 100%;
+	text-align: center;
+	background-color: #aaa;
+	padding: 3%;
+	margin-top: 10%;
+}
+
+
+#footer a {
+
+	text-decoration: none;
+
+}

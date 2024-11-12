@@ -1,0 +1,46 @@
+﻿@charset "utf-8";
+/* [目次]
+/*----------------------------------
+/* こいこいマンガ
+/*----------------------------------*/
+#manga {
+	padding-bottom: 20px;
+}
+#manga .manga_header {
+	font-size: 0;
+	padding-top: 20.33%;
+	background: url(/ikoiko/img/manga/header_manga.jpg) no-repeat 0 0;
+	background-size: contain;
+}
+#manga .manga_list {
+	padding-bottom: 20px;
+}
+#manga .manga_list li {
+	margin: 30px 10px 0;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-size: 0;
+}
+#manga .manga_link_list {
+	overflow-x: auto;
+	white-space: nowrap;
+	margin: 10px;
+	-webkit-overflow-scrolling: touch;
+}
+#manga .manga_link_list li {
+	display: inline-block;
+	margin-right: 10px;
+}
+#manga .manga_link_list li a {
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	color: #ff6600;
+	border: 1px solid #ccc;
+	line-height: 1;
+}
+#manga .manga_link_list li.is-current a {
+	color: #ccc;
+}
+@media screen and (max-width:660px){}
+@media screen and (min-width:661px){}

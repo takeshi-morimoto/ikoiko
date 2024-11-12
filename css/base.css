@@ -1,0 +1,269 @@
+﻿/* [目次]
+/*----------------------------------
+/* 初期化
+/*----------------------------------
+/* 汎用クラスの定義
+/*----------------------------------
+/* カラム構成
+/*----------------------------------
+/* 
+/*----------------------------------
+/* 
+/*----------------------------------
+/* 
+/*----------------------------------*/
+
+
+/* 開発用
+---------------------------------------------------*/
+
+
+.dev-box {
+
+	border: solid 1px #000;
+}
+
+
+
+/* 初期化
+/*----------------------------------*/
+
+* {
+
+}
+
+div, section, nav, aside, article,
+table, td, th,
+h1, h2, h3, h4, h5,
+ul, li {
+
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+
+	list-style: none;
+
+}
+
+img {
+
+	max-width: 100%;
+}
+
+table {
+
+	table-layout: fixed;
+}
+
+div, th, td, section, header, nav, article {
+
+	box-sizing: border-box;
+}
+
+
+/* 汎用クラスの定義
+/*----------------------------------*/
+
+
+	/* 横幅 */
+
+	.w_100 {
+
+		box-sizing: border-box;
+		width: 100%;
+	}
+
+
+	/* センタリング */
+
+	.centering_text {
+
+		text-align: center;
+	}
+
+	.centering_box {
+
+		margin: auto;
+	}
+
+
+	.txta_right {
+
+		text-align: right;
+	}
+
+
+	/* テキストカラー */
+
+	.txtc_red {
+
+		color: red;
+	}
+
+	.txtc_blue {
+
+		color: blue;
+	}
+
+	.txtc_green {
+
+		color: green;
+	}
+
+	/* フォント */
+	body {
+	background: #f7f3e8;
+	color: #333;
+	font-family:"メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	line-height:1.4;
+	border-top:5px solid #1b4f98;
+	}
+
+	.bold {
+
+		font-weight: bold;
+	}
+
+	/* テーブル */
+
+
+	.table {
+
+		display: table;
+		border-spacing: 0;
+	}
+
+	.td {
+
+		display: table-cell;
+	}
+
+	/* 非表示 */
+
+	@media screen and (max-width:660px){
+
+		.mb_none {
+
+			display: none!important;
+		}
+
+	}
+
+	@media screen and (min-width:661px){
+
+		.pc_none {
+
+			display: none!important;
+		}
+
+	}
+
+
+
+
+/* カラム構成
+/*----------------------------------*/
+
+	#topContainer {
+
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 5px 10px;
+	}	
+
+	#mainContainer {
+		
+		margin-top: 2%; 
+		padding: 0.5% 0.5% 0.5% 1%;
+
+	}
+
+	#mainContainer:after {
+		
+		content: "";
+		display: block;
+		clear: both;
+
+	}
+
+	#mainContainer .general {
+		padding-top: 3%;
+	}
+
+
+
+	@media screen and (min-width:661px){
+
+		#mainContainer #mainContent {
+
+			margin-right: 1%;
+			width: 69%;
+			float: left;
+			background-color: #fff;
+		}
+
+
+#mainContainer #sideContent {
+    width: 29%;
+    float: left;
+    border: solid 3px #EBD7B0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+	}
+
+	@media screen and (max-width:660px){
+
+
+		#mainContainer #mainContent {
+
+			margin-right: 1%;
+			background-color: #fff;
+		}
+
+
+		#mainContainer #sideContent {
+
+			margin-top: 10%;
+
+		}
+
+
+	}
+
+	#footer {
+
+		margin-top: 2%;
+		background-color: #ff9933;
+	}
+
+	#footerInner {
+
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 1.5% 0 2%;
+
+		color: #fff;
+	}
+
+	#footer li {
+
+		display: inline-block;		
+	}
+
+	#footer li a {
+
+		text-decoration: none;
+		font-weight: bold;
+		color: #fff;
+	}
+
+	#footer p {
+
+		margin-top: 1%;
+		text-align: center;
+	}

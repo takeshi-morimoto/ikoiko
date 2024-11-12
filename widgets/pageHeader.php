@@ -1,4 +1,4 @@
-<a class="mb_none">
+<a class="mb_none" href="//koikoi.co.jp/ikoiko/"> <!-- href属性を追加 -->
     <img class="mb_none" id="logo" src="//koikoi.co.jp/ikoiko/img/common/logo.png" alt="ロゴ">
 </a>
 

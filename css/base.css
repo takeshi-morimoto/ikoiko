@@ -28,6 +28,10 @@
 /* 初期化
 /*----------------------------------*/
 
+* {
+
+}
+
 div, section, nav, aside, article,
 table, td, th,
 h1, h2, h3, h4, h5,
@@ -36,6 +40,28 @@ ul, li {
 	margin: 0;
 	padding: 0;
 }
+
+ul {
+
+	list-style: none;
+
+}
+
+img {
+
+	max-width: 100%;
+}
+
+table {
+
+	table-layout: fixed;
+}
+
+div, th, td, section, header, nav, article {
+
+	box-sizing: border-box;
+}
+
 
 /* 汎用クラスの定義
 /*----------------------------------*/
@@ -207,4 +233,37 @@ ul, li {
 		}
 
 
+	}
+
+	#footer {
+
+		margin-top: 2%;
+		background-color: #ff9933;
+	}
+
+	#footerInner {
+
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 1.5% 0 2%;
+
+		color: #fff;
+	}
+
+	#footer li {
+
+		display: inline-block;		
+	}
+
+	#footer li a {
+
+		text-decoration: none;
+		font-weight: bold;
+		color: #fff;
+	}
+
+	#footer p {
+
+		margin-top: 1%;
+		text-align: center;
 	}

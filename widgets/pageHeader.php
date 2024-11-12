@@ -1,6 +1,6 @@
 <div id="pageHeader">
     <a class="mb_none" href="//koikoi.co.jp/ikoiko/">
-        <img class="mb_none" id="logo" src="//koikoi.co.jp/ikoiko/img/common/logo.png" alt="ロゴ">
+        <img class="mb_none" id="logo" src="//koikoi.co.jp/ikoiko/img/common/icon/logo.png" alt="ロゴ">
     </a>
 
     <div id="contact">

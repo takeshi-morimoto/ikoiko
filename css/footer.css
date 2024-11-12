@@ -1,23 +1,19 @@
-/*----------------------------------
- * フッター全体
- *----------------------------------*/
- #footer {
-  background-color: #ff9933; /* 背景色を調整 */
-  padding: 20px 0;
+/* フッター全体 */
+#footer {
+  background-color: #ff9933; /*背景色*/
+  padding: 20px 0; /*上下の余白を調整*/
   text-align: center;
-  color: #fff; /* テキストを白に変更 */
+  color: #fff; /*文字色を白に設定*/
 }
 
-/*----------------------------------
-* フッターのバナー
-*----------------------------------*/
+/* バナーのスタイル */
 .footer-banner ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  list-style: none;
   padding: 0;
   margin: 10px 0;
-  list-style: none;
 }
 
 .footer-banner li {
@@ -29,9 +25,7 @@
   width: auto;
 }
 
-/*----------------------------------
-* フッターメニュー
-*----------------------------------*/
+/* メニューのスタイル */
 .footer-menu {
   display: flex;
   justify-content: center;
@@ -45,20 +39,17 @@
 }
 
 .footer-menu li a {
-  color: #fff; /* リンクの色を白に調整 */
+  color: #fff; /*文字色を白に設定*/
   text-decoration: none;
-  font-weight: bold;
 }
 
 .footer-menu li a:hover {
   text-decoration: underline;
 }
 
-/*----------------------------------
-* 著作権表示
-*----------------------------------*/
+/* 著作権表示 */
 .footer-copyright {
   font-size: 12px;
-  color: #fff; /* 著作権表示も白に */
-  margin-top: 15px; /* 上の間隔を少し広く */
+  color: #fff; /*文字色を白に設定*/
+  margin-top: 10px;
 }

@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./"                # ローカルのディレクトリを指定
-          server-dir: "/web"             # サーバー上のデプロイ先ディレクトリ
+          server-dir: "/web/"            # サーバー上のデプロイ先ディレクトリ（末尾にスラッシュを追加）
           protocol: "ftp"                # プロトコルをFTPに設定

@@ -1,0 +1,57 @@
+/* footer.css */
+
+/* フッター全体 */
+#footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* フッターのバナー */
+  .footer-banner ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 10px 0;
+    list-style: none;
+  }
+  
+  .footer-banner li {
+    margin: 10px;
+  }
+  
+  .footer-banner li img {
+    height: 60px;
+    width: auto;
+  }
+  
+  /* フッターメニュー */
+  .footer-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .footer-menu li {
+    margin: 0 10px;
+  }
+  
+  .footer-menu li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .footer-menu li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 著作権表示 */
+  .footer-copyright {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+  }
+  

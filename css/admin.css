@@ -667,12 +667,6 @@ input {
 /* 手動登録の入力フォーム
 -------------------------------------------*/
 
-#form_addition div.center {
-
-
-
-}
-
 #form_addition table {
 
 	border-spacing: 0;
@@ -705,26 +699,4 @@ input {
 	width: 100px;
 	height: 40px;
 	font-size: 120%;
-}
-
-
-
-
-/* フッター
--------------------------------------------*/
-
-#footer {
-
-	width: 100%;
-	text-align: center;
-	background-color: #aaa;
-	padding: 3%;
-	margin-top: 10%;
-}
-
-
-#footer a {
-
-	text-decoration: none;
-
 }

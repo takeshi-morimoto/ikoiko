@@ -846,11 +846,9 @@
 		}
 
 		.dateSearch table td.contains {
-
-			background: url(//koikoi.co.jp/ikoiko/img/icon/icon_025.png); 
+			background: url(//koikoi.co.jp/ikoiko/img/common/icon/icon_025.png); 
 			background-size: cover;
 		}
-
 
 		.dateSearch table th {
 

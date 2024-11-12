@@ -75,10 +75,8 @@
 
     <!-- ツイッター -->
     <div style="width:90%;margin:0 auto;height:610px;overflow:hidden;">
-        <a class="twitter-timeline" href="https://twitter.com/machikonkoikoi" data-widget-id="428108933408890880">@machikonkoikoiさんのツイート</a>
-        <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-        </script>
+        <a class="twitter-timeline" href="https://twitter.com/machikonkoikoi">@machikonkoikoiさんのツイート</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 
     <!-- 幸せ報告 -->

@@ -7,7 +7,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 $pat = '/^2[0-9]{3}-[0-9]{1,2}-[0-9]{1,2}$/';
 $tok = strtok($_SERVER['PATH_INFO'], "/");
 
-if ( preg_match($pat, $tok) ):
+if (preg_match($pat, $tok)):
     $searchDate = $tok;
 else:
     $searchArea = $tok;
@@ -16,8 +16,8 @@ endif;
 // 2個めのクエリがある場合は処理を実行
 $tok2 = strtok('/');
 
-if ( !empty($tok2) ):
-    if ( preg_match($pat, $tok2) ):
+if (!empty($tok2)):
+    if (preg_match($pat, $tok2)):
         $searchDate = $tok2;
     else:
         $searchArea = $tok2;
@@ -25,13 +25,13 @@ if ( !empty($tok2) ):
 endif;
 
 // where句の設定
-if ( empty($searchArea) ):
+if (empty($searchArea)):
     $where_1 = ' 1 = 1 ';
 else:
     $where_1 = " area.ken = '{$searchArea}' ";
 endif;
 
-if ( empty($searchDate) ):
+if (empty($searchDate)):
     $today = date("Y") . '-' . date("m") . '-' . date("j");
     $where_2 = " and events.date >= '{$today}' ";
 else:
@@ -43,32 +43,30 @@ require("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/db_data/db_init.ph
 $db->query("SET NAMES utf8");
 
 /**
- * 価格文字列を整形する関数
- * - 早割が含まれていれば「定価：◯円」部分と「早割：◯円」部分を改行してわかりやすく表示
- * - 早割がなければ置き換えを行わない
- *
- * 例:
- *   "定価：8,500円→早割：7,500円" → 
- *     "定価：8,500円
- *      早割：7,500円"
+ * 価格表示をテーブル形式にする関数
+ * 例：男性と女性の価格を2行のテーブルで表示
+ * 
+ * @param string $price_m 男性用の価格文字列
+ * @param string $price_f 女性用の価格文字列
+ * @return string <table>を含むHTML文字列
  */
-function formatPriceText($text) {
-    // もし「早割」という単語が含まれていれば、改行等を入れる
-    if (strpos($text, '早割') !== false) {
-        // 1) 正規表現で「定価：◯円→早割：◯円」を2行に分ける
-        //    → 例: "定価：8,500円→早割：7,500円"
-        //           "定価：8,500円\n→早割：7,500円"
-        $pattern = '/(定価：[\d,]+円)(→早割：[\d,]+円)/u';
-        $replacement = '$1<br>$2';
-        $text = preg_replace($pattern, $replacement, $text);
+function buildPriceTable($price_m, $price_f) {
+    // テーブルレイアウトを組み立てる
+    // str_replace("→", ...) は使わず、そのまま表示します
+    $html = "
+    <table class='price-table'>
+      <tr>
+        <th>男性</th>
+        <td>{$price_m}</td>
+      </tr>
+      <tr>
+        <th>女性</th>
+        <td>{$price_f}</td>
+      </tr>
+    </table>
+    ";
 
-        // 2) "→" を " → " に変換して少し見やすく
-        $text = str_replace("→", " → ", $text);
-    }
-    // 早割が含まれない場合はそのまま表示
-    // 例: "定価：8,500円" のみ
-
-    return $text;
+    return $html;
 }
 ?>
 
@@ -91,6 +89,25 @@ function formatPriceText($text) {
     gtag('config', 'G-MQ4VFQRSYR');
     </script>
 
+    <!-- テーブルの簡易的なCSS例 -->
+    <style>
+    .price-table {
+      border-collapse: collapse;
+      margin-top: 0.5em;
+    }
+    .price-table th,
+    .price-table td {
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      vertical-align: top;
+    }
+    .price-table th {
+      background: #f0f0f0;
+      white-space: nowrap;
+      text-align: left;
+    }
+    </style>
+
 </head>
 <body>
 
@@ -112,7 +129,6 @@ function formatPriceText($text) {
 </div>
 
 <div id="topContainer">
-    
     <div id="pageHeader">
         <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
     </div>
@@ -126,142 +142,139 @@ function formatPriceText($text) {
     </div>
 
     <div id="mainContainer">
-        
         <div id="mainContent">
             <div id="searchResult">
+
             <?php
-                $today = date("Y") . '-' . date("m") . '-' . date("j");
+            $today = date("Y") . '-' . date("m") . '-' . date("j");
 
-                // イベント情報を取得
-                $sql = "
-                SELECT
-                    events.find,
-                    events.title,
-                    events.date,
-                    events.week,
-                    events.begin,
-                    events.end,
-                    events.pr_comment,
-                    area.page,
-                    area.place,
-                    events.price_m,
-                    events.price_f,
-                    area.price_h,
-                    area.area,
-                    area.area_ja,
-                    area.content,
-                    events.img_url,
-                    events.feature
-                FROM events
-                JOIN area USING(area)
-                WHERE {$where_1} {$where_2}
-                  AND area.page = 'ani'
-                ORDER BY events.date;
-                ";
+            // イベント情報を取得
+            $sql = "
+            SELECT
+                events.find,
+                events.title,
+                events.date,
+                events.week,
+                events.begin,
+                events.end,
+                events.pr_comment,
+                area.page,
+                area.place,
+                events.price_m,
+                events.price_f,
+                area.price_h,
+                area.area,
+                area.area_ja,
+                area.content,
+                events.img_url,
+                events.feature
+            FROM events
+            JOIN area USING(area)
+            WHERE {$where_1} {$where_2}
+              AND area.page = 'ani'
+            ORDER BY events.date;
+            ";
 
-                $result = $db->query($sql);
+            $result = $db->query($sql);
 
-                if ( empty($searchArea) ):
-                    $searchArea = '全国';
-                endif;
+            if (empty($searchArea)) {
+                $searchArea = '全国';
+            }
 
-                echo "<h2>{$searchArea}のイベント情報</h2>";
-                echo "<div id='resultList'>";
+            echo "<h2>{$searchArea}のイベント情報</h2>";
+            echo "<div id='resultList'>";
 
-                while ( $row = $result->fetch() ):
-                    list(
-                        $find,
-                        $title,
-                        $date,
-                        $week,
-                        $begin,
-                        $end,
-                        $pr_comment,
-                        $page,
-                        $place,
-                        $price_m,
-                        $price_f,
-                        $price_h,
-                        $area,
-                        $area_ja,
-                        $content,
-                        $img_url,
-                        $feature
-                    ) = $row;
+            while ($row = $result->fetch()) {
+                list(
+                    $find,
+                    $title,
+                    $date,
+                    $week,
+                    $begin,
+                    $end,
+                    $pr_comment,
+                    $page,
+                    $place,
+                    $price_m,
+                    $price_f,
+                    $price_h,
+                    $area,
+                    $area_ja,
+                    $content,
+                    $img_url,
+                    $feature
+                ) = $row;
 
-                    // $date から日付データを年、月、日に分割
-                    $y = strtok($date, '-');
-                    $m = strtok('-');
-                    $d = strtok('-');
+                // $date から日付データを年、月、日に分割
+                $y = strtok($date, '-');
+                $m = strtok('-');
+                $d = strtok('-');
 
-                    // 開始と終了時刻を時、分に分割
-                    $begin_H = strtok($begin, ':');
-                    $begin_M = strtok(':');
+                // 開始と終了時刻を時、分に分割
+                $begin_H = strtok($begin, ':');
+                $begin_M = strtok(':');
 
-                    $end_H = strtok($end, ':');
-                    $end_M = strtok(':');
+                $end_H = strtok($end, ':');
+                $end_M = strtok(':');
 
-                    // 男女別の通常と早割の価格を個別に分割
-                    $area_price_m = strtok($price_h, '/');
-                    $area_price_f = strtok('/');
+                // 男女別の通常と早割の価格を個別に分割
+                // price_h から area_price_m / area_price_f を取得 (例: "8500/2000" のように入っている?)
+                $area_price_m = strtok($price_h, '/');
+                $area_price_f = strtok('/');
 
-                    // 金額が未設定ならエリアのデータを適用
-                    if ( empty($price_m) ) {
-                        $price_m = $area_price_m;
-                    }
-                    if ( empty($price_f) ) {
-                        $price_f = $area_price_f;
-                    }
+                // 金額が未設定ならエリアのデータを適用
+                if (empty($price_m)) {
+                    $price_m = $area_price_m;
+                }
+                if (empty($price_f)) {
+                    $price_f = $area_price_f;
+                }
 
-                    // contentテーブルからイベントタイプ名を取得
-                    $result2 = $db->query("SELECT name FROM content WHERE num = {$content}");
-                    $tmp = $result2->fetch();
-                    $eventType = $tmp['name'];
+                // contentテーブルからイベントタイプ名を取得
+                $result2 = $db->query("SELECT name FROM content WHERE num = {$content}");
+                $tmp = $result2->fetch();
+                $eventType = $tmp['name'];
 
-                    // タイトルが未設定の場合はイベントタイプとエリアを基に生成
-                    if ( empty($title) ) {
-                        $title = $eventType . $area_ja;
-                    }
+                // タイトルが未設定の場合はイベントタイプとエリアを基に生成
+                if (empty($title)) {
+                    $title = $eventType . $area_ja;
+                }
 
-                    // 画像URLが未設定の場合は旧の処理
-                    if ( empty($img_url) ) {
-                        $img_url = "/ikoiko/img/img_thamb/{$find}";
-                    }
+                // 画像URLが未設定の場合は旧の処理
+                if (empty($img_url)) {
+                    $img_url = "/ikoiko/img/img_thamb/{$find}";
+                }
 
-                    // ここで価格を整形
-                    $price_m_formatted = formatPriceText($price_m);
-                    $price_f_formatted = formatPriceText($price_f);
+                // テーブル用HTMLを組み立て
+                $price_table_html = buildPriceTable($price_m, $price_f);
 
-                    echo "
-                    <div class='event'>
-                        <div class='image-box'>
-                            <a href='//koikoi.co.jp/ikoiko/event/{$area}'>
-                                <img src='{$img_url}' alt=''>
-                                <p>{$feature}</p>
-                            </a>
-                        </div>
-
-                        <div class='eventInfo-box'>
-                            <!--
-                            <span class='place'>{$place}</span>
-                            -->
-                            <span class='eventName'>
-                                <a href='//koikoi.co.jp/ikoiko/event/{$area}'>{$title}</a>
-                            </span>
-                            <span class='dateTime'>
-                                {$m}月{$d}日({$week}){$begin_H}:{$begin_M}-{$end_H}:{$end_M}
-                            </span>
-                            <span class='price'>
-                                男性 {$price_m_formatted}<br>
-                                女性 {$price_f_formatted}
-                            </span>
-                        </div>
+                echo "
+                <div class='event'>
+                    <div class='image-box'>
+                        <a href='//koikoi.co.jp/ikoiko/event/{$area}'>
+                            <img src='{$img_url}' alt=''>
+                            <p>{$feature}</p>
+                        </a>
                     </div>
-                    ";
-                endwhile;
 
-                echo "</div>";
+                    <div class='eventInfo-box'>
+                        <span class='eventName'>
+                            <a href='//koikoi.co.jp/ikoiko/event/{$area}'>{$title}</a>
+                        </span>
+                        <span class='dateTime'>
+                            {$m}月{$d}日({$week}){$begin_H}:{$begin_M}-{$end_H}:{$end_M}
+                        </span>
+                        <span class='price'>
+                            {$price_table_html}
+                        </span>
+                    </div>
+                </div>
+                ";
+            }
+
+            echo "</div>";
             ?>
+
             </div>
         </div>
 

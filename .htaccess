@@ -1,3 +1,13 @@
+# カスタムphp.iniの読み込み
+<IfModule mod_suphp.c>
+    suPHP_ConfigPath /home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/
+</IfModule>
+
+# PHPINIディレクティブ（Lolipop用）
+<IfModule mod_php.c>
+    php_value auto_prepend_file "/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/php.ini"
+</IfModule>
+
 # OPcache設定（PHP 7.0以降）
 <IfModule mod_php7.c>
     php_flag opcache.enable On

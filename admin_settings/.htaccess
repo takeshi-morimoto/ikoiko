@@ -62,3 +62,40 @@ Allow from 125.198.179.253
 </Files>
 
 # END Lolipop
+
+# OPcache設定（PHP 7.0以降）
+<IfModule mod_php7.c>
+    php_flag opcache.enable On
+    php_value opcache.memory_consumption 128
+    php_value opcache.interned_strings_buffer 8
+    php_value opcache.max_accelerated_files 4000
+    php_value opcache.revalidate_freq 60
+    php_value opcache.fast_shutdown 1
+    php_flag opcache.enable_cli Off
+    php_value opcache.max_wasted_percentage 5
+    php_value opcache.validate_timestamps 1
+    php_flag opcache.save_comments 1
+</IfModule>
+
+# PHP 8.0以降の場合
+<IfModule mod_php.c>
+    php_flag opcache.enable On
+    php_value opcache.memory_consumption 128
+    php_value opcache.interned_strings_buffer 8
+    php_value opcache.max_accelerated_files 4000
+    php_value opcache.revalidate_freq 60
+    php_value opcache.fast_shutdown 1
+    php_flag opcache.enable_cli Off
+    php_value opcache.max_wasted_percentage 5
+    php_value opcache.validate_timestamps 1
+    php_flag opcache.save_comments 1
+    php_flag opcache.jit 1
+    php_value opcache.jit_buffer_size 100M
+</IfModule>
+
+# セキュリティヘッダー
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

@@ -3,7 +3,11 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(find:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "WebFetch(domain:machicon.jp)",
+      "WebFetch(domain:machicom-matome.com)",
+      "WebFetch(domain:party-calendar.net)",
+      "WebFetch(domain:www.machicom.jp)"
     ],
     "deny": []
   }

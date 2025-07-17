@@ -6,11 +6,6 @@
                     <img src="/ikoiko/img/common/footer_banners/japan.jpg" alt="全国街コン公式サイト 街コンジャパン" title="街コンジャパン">
                 </a>
             </li>
-            <li class="matome">
-                <a href="//machicom-matome.com" target="_blank">
-                    <img src="/ikoiko/img/common/footer_banners/matome.jpg" alt="東京神奈川千葉埼玉大阪名古屋福岡の情報なら街コンまとめへ">
-                </a>
-            </li>
             <li class="omikare">
                 <a href="//party-calendar.net" target="_blank">
                     <img src="/ikoiko/img/common/footer_banners/omikare.jpg" alt="オミカレ">

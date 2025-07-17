@@ -76,10 +76,17 @@
     </div>
 
     <!-- X (旧Twitter) -->
-    <div class="banner" style="padding: 0 20px;">
-        <div style="width:100%; height:600px; overflow-y:auto; border:1px solid #e1e8ed; border-radius:8px;">
-            <a class="twitter-timeline" data-height="600" data-chrome="nofooter noborders" href="https://twitter.com/machikonkoikoi?ref_src=twsrc%5Etfw">Tweets by machikonkoikoi</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div class="banner" style="padding: 0 20px 10px;">
+        <div style="text-align:center; padding:20px; border:1px solid #e1e8ed; border-radius:8px; background-color:#f7f9fa;">
+            <p style="font-size:16px; font-weight:bold; margin-bottom:15px;">
+                <img src="https://img.icons8.com/ios-filled/50/000000/twitterx.png" alt="X" style="width:30px; height:30px; vertical-align:middle; margin-right:5px;">
+                公式X（旧Twitter）
+            </p>
+            <p style="margin-bottom:15px;">最新情報はXでチェック！</p>
+            <a href="https://twitter.com/machikonkoikoi" target="_blank" rel="noopener noreferrer" 
+               style="display:inline-block; padding:10px 30px; background-color:#000; color:#fff; text-decoration:none; border-radius:20px; font-weight:bold;">
+                @machikonkoikoi をフォロー
+            </a>
         </div>
     </div>
 

@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://koikoi.co.jp/ikoiko/analytics/sitemap.xml
+
+# 管理画面へのアクセスを制限
+Disallow: /admin_settings/
+Disallow: /db_data/
+
+# 一時ファイルへのアクセスを制限
+Disallow: /tmp/
+Disallow: *.tmp
+
+# 重複コンテンツの回避
+Disallow: /*?*sort=
+Disallow: /*?*page=

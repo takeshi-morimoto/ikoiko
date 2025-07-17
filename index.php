@@ -16,9 +16,30 @@ $db->query("SET NAMES utf8");
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
-
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="アニメコン-総動員数NO.1！株式会社KOIKOI" />
+	<meta property="og:description" content="アニメ好きの集まる街コンを全国で開催中。婚活・恋活はもちろん、オタクのお友達探しにもおススメです。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/" />
+	<meta property="og:site_name" content="こいこい" />
+	
+	<!-- 構造化データ -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "株式会社KOIKOI",
+		"url": "https://koikoi.co.jp/ikoiko/",
+		"description": "アニメ好きの集まる街コンを全国で開催中",
+		"sameAs": [
+			"https://twitter.com/machikonkoikoi"
+		]
+	}
 	</script>
+
+	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
 
 </head>
 <body>

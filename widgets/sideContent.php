@@ -93,7 +93,7 @@
     <!-- アニメージュ -->
     <div class="banner" style="padding: 10px 20px;">
         <p class="sidebarstyle">
-            <a href="http://animage.jp/books/2343/">
+            <a href="https://animage.jp/books/2343/">
                 <img src="/ikoiko/img/sidebar/animage1808.jpg" alt="アニメージュ8月号" title="アニメージュ8月号" width="auto">
             </a>
             <b>雑誌でも紹介されています！<br>アニメージュにて「あっくんと彼女コラボ」を取材していただきました！</b>

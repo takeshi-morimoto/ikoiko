@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="//koikoi.co.jp/ikoiko/css/onepcssgrid.css" />
 <link rel="icon" href="//koikoi.co.jp/ikoiko/img/favicon.ico" />
 
-<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jQuery.js' defer></script>
+<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js' defer></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ4VFQRSYR"></script>
 <script>

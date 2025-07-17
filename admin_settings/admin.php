@@ -237,7 +237,7 @@ endif;
 	<meta charset="UTF-8" />
 	<title>街コン設定用コントロールパネル</title>
 	<link rel="stylesheet" href="//koikoi.co.jp/ikoiko/css/admin.css">
-	<script src="//koikoi.co.jp/ikoiko/js/jquery.js" type="text/javascript"></script>
+	<script src="//koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 

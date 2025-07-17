@@ -46,8 +46,8 @@
 		<div id="manga">
 			<h2 class="manga_header">こいこいマンガ</h2>
 			<ul class="manga_list">
-				<li><picture><source srcset="/ikoiko/img/manga/14/1.webp" type="image/webp"><img src="/ikoiko/img/manga/14/1.jpg" alt="Manga page" loading="lazy"></picture></li>
-				<li><picture><source srcset="/ikoiko/img/manga/14/2.webp" type="image/webp"><img src="/ikoiko/img/manga/14/2.jpg" alt="Manga page" loading="lazy"></picture></li>
+				<li><img src="/ikoiko/img/manga/14/1.jpg" loading="lazy"></li>
+				<li><img src="/ikoiko/img/manga/14/2.jpg" loading="lazy"></li>
 			</ul>
 
 			<ul class="manga_link_list">

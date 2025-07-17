@@ -1,3 +1,10 @@
+# HTTPからHTTPSへのリダイレクト
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # カスタムphp.iniの読み込み
 <IfModule mod_suphp.c>
     suPHP_ConfigPath /home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/
@@ -43,6 +50,8 @@
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
+    # HSTS（HTTP Strict Transport Security）- 1年間
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
 # Gzip圧縮の有効化

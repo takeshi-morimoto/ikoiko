@@ -8,7 +8,11 @@
       "WebFetch(domain:machicom-matome.com)",
       "WebFetch(domain:party-calendar.net)",
       "WebFetch(domain:www.machicom.jp)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(php:*)",
+      "Bash(php:*)",
+      "Bash(chmod:*)",
+      "Bash(/mnt/c/Users/tmori/Code/ikoiko/update_manga_files.sh:*)"
     ],
     "deny": []
   }

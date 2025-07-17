@@ -8,6 +8,9 @@ Sitemap: https://koikoi.co.jp/ikoiko/analytics/sitemap.xml
 Disallow: /admin_settings/
 Disallow: /db_data/
 
+# サードパーティコンテンツを明示的にブロック
+Disallow: /media/
+
 # 一時ファイルへのアクセスを制限
 Disallow: /tmp/
 Disallow: *.tmp

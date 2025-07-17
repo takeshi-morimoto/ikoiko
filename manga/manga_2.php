@@ -46,16 +46,16 @@
 		<div id="manga">
 			<h2 class="manga_header">こいこいマンガ</h2>
 			<ul class="manga_list">
-				<li><img src="/ikoiko/img/manga/2/1.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/2.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/3.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/4.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/5.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/6.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/7.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/8.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/9.jpg"></li>
-				<li><img src="/ikoiko/img/manga/2/10.jpg"></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/1.webp" type="image/webp"><img src="/ikoiko/img/manga/2/1.jpg" alt="Manga page 1" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/2.webp" type="image/webp"><img src="/ikoiko/img/manga/2/2.jpg" alt="Manga page 2" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/3.webp" type="image/webp"><img src="/ikoiko/img/manga/2/3.jpg" alt="Manga page 3" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/4.webp" type="image/webp"><img src="/ikoiko/img/manga/2/4.jpg" alt="Manga page 4" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/5.webp" type="image/webp"><img src="/ikoiko/img/manga/2/5.jpg" alt="Manga page 5" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/6.webp" type="image/webp"><img src="/ikoiko/img/manga/2/6.jpg" alt="Manga page 6" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/7.webp" type="image/webp"><img src="/ikoiko/img/manga/2/7.jpg" alt="Manga page 7" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/8.webp" type="image/webp"><img src="/ikoiko/img/manga/2/8.jpg" alt="Manga page 8" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/9.webp" type="image/webp"><img src="/ikoiko/img/manga/2/9.jpg" alt="Manga page 9" loading="lazy"></picture></li>
+				<li><picture><source srcset="/ikoiko/img/manga/2/10.webp" type="image/webp"><img src="/ikoiko/img/manga/2/10.jpg" alt="Manga page 10" loading="lazy"></picture></li>
 			</ul>
 
 			<ul class="manga_link_list">

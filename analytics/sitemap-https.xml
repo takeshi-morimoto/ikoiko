@@ -3,160 +3,160 @@
 
 <!-- 基本ページ -->
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/</loc>
+  <loc>https://koikoi.co.jp/ikoiko/</loc>
   <priority>1.0</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/machi/</loc>
+  <loc>https://koikoi.co.jp/ikoiko/machi/</loc>
   <priority>0.9</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/contact.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/contact.php</loc>
   <priority>0.8</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/</loc>
   <priority>0.8</priority>
   <changefreq>weekly</changefreq>
 </url>
 
 <!-- リストページ -->
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/list_1.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/list_1.php</loc>
   <priority>0.8</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/list_2.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/list_2.php</loc>
   <priority>0.8</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/list_3.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/list_3.php</loc>
   <priority>0.8</priority>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/list_4.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/list_4.php</loc>
   <priority>0.8</priority>
   <changefreq>daily</changefreq>
 </url>
 
 <!-- 特定イベントページ -->
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes</loc>
+  <loc>https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes</loc>
   <priority>0.7</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes</loc>
+  <loc>https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes</loc>
   <priority>0.7</priority>
   <changefreq>weekly</changefreq>
 </url>
 
 <!-- マンガページ -->
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_2.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_2.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_3.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_3.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_4.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_4.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_5.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_5.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_6.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_6.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_7.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_7.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_8.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_8.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_9.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_9.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_10.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_10.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_11.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_11.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_12.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_12.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_13.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_13.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/manga/manga_14.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/manga/manga_14.php</loc>
   <priority>0.6</priority>
   <changefreq>monthly</changefreq>
 </url>
 
 <!-- その他のページ -->
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/参加.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/参加.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/ポリシー.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/ポリシー.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/特商法.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/特商法.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/参加ルール.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/参加ルール.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/nazo.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/nazo.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/off.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/off.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>http://www.koikoi.co.jp/ikoiko/yoruuuu.php</loc>
+  <loc>https://koikoi.co.jp/ikoiko/yoruuuu.php</loc>
   <priority>0.5</priority>
   <changefreq>monthly</changefreq>
 </url>

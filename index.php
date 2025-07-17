@@ -13,6 +13,8 @@ $db->query("SET NAMES utf8");
 	<title>アニメコン-総動員数NO.1！株式会社KOIKOI</title>
 
 	<meta name="description" content="アニメ好きの集まる街コンを全国で開催中。婚活・恋活はもちろん、オタクのお友達探しにもおススメです。完全着席形式で、マンガ・アニメ・ゲーム・コスプレ・声優など、好きなジャンルが一目でわかるプロフィールシート・マッチングゲームなどの工夫をしております。">
+	<!-- Google Search Console 確認用 - 確認後は削除可能 -->
+	<!-- <meta name="google-site-verification" content="ここにGoogle提供のコードを入力" /> -->
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
 

@@ -75,10 +75,12 @@
         </form>
     </div>
 
-    <!-- ツイッター -->
-    <div style="width:90%; margin:0 auto; height:610px; overflow:hidden;">
-        <a class="twitter-timeline" href="https://twitter.com/machikonkoikoi?ref_src=twsrc%5Etfw">Tweets by machikonkoikoi</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <!-- X (旧Twitter) -->
+    <div class="banner" style="padding: 0 20px;">
+        <div style="width:100%; height:600px; overflow-y:auto; border:1px solid #e1e8ed; border-radius:8px;">
+            <a class="twitter-timeline" data-height="600" data-chrome="nofooter noborders" href="https://twitter.com/machikonkoikoi?ref_src=twsrc%5Etfw">Tweets by machikonkoikoi</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
     </div>
 
     <!-- アニメージュ -->

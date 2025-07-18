@@ -448,9 +448,7 @@
 /* エントリーエリアのスタイル */
 .entryArea {
   margin: var(--spacing-lg) 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
+  display: block;
 }
 
 /* generalクラス内での直接配置 */
@@ -459,7 +457,6 @@
 }
 
 .entryArea h2 {
-  grid-column: 1 / -1;
   text-align: center;
   margin-bottom: var(--spacing-lg);
 }
@@ -469,10 +466,12 @@
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-lg);
-  overflow: hidden;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
   transition: all var(--transition-base);
-  display: flex;
-  flex-direction: column;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .entryArea .row:hover,

@@ -40,12 +40,6 @@ $content = $row['text'];
 
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 
-	<!-- モダンCSS追加 -->
-	<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
-	<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
-	<link rel="stylesheet" href="/ikoiko/css/responsive.css">
-	<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
-	
 <link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
 
 <!-- Open Graph -->
@@ -60,7 +54,8 @@ $content = $row['text'];
 <meta name="twitter:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />
 <meta name="twitter:description" content="<?php echo $area_ja; ?>で開催される街コン・アニメコンの情報。" />
 
-<!-- 構造化データ - Event -->
+	<!-- 構造化データ -->
+	<!-- 構造化データ - Event -->
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -76,30 +71,45 @@ $content = $row['text'];
 "@type": "Offer",
 "price": "<?php echo $price_l_m; ?>",
 "priceCurrency": "JPY"
+		},
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "ホーム",
+				"item": "https://koikoi.co.jp/ikoiko/"
+			},{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "<?php echo $area_ja; ?>",
+				"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
+			}]
 }
 }
 </script>
+	
+	<!-- 構造化データ - パンくずリスト -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "ホーム",
+			"item": "https://koikoi.co.jp/ikoiko/"
+		},{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "<?php echo $area_ja; ?>",
+			"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
+		}]
+	}
+	</script>
 
-<!-- 構造化データ - パンくずリスト -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [{
-"@type": "ListItem",
-"position": 1,
-"name": "ホーム",
-"item": "https://koikoi.co.jp/ikoiko/"
-},{
-"@type": "ListItem",
-"position": 2,
-"name": "<?php echo $area_ja; ?>",
-"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
-}]
-}
-</script>
-
-<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
+	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>
@@ -108,13 +118,11 @@ $content = $row['text'];
 
 <div id="topContainer">
 
-	<div id="pageHeader">
-		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
+<div id="pageHeader">
 
-	</div>
-	<!-- モダンなヘッダーに変更 -->
-	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
+
+</div>
 
 <div id="mainVisual">
 
@@ -124,28 +132,18 @@ $content = $row['text'];
 
 <div id="mainContainer">
 <div id="mainContent" class="general">
-			<div class="card">
-				<div class="card-body">
-					<?php print $free_text1 ; ?>
 
-            <?php print $free_text1 ; ?>
+<?php print $free_text1 ; ?>
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
 
-            <?php print $content ; ?>
-	
-			<?php print $free_text2 ; ?>			
+<?php print $content ; ?>
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
-					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+<?php print $free_text2 ; ?>			
 
-					<?php print $content ; ?>
-		
-					<?php print $free_text2 ; ?>			
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
 
-					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
-				</div>
-			</div>
+
 </div>
 
 <div id="sideContent">

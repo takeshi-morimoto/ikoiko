@@ -41,13 +41,6 @@ $content = $row['text'];
 
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 
-<!-- モダンCSS追加 -->
-<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
-<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
-<link rel="stylesheet" href="/ikoiko/css/responsive.css">
-<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
-<link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
-
 <link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
 
 <!-- Open Graph -->
@@ -96,7 +89,8 @@ $content = $row['text'];
 }
 </script>
 
-<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
+	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>
@@ -105,8 +99,11 @@ $content = $row['text'];
 
 <div id="topContainer">
 
-<!-- モダンヘッダーに変更 -->
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
+<div id="pageHeader">
+
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_m.php") ?>
+
+</div>
 
 <div id="mainVisual">
 
@@ -116,30 +113,23 @@ $content = $row['text'];
 
 <div id="mainContainer">
 <div id="mainContent" class="general">
-<div class="card">
-<div class="card-body">
-					<?php print $free_text1 ; ?>
 
-            <?php print $free_text1 ; ?>
-					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+<?php print $free_text1 ; ?>
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
 
-            <?php print $content ; ?>
-					<?php print $content ; ?>
+<?php print $content ; ?>
 
-			<?php print $free_text2 ; ?>			
-					<?php print $free_text2 ; ?>			
+<?php print $free_text2 ; ?>			
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
-					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
-</div>
-</div>
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+
+
 </div>
 
 <div id="sideContent">
 
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_m_modern.php") ?>
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_m.php") ?>
 
 </div>
 </div>

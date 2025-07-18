@@ -123,8 +123,7 @@ $db->query("SET NAMES utf8");
 				<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/ani/next10.php") ?>
 			</section>
 			
-			<section class="card mt-4">
-				<h2 class="card-header">最新のお知らせ</h2>
+			<section class="mt-4">
 				<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/new-article.ani.php") ?>
 			</section>
 

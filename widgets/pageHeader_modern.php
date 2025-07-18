@@ -80,9 +80,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
+    width: 100%;
 }
 
 /* ロゴ */
+.header-logo {
+    flex-shrink: 0;
+}
+
 .header-logo .logo-link {
     display: block;
     height: 50px;
@@ -99,8 +104,7 @@
     display: flex;
     gap: 24px;
     align-items: center;
-    flex: 1; /* 中央寄せのためのスペース確保 */
-    justify-content: center;
+    margin: 0 auto; /* 中央配置 */
 }
 
 .nav-link {
@@ -139,7 +143,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-left: auto; /* 右寄せ */
+    flex-shrink: 0;
 }
 
 .contact-info {

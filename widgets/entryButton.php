@@ -17,6 +17,13 @@ while ( $eventData = $eventDataTmp->fetch() ):
     print "<h2 style='text-align:center;'>{$tmp['ken']}お申し込みはこちら</h2><div class='entryArea'>";
   }
 
+  // 画像URLが未設定の場合は旧の処理
+  if ( empty($eventData['img_url']) ) {
+    $url = "/ikoiko/img/img_thamb/{$eventData['find']}";
+  } else {
+    $url = $eventData['img_url'];
+  }
+
   // アイテムが４つ以上あるときは開閉して表示
   if ( $n === 3 ) { 
     $isExtra = true; 
@@ -56,16 +63,21 @@ while ( $eventData = $eventDataTmp->fetch() ):
   print 
         "
           <div class='event-card'>
-            <div class='event-title'>{$eventData['title']}</div>
-            <div class='event-date'>
-              {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']}) {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
+            <div class='event-image'>
+              <img src='{$url}' alt='{$eventData['title']}'>
             </div>
-            <div class='event-buttons'>
-              <a class='btn-apply' href='{$sale}'>このイベントに申し込む</a>
-              <a class='btn-detail' href='#' onclick='showDetails(this); return false;'>詳細を表示</a>
-            </div>
-            <div class='event-details' style='display:none;'>
-              {$eventData['pr_comment']}
+            <div class='event-content'>
+              <div class='event-title'>{$eventData['title']}</div>
+              <div class='event-date'>
+                {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']}) {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
+              </div>
+              <div class='event-buttons'>
+                <a class='btn-apply' href='{$sale}'>このイベントに申し込む</a>
+                <a class='btn-detail' href='#' onclick='showDetails(this); return false;'>詳細を表示</a>
+              </div>
+              <div class='event-details' style='display:none;'>
+                {$eventData['pr_comment']}
+              </div>
             </div>
           </div> 
         ";
@@ -90,6 +102,23 @@ if ($isExtra) {
   margin-bottom: 20px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 20px;
+}
+
+.event-image {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.event-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.event-content {
+  flex: 1;
 }
 
 .event-title {
@@ -144,6 +173,16 @@ if ($isExtra) {
   background: #f9f9f9;
   border-radius: 5px;
   border-left: 4px solid #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+  }
+  
+  .event-image {
+    width: 100%;
+  }
 }
 </style>
 

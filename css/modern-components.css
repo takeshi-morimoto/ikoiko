@@ -537,6 +537,23 @@
   color: var(--text-secondary);
   font-size: var(--font-size-base);
   line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+}
+
+/* スマホでの表示調整 */
+@media (max-width: 768px) {
+  .entryArea .title,
+  .general .title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .entryArea .dateTime,
+  .general .dateTime {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+  }
 }
 
 /* ボタンエリア */
@@ -548,9 +565,10 @@
 /* エントリーボタン */
 .entryArea .entryButton,
 .general .entryButton {
-  display: inline-block;
+  display: block;
+  text-align: center;
   transition: transform var(--transition-fast);
-  margin-bottom: var(--spacing-md);
+  margin: 0 auto var(--spacing-md) auto;
 }
 
 .entryArea .entryButton:hover,
@@ -560,8 +578,9 @@
 
 .entryArea .entryButton img,
 .general .entryButton img {
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
+  display: inline-block;
 }
 
 /* 詳細情報の表示/非表示 */

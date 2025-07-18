@@ -1,0 +1,26 @@
+/* Combined CSS - Created for optimization */
+/* This file combines multiple CSS files to reduce HTTP requests */
+/* Order: base.css -> globalMenu.css -> onepcssgrid.css -> content.css */
+
+/* ============================================
+   base.css - Base styles
+   ============================================ */
+
+/* ============================================
+   globalMenu.css - Navigation menu styles
+   ============================================ */
+
+/* ============================================
+   onepcssgrid.css - Grid system
+   ============================================ */
+
+/* ============================================
+   content.css - Main content styles
+   ============================================ */
+
+/* 
+   To use this combined CSS:
+   1. Combine the actual CSS files in this order
+   2. Minify the result
+   3. Update outputHead.php to load only combined.min.css
+*/

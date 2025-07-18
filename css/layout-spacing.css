@@ -113,3 +113,25 @@ section + section {
 .p-3 { padding: var(--spacing-md) !important; }
 .p-4 { padding: var(--spacing-lg) !important; }
 .p-5 { padding: var(--spacing-xl) !important; }
+
+/* 街コンページ特有の調整 */
+.page-machi #mainContainer,
+body[class*="event_m"] #mainContainer {
+  max-width: 1400px; /* コンテナ幅を広げる */
+  margin: 0 auto;
+}
+
+/* 街コンページのサイドバー幅調整 */
+@media (min-width: 1024px) {
+  .page-machi #sideContent,
+  body[class*="event_m"] #sideContent {
+    flex: 0 0 360px; /* サイドバー幅を固定 */
+    max-width: 360px;
+  }
+  
+  .page-machi #mainContent,
+  body[class*="event_m"] #mainContent {
+    flex: 1;
+    max-width: calc(100% - 380px); /* サイドバー幅 + gap */
+  }
+}

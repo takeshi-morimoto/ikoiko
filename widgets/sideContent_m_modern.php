@@ -96,3 +96,26 @@
 </aside>
 
 <!-- スタイルは sideContent_modern.php と共通 -->
+
+<style>
+/* 街コンページ用のサイドバー追加調整 */
+@media (min-width: 1024px) {
+    #sideContent {
+        width: 340px; /* サイドバーの幅を少し広げる */
+    }
+    
+    .sidebar-modern {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* サイドバー内の画像サイズ調整 */
+.sidebar-modern .event-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar-modern .sidebar-card {
+    margin-bottom: var(--spacing-md);
+}
+</style>

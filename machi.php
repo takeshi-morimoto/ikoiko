@@ -70,7 +70,7 @@ $db->query("SET NAMES utf8");
 	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
-<body class="machi">
+<body class="machi page-machi">
 
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageTop_m.php") ?>
 

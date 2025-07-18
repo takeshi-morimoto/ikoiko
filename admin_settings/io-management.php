@@ -53,8 +53,8 @@ if ( isset($_POST['import_e']) || isset($_POST['import_a']) ) {
 <head>
 	<meta charset="utf-8">
 	<title>データ入出力</title>
-	<link rel="stylesheet" href="//koikoi.co.jp/ikoiko/css/admin.css">
-	<script src="//koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js"></script>
+	<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/admin.css">
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js"></script>
 	<script>
 		$(function(){
 			$('#export button').on('click', function(event) {

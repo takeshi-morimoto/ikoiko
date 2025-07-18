@@ -41,7 +41,7 @@ $db->query("SET NAMES utf8");
 	}
 	</script>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>
@@ -51,11 +51,11 @@ $db->query("SET NAMES utf8");
 	<div id="inner">
 
 		<ul>
-			<li><a href="//koikoi.co.jp/ikoiko/">アニメコン<br />を探す　＞</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/machi/">街コン　　<br />を探す　＞</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/">アニメコン<br />を探す　＞</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/machi/">街コン　　<br />を探す　＞</a></li>
 			<!--
-			<li><a href="//koikoi.co.jp/ikoiko/nazo/">謎解きを探す　＞</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/off/">オフ会を探す　＞</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/nazo/">謎解きを探す　＞</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/off/">オフ会を探す　＞</a></li>
 			-->
 		</ul>		
 

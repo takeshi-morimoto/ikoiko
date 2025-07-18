@@ -1,4 +1,8 @@
 $(function(){
+	// DOM要素が存在しない場合は処理を中断
+	if ($('#dateSearch_inner').length === 0 || $('#next').length === 0 || $('#prev').length === 0) {
+		return;
+	}
 
 	var pos = 0,
 		set = 0;

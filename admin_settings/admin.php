@@ -236,8 +236,8 @@ endif;
 <head>
 	<meta charset="UTF-8" />
 	<title>街コン設定用コントロールパネル</title>
-	<link rel="stylesheet" href="//koikoi.co.jp/ikoiko/css/admin.css">
-	<script src="//koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/admin.css">
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -284,7 +284,7 @@ var 2.1.8
 
 <div id='searchCustomer'>
 
-	<form action="//koikoi.co.jp/ikoiko/admin_settings/admin.php" method='post'>
+	<form action="https://koikoi.co.jp/ikoiko/admin_settings/admin.php" method='post'>
 					
 
 		[-- search --]
@@ -496,7 +496,7 @@ else:
 		print 
 				"
 				<tr class='{$trClass}'>
-					<form action='//koikoi.co.jp/ikoiko/admin_settings/admin.php' method='post' accept-charset='utf-8'>
+					<form action='https://koikoi.co.jp/ikoiko/admin_settings/admin.php' method='post' accept-charset='utf-8'>
 					<input type='hidden' name='localFind' value='{$localFind}' />
 					<input type='hidden' name='name' value='{$name}' />
 					<input type='hidden' name='memo' value='{$memo}' />

@@ -164,7 +164,7 @@ endif;
 
   <?php include("/home/users/0/sub.jp-p007/web/widgets/outputHead.php") ?>
 
-  <script type='text/javascript' src='//p007.sub.jp/js/都道府県検索MB.js'></script>
+  <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>

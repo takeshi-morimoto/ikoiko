@@ -54,7 +54,7 @@ $content = $row['text'];
 	<meta name="twitter:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />
 	<meta name="twitter:description" content="<?php echo $area_ja; ?>で開催される街コン・アニメコンの情報。" />
 	
-	<!-- 構造化データ -->
+	<!-- 構造化データ - Event -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -70,25 +70,30 @@ $content = $row['text'];
 			"@type": "Offer",
 			"price": "<?php echo $price_l_m; ?>",
 			"priceCurrency": "JPY"
-		},
-		"breadcrumb": {
-			"@type": "BreadcrumbList",
-			"itemListElement": [{
-				"@type": "ListItem",
-				"position": 1,
-				"name": "ホーム",
-				"item": "https://koikoi.co.jp/ikoiko/"
-			},{
-				"@type": "ListItem",
-				"position": 2,
-				"name": "<?php echo $area_ja; ?>",
-				"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
-			}]
 		}
 	}
 	</script>
+	
+	<!-- 構造化データ - パンくずリスト -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "ホーム",
+			"item": "https://koikoi.co.jp/ikoiko/"
+		},{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "<?php echo $area_ja; ?>",
+			"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
+		}]
+	}
+	</script>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>

@@ -1,11 +1,11 @@
 <div class="dateSearch">
 
-	<script src="//koikoi.co.jp/ikoiko/js/dateSearch.js"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/dateSearch.js"></script>
 
 	<h2>カレンダーから検索</h2>
 
-	<div id="next"><img src="//koikoi.co.jp/ikoiko/img/common/icon/icon_next.png" alt="" /></div>
-	<div id="prev"><img src="//koikoi.co.jp/ikoiko/img/common/icon/icon_prev.png" alt="" /></div>
+	<div id="next"><img src="https://koikoi.co.jp/ikoiko/img/common/icon/icon_next.png" alt="" /></div>
+	<div id="prev"><img src="https://koikoi.co.jp/ikoiko/img/common/icon/icon_prev.png" alt="" /></div>
 
 	<div id="dateSearch_inner">
 

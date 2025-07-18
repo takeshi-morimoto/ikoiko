@@ -15,7 +15,8 @@
       "Bash(/mnt/c/Users/tmori/Code/ikoiko/update_manga_files.sh:*)",
       "Bash(grep:*)",
       "Bash(diff:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(sed:*)"
     ],
     "deny": []
   }

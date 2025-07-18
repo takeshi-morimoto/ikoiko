@@ -246,7 +246,7 @@ elseif ( isset($_POST['submit_download']) ):
 	//ファイルをダウンロードさせる
 	header('Content-Type: text/csv');
 	header('Content-Disposition: attachment; filename=tmpList.csv');
-	readfile('//koikoi.co.jp/ikoiko/admin_settings/downloadList/tmpList.csv');
+	readfile('https://koikoi.co.jp/ikoiko/admin_settings/downloadList/tmpList.csv');
 
 
 
@@ -299,7 +299,7 @@ elseif ( isset($_POST['submit_quick']) ):
 	//ファイルをダウンロードさせる
 	header('Content-Type: text/csv');
 	header('Content-Disposition: attachment; filename=tmpList.csv');
-	readfile('//koikoi.co.jp/ikoiko/admin_settings/downloadList/tmpList.csv');
+	readfile('https://koikoi.co.jp/ikoiko/admin_settings/downloadList/tmpList.csv');
 
 	$db->query("UPDATE customers SET download = 1 WHERE 1;");
 
@@ -332,8 +332,8 @@ endif;
 <head>
 	<meta charset="UTF-8" />
 	<title>街コン設定用コントロールパネル</title>
-	<link rel="stylesheet" href="//koikoi.co.jp/ikoiko/css/admin.css">
-	<script src="//koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/admin.css">
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -350,7 +350,7 @@ endif;
 
 <div id='searchCustomer'>
 
-	<form action="//koikoi.co.jp/ikoiko/admin_settings/search.php" method='post'>
+	<form action="https://koikoi.co.jp/ikoiko/admin_settings/search.php" method='post'>
 					
 
 		[-- search --]
@@ -411,7 +411,7 @@ endif;
 
 <hr />
 
-<form action="//koikoi.co.jp/ikoiko/admin_settings/search.php" method="post">
+<form action="https://koikoi.co.jp/ikoiko/admin_settings/search.php" method="post">
 	<input type="submit" name="submit_quick" value="クイックダウンロード">
 	未ダウンロードのデータを抽出してダウンロードできます。
 </form>
@@ -577,7 +577,7 @@ else:
 		print 
 				"
 				<tr class='{$trClass}'>
-					<form action='//koikoi.co.jp/ikoiko/admin_settings/admin.php' method='post' accept-charset='utf-8'>
+					<form action='https://koikoi.co.jp/ikoiko/admin_settings/admin.php' method='post' accept-charset='utf-8'>
 					<input type='hidden' name='localFind' value='{$localFind}' />
 					<input type='hidden' name='name' value='{$name}' />
 					<input type='hidden' name='memo' value='{$memo}' />

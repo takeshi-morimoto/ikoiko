@@ -78,7 +78,7 @@ function buildPriceTable($price_m, $price_f) {
 
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 
-    <script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+    <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
     <!-- テーブルの簡易的なCSS例 -->
     <style>
@@ -104,11 +104,11 @@ function buildPriceTable($price_m, $price_f) {
 <div id="pageTop">
     <div id="inner">
         <ul>
-            <li><a href="//koikoi.co.jp/ikoiko/">アニメコン</a></li>
-            <li><a href="//koikoi.co.jp/ikoiko/machi/">街コン</a></li>
+            <li><a href="https://koikoi.co.jp/ikoiko/">アニメコン</a></li>
+            <li><a href="https://koikoi.co.jp/ikoiko/machi/">街コン</a></li>
             <!--
-            <li><a href="//koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
-            <li><a href="//koikoi.co.jp/ikoiko/off/">オフ会</a></li>
+            <li><a href="https://koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
+            <li><a href="https://koikoi.co.jp/ikoiko/off/">オフ会</a></li>
             -->
         </ul>        
     </div>
@@ -237,15 +237,15 @@ function buildPriceTable($price_m, $price_f) {
                 echo "
                 <div class='event'>
                   <div class='image-box'>
-                    <a href='//koikoi.co.jp/ikoiko/event_m/{$area}'>
-                      <img src='{$img_url}' alt=''>
+                    <a href='https://koikoi.co.jp/ikoiko/event_m/{$area}'>
+                      <img src='{$img_url}' alt='{$area_ja}の{$name}' loading='lazy'>
                       <p>{$feature}</p>
                     </a>
                   </div>
   
                   <div class='eventInfo-box'>
                     <span class='eventName'>
-                      <a href='//koikoi.co.jp/ikoiko/event_m/{$area}'>{$title}</a>
+                      <a href='https://koikoi.co.jp/ikoiko/event_m/{$area}'>{$title}</a>
                     </span>
                     <span class='dateTime'>
                       {$m}月{$d}日({$week}){$begin_H}:{$begin_M}-{$end_H}:{$end_M}

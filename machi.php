@@ -21,13 +21,13 @@ $db->query("SET NAMES utf8");
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
 	
-	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/machi/" />
+	<link rel="canonical" href="https:https://koikoi.co.jp/ikoiko/machi/" />
 	
 	<!-- Open Graph -->
 	<meta property="og:title" content="KOIKOI街コン｜街コンを探す" />
 	<meta property="og:description" content="街コンを全国で開催中。婚活・恋活はもちろん、お友達探しにもおススメです。完全着席形式で出会いをサポート。" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/machi/" />
+	<meta property="og:url" content="https:https://koikoi.co.jp/ikoiko/machi/" />
 	<meta property="og:site_name" content="こいこい" />
 	
 	<!-- Twitter Card -->
@@ -42,25 +42,25 @@ $db->query("SET NAMES utf8");
 		"@type": "WebPage",
 		"name": "KOIKOI街コン",
 		"description": "街コンを全国で開催中",
-		"url": "https://koikoi.co.jp/ikoiko/machi/",
+		"url": "https:https://koikoi.co.jp/ikoiko/machi/",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
 			"itemListElement": [{
 				"@type": "ListItem",
 				"position": 1,
 				"name": "ホーム",
-				"item": "https://koikoi.co.jp/ikoiko/"
+				"item": "https:https://koikoi.co.jp/ikoiko/"
 			},{
 				"@type": "ListItem",
 				"position": 2,
 				"name": "街コン",
-				"item": "https://koikoi.co.jp/ikoiko/machi/"
+				"item": "https:https://koikoi.co.jp/ikoiko/machi/"
 			}]
 		}
 	}
 	</script>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body class="machi">

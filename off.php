@@ -16,13 +16,13 @@ $db->query("SET NAMES utf8");
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
 	
-	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/off/" />
+	<link rel="canonical" href="https:https://koikoi.co.jp/ikoiko/off/" />
 	
 	<!-- Open Graph -->
 	<meta property="og:title" content="KOIKOI街コン｜オフ会・趣味の交流イベント" />
 	<meta property="og:description" content="共通の趣味を持つ仲間と出会えるオフ会イベントを全国で開催中。好きなものが同じ人たちと楽しく交流。" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/off/" />
+	<meta property="og:url" content="https:https://koikoi.co.jp/ikoiko/off/" />
 	<meta property="og:site_name" content="こいこい" />
 	
 	<!-- Twitter Card -->
@@ -37,25 +37,25 @@ $db->query("SET NAMES utf8");
 		"@type": "WebPage",
 		"name": "オフ会・趣味の交流イベント",
 		"description": "共通の趣味を持つ仲間と出会えるオフ会イベントを全国で開催中",
-		"url": "https://koikoi.co.jp/ikoiko/off/",
+		"url": "https:https://koikoi.co.jp/ikoiko/off/",
 		"breadcrumb": {
 			"@type": "BreadcrumbList",
 			"itemListElement": [{
 				"@type": "ListItem",
 				"position": 1,
 				"name": "ホーム",
-				"item": "https://koikoi.co.jp/ikoiko/"
+				"item": "https:https://koikoi.co.jp/ikoiko/"
 			},{
 				"@type": "ListItem",
 				"position": 2,
 				"name": "オフ会",
-				"item": "https://koikoi.co.jp/ikoiko/off/"
+				"item": "https:https://koikoi.co.jp/ikoiko/off/"
 			}]
 		}
 	}
 	</script>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>
@@ -65,10 +65,10 @@ $db->query("SET NAMES utf8");
 	<div id="inner">
 
 		<ul>
-			<li><a href="//koikoi.co.jp/ikoiko/">アニメコン</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/machi/">街コン</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/off/">オフ会</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/">アニメコン</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/machi/">街コン</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/off/">オフ会</a></li>
 		</ul>		
 
 	</div>

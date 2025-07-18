@@ -1,5 +1,5 @@
 <div class="dateSearch">
-	<script src="//koikoi.co.jp/ikoiko/js/dateSearch.js"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/dateSearch.js"></script>
 
 	<h2>カレンダーから検索</h2>
 

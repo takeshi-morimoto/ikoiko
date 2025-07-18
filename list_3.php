@@ -72,7 +72,7 @@ $db->query("SET NAMES utf8");
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>
 <body>
@@ -82,10 +82,10 @@ $db->query("SET NAMES utf8");
 	<div id="inner">
 
 		<ul>
-			<li><a href="//koikoi.co.jp/ikoiko/">アニメコン</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/machi/">街コン</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/off/">オフ会</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/">アニメコン</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/machi/">街コン</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
+			<li><a href="https://koikoi.co.jp/ikoiko/off/">オフ会</a></li>
 		</ul>		
 
 	</div>
@@ -190,11 +190,11 @@ $db->query("SET NAMES utf8");
 			      "
 			      <div class='event'>
 
-			            <img class='eventImg' src='//koikoi.co.jp/ikoiko/img/img_thamb/{$find}' alt='' />
+			            <img class='eventImg' src='https://koikoi.co.jp/ikoiko/img/img_thamb/{$find}' alt='{$area_ja}の{$name}' loading='lazy' />
 
 			            <div class='eventInfo'>
 							<span class='place'>{$place}</span>
-							<span class='eventName'><a href='//koikoi.co.jp/ikoiko/event/{$area}'>{$eventType} {$area_ja}</a></span>
+							<span class='eventName'><a href='https://koikoi.co.jp/ikoiko/event/{$area}'>{$eventType} {$area_ja}</a></span>
 							<span class='dateTime'>{$m}月{$d}日({$week}){$begin_H}:{$begin_M}-{$end_H}:{$end_M}</span>
 							<span class='price'>男性 {$price_m}円　女性 {$price_w}円</span>
 			            </div>

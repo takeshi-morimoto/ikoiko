@@ -1,4 +1,9 @@
 jQuery(function($) {
+    // DOM要素が存在しない場合は処理を中断
+    if ($('.areaSearch_mb').length === 0) {
+        return;
+    }
+    
     // 地域タブの切り替え機能
     $('.areaSearch_mb .region_1 li, .areaSearch_mb .region_2 li').click(function() {
         // 全てのタブから選択状態を解除

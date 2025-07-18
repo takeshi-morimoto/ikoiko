@@ -1,6 +1,6 @@
 <div id="pageHeader">
     <a class="mb_none" href="/ikoiko/">
-        <img class="mb_none" id="logo" src="/ikoiko/img/common/icon/logo.png" alt="ロゴ">
+        <img class="mb_none" id="logo" src="/ikoiko/img/common/icon/logo.png" alt="KOIKOI アニメコン・街コン公式サイト">
     </a>
 
     <div id="contact">

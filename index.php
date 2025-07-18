@@ -17,6 +17,11 @@ $db->query("SET NAMES utf8");
 	<!-- <meta name="google-site-verification" content="ここにGoogle提供のコードを入力" /> -->
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
+	
+	<!-- モダンCSS追加 -->
+	<link rel="stylesheet" href="css/modern-base.css">
+	<link rel="stylesheet" href="css/modern-components.css">
+	<link rel="stylesheet" href="css/responsive.css">
 
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/" />
 	
@@ -115,10 +120,16 @@ $db->query("SET NAMES utf8");
 
 	<div id="mainContainer">
 		<main id="mainContent">
-
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/ani/next10.php") ?>
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/new-article.ani.php") ?>
-
+			<!-- カード型レイアウトを適用 -->
+			<section class="card">
+				<h2 class="card-header">近日開催のイベント</h2>
+				<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/ani/next10.php") ?>
+			</section>
+			
+			<section class="card mt-4">
+				<h2 class="card-header">最新のお知らせ</h2>
+				<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/new-article.ani.php") ?>
+			</section>
 
 		</main>
 

@@ -95,27 +95,231 @@
     </div>
 </aside>
 
-<!-- スタイルは sideContent_modern.php と共通 -->
-
 <style>
-/* 街コンページ用のサイドバー追加調整 */
+/* サイドバーのモダンスタイル（街コン用） */
+.sidebar-modern {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg, 24px);
+}
+
+.sidebar-card {
+    background: var(--bg-primary, #ffffff);
+    border-radius: var(--border-radius-lg, 12px);
+    box-shadow: var(--shadow-sm, 0 1px 3px rgba(0,0,0,0.1));
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
+}
+
+.sidebar-header {
+    padding: var(--spacing-md, 16px);
+    background: var(--bg-secondary, #f8f9fa);
+    border-bottom: 1px solid var(--border-color, #dee2e6);
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.125rem;
+    color: var(--text-primary, #2d3436);
+}
+
+.sidebar-content {
+    padding: var(--spacing-md, 16px);
+}
+
+/* リンクカード */
+.sidebar-link-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-card-content {
+    position: relative;
+}
+
+.sidebar-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-link-card:hover .sidebar-image {
+    transform: scale(1.05);
+}
+
+.sidebar-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: var(--spacing-lg, 24px) var(--spacing-md, 16px) var(--spacing-md, 16px);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-link-card:hover .sidebar-overlay {
+    transform: translateY(0);
+}
+
+.sidebar-cta {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+/* イベントアイテム */
+.event-item {
+    margin-bottom: var(--spacing-md, 16px);
+    padding-bottom: var(--spacing-md, 16px);
+    border-bottom: 1px solid var(--border-color, #dee2e6);
+}
+
+.event-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.event-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md, 8px);
+    margin-bottom: var(--spacing-sm, 8px);
+}
+
+.event-item h4 {
+    margin: var(--spacing-sm, 8px) 0;
+    font-size: 1rem;
+    color: var(--text-primary, #2d3436);
+}
+
+.event-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary, #636e72);
+    margin-bottom: var(--spacing-sm, 8px);
+}
+
+/* メルマガフォーム */
+.newsletter-form {
+    margin: 0;
+}
+
+.form-description {
+    margin-bottom: var(--spacing-md, 16px);
+    font-size: 0.875rem;
+    color: var(--text-secondary, #636e72);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-sm, 8px);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-sm, 8px) var(--spacing-md, 16px);
+    border: 1px solid var(--border-color, #dee2e6);
+    border-radius: var(--border-radius-md, 8px);
+    font-size: 1rem;
+}
+
+/* SNSボタン */
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm, 8px);
+    padding: var(--spacing-sm, 8px) var(--spacing-lg, 24px);
+    background: #000;
+    color: white;
+    text-decoration: none;
+    border-radius: 24px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.social-button:hover {
+    transform: scale(1.05);
+    background: #1a1a1a;
+}
+
+.social-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ボタンスタイル */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-sm, 8px) var(--spacing-lg, 24px);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-md, 8px);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color, #FF6B35);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover, #E85A2C);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0,0,0,0.1));
+}
+
+.btn-sm {
+    padding: 4px 12px;
+    font-size: 0.875rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 街コンページ用の追加調整 */
 @media (min-width: 1024px) {
     #sideContent {
-        width: 340px; /* サイドバーの幅を少し広げる */
+        width: 360px;
     }
     
     .sidebar-modern {
-        padding: 0 var(--spacing-sm);
+        padding: 0 var(--spacing-sm, 8px);
     }
 }
 
-/* サイドバー内の画像サイズ調整 */
-.sidebar-modern .event-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-.sidebar-modern .sidebar-card {
-    margin-bottom: var(--spacing-md);
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .sidebar-modern {
+        margin-top: var(--spacing-xl, 32px);
+    }
+    
+    .sidebar-card {
+        margin: 0;
+    }
 }
 </style>

@@ -449,7 +449,7 @@
 .entryArea {
   margin: var(--spacing-lg) 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -548,6 +548,10 @@
   font-weight: 600;
   transition: all var(--transition-fast);
   margin-bottom: var(--spacing-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
 .entryArea .entryButton:hover {
@@ -577,6 +581,9 @@
   font-weight: 600;
   transition: all var(--transition-fast);
   border: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .showBody:hover,
@@ -678,6 +685,20 @@
   grid-column: 1 / -1;
   text-align: center;
   margin: var(--spacing-md) 0;
+}
+
+/* タブレット対応 */
+@media (max-width: 992px) {
+  .entryArea {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  
+  .entryArea .entryButton,
+  .showBody,
+  .hideBody {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+  }
 }
 
 /* レスポンシブ対応 */

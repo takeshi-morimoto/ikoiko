@@ -45,6 +45,7 @@ $content = $row['text'];
 	<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
 	<link rel="stylesheet" href="/ikoiko/css/responsive.css">
 	<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
+	<link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 	
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
 	

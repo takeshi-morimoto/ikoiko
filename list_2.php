@@ -79,10 +79,11 @@ function buildPriceTable($price_m, $price_f) {
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
     
     <!-- モダンCSS追加 -->
-    <link rel="stylesheet" href="css/modern-base.css">
-    <link rel="stylesheet" href="css/modern-components.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/news-fix.css">
+    <link rel="stylesheet" href="/ikoiko/css/modern-base.css">
+    <link rel="stylesheet" href="/ikoiko/css/modern-components.css">
+    <link rel="stylesheet" href="/ikoiko/css/responsive.css">
+    <link rel="stylesheet" href="/ikoiko/css/news-fix.css">
+    <link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 
     <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 

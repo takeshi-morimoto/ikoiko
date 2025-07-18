@@ -58,6 +58,8 @@ endif;
 	<link rel="stylesheet" href="css/modern-base.css">
 	<link rel="stylesheet" href="css/modern-components.css">
 	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/news-fix.css">
+	<link rel="stylesheet" href="css/layout-spacing.css">
 	
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/contact.php" />
 	

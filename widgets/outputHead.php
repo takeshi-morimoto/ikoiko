@@ -2,10 +2,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/base.css" />
-<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/content.css" />
-<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/globalMenu.css" />
-<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/onepcssgrid.css" />
+<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/all.css" />
 <link rel="icon" href="https://koikoi.co.jp/ikoiko/img/favicon.ico" />
 
 <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js' defer></script>

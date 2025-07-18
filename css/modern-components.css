@@ -444,3 +444,143 @@
 .modal-close:hover {
   color: var(--text-primary);
 }
+
+/* エントリーエリアのスタイル */
+.entryArea {
+  margin: var(--spacing-lg) 0;
+}
+
+.entryArea .row {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  transition: all var(--transition-base);
+}
+
+.entryArea .row:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.entryArea .row img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.entryArea .feature {
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.entryArea .title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.entryArea .dateTime {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* エントリーボタン */
+.entryArea .entryButton {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.entryArea .entryButton:hover {
+  transform: scale(1.05);
+}
+
+.entryArea .entryButton img {
+  margin-bottom: 0;
+  max-width: 300px;
+}
+
+/* 詳細情報の表示/非表示 */
+.meetingPoint {
+  margin-top: var(--spacing-md);
+}
+
+.showBody,
+.hideBody {
+  background: var(--secondary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  margin-bottom: var(--spacing-sm);
+}
+
+.showBody:hover,
+.hideBody:hover {
+  background: var(--secondary-hover);
+  transform: translateY(-2px);
+}
+
+.hideBody {
+  display: none;
+}
+
+.meetingPoint .body {
+  display: none;
+  background: var(--bg-secondary);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--spacing-sm);
+  line-height: 1.6;
+}
+
+/* もっと見る/閉じる */
+.showMore {
+  text-align: center;
+  margin: var(--spacing-lg) 0;
+}
+
+.showMore .show,
+.showMore .hide {
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.showMore .show:hover,
+.showMore .hide:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.extra {
+  display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .entryArea .row {
+    padding: var(--spacing-md);
+  }
+  
+  .entryArea .entryButton img {
+    max-width: 100%;
+  }
+}

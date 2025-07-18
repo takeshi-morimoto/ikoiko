@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIUXプレビュー - KOIKOI</title>
+    
+    <!-- 既存のCSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/content.css">
+    
+    <!-- 改善提案のCSS -->
+    <style>
+        /* モダンなカラーパレット */
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #4ECDC4;
+            --background-color: #F8F9FA;
+            --text-color: #2D3436;
+            --spacing-unit: 8px;
+        }
+        
+        /* レスポンシブ対応の改善 */
+        @media screen and (max-width: 768px) {
+            .entryButton {
+                min-height: 44px;
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+        
+        /* カード型レイアウト */
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 16px;
+            margin-bottom: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* 価格バッジ */
+        .price-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        /* ボタンの改善 */
+        .modern-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .modern-button:hover {
+            background: #E85A2C;
+            transform: scale(1.02);
+        }
+        
+        /* フォーカス状態の改善 */
+        a:focus,
+        button:focus,
+        input:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KOIKOI UIUXプレビュー</h1>
+        
+        <section>
+            <h2>改善前と改善後の比較</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>従来のスタイル</h3>
+                    <div class="event">
+                        <img src="https://via.placeholder.com/300x200" alt="イベント画像">
+                        <div class="eventInfo">
+                            <span class="eventName">アニメコン東京</span>
+                            <span class="dateTime">12月25日(土) 18:00-21:00</span>
+                            <span class="price">男性: 5,000円 / 女性: 2,000円</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>改善後のスタイル</h3>
+                    <div class="event-card">
+                        <img src="https://via.placeholder.com/300x200" alt="イベント画像" style="width: 100%; border-radius: 8px;">
+                        <h4 style="margin: 12px 0 8px;">アニメコン東京</h4>
+                        <p style="color: #7f8c8d; margin: 4px 0;">12月25日(土) 18:00-21:00</p>
+                        <div style="margin-top: 12px;">
+                            <span class="price-badge">男性 ¥5,000</span>
+                            <span class="price-badge" style="background: var(--secondary-color);">女性 ¥2,000</span>
+                        </div>
+                        <button class="modern-button" style="width: 100%; margin-top: 16px;">詳細を見る</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section style="margin-top: 40px;">
+            <h2>レスポンシブテスト</h2>
+            <p>ブラウザウィンドウのサイズを変更して、異なる画面サイズでの表示を確認してください。</p>
+        </section>
+    </div>
+</body>
+</html>

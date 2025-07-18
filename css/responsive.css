@@ -1,0 +1,282 @@
+/* =========================================
+   レスポンシブデザイン強化
+   KOIKOI アニメコン・街コン
+   ========================================= */
+
+/* タブレット対応 (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 750px;
+  }
+  
+  /* イベントカードをグリッド表示 */
+  .event-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  /* サイドバーを下に配置 */
+  .main-content .row {
+    flex-direction: column;
+  }
+  
+  .main-content .col:first-child {
+    flex: 0 0 100%;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .main-content .col:last-child {
+    flex: 0 0 100%;
+  }
+}
+
+/* モバイル対応 (767px以下) */
+@media screen and (max-width: 767px) {
+  /* タイポグラフィの調整 */
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* コンテナの余白調整 */
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* ヘッダーの調整 */
+  #pageHeader {
+    padding: var(--spacing-sm) 0;
+  }
+  
+  #pageHeader #logo {
+    height: 40px;
+  }
+  
+  #pageHeader #contact {
+    display: none;
+  }
+  
+  /* ナビゲーションメニュー */
+  .nav-menu {
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: var(--bg-primary);
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    transition: left var(--transition-base);
+    z-index: 999;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* ヒーローセクション */
+  .hero-section {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  /* 検索フォーム */
+  .search-form {
+    flex-direction: column;
+  }
+  
+  .search-input-group {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .search-button {
+    width: 100%;
+  }
+  
+  /* イベントカード */
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .event-card {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .event-card-content {
+    padding: var(--spacing-md);
+  }
+  
+  .event-card-meta {
+    font-size: var(--font-size-xs);
+  }
+  
+  /* 価格表示 */
+  .price-tag {
+    font-size: var(--font-size-xs);
+    padding: 2px 8px;
+  }
+  
+  /* テーブルのレスポンシブ対応 */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  table {
+    min-width: 100%;
+  }
+  
+  /* フォーム要素 */
+  .form-control {
+    font-size: 16px; /* iOSのズーム防止 */
+  }
+  
+  /* ボタン */
+  .btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+  }
+  
+  /* カレンダー */
+  .calendar-widget {
+    padding: var(--spacing-md);
+  }
+  
+  .calendar-day {
+    font-size: var(--font-size-xs);
+  }
+  
+  /* フッター */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* モーダル */
+  .modal {
+    padding: var(--spacing-lg);
+  }
+  
+  /* トースト通知 */
+  .toast {
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    bottom: var(--spacing-md);
+  }
+}
+
+/* 小型モバイル対応 (375px以下) */
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* プリント用スタイル */
+@media print {
+  /* 不要な要素を非表示 */
+  #pageHeader,
+  .nav-menu,
+  .mobile-menu-toggle,
+  .search-section,
+  #footer,
+  .btn,
+  .toast,
+  .modal-overlay {
+    display: none !important;
+  }
+  
+  /* 背景色を削除 */
+  body {
+    background: white;
+    color: black;
+  }
+  
+  /* リンクのスタイル調整 */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  /* ページ区切り */
+  .page-break {
+    page-break-after: always;
+  }
+}
+
+/* 高解像度ディスプレイ対応 */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  /* Retinaディスプレイ用の調整 */
+  #pageHeader #logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ダークモード対応（将来の実装用） */
+@media (prefers-color-scheme: dark) {
+  /* ダークモードのスタイルをここに追加 */
+}
+
+/* アクセシビリティ：動きを減らす設定 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

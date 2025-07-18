@@ -457,6 +457,9 @@
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
   transition: all var(--transition-base);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
 }
 
 .entryArea .row:hover {
@@ -464,11 +467,18 @@
   transform: translateY(-2px);
 }
 
+/* 画像コンテナ */
+.entryArea .row > div:first-child {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius-md);
+}
+
 .entryArea .row img {
   width: 100%;
   height: auto;
+  display: block;
   border-radius: var(--border-radius-md);
-  margin-bottom: var(--spacing-md);
 }
 
 .entryArea .feature {
@@ -479,25 +489,27 @@
   display: inline-block;
   font-size: var(--font-size-sm);
   font-weight: 600;
-  margin-bottom: var(--spacing-sm);
+  width: fit-content;
 }
 
 .entryArea .title {
   font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
 }
 
 .entryArea .dateTime {
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-md);
+  margin: 0;
+  font-size: var(--font-size-base);
 }
 
 /* エントリーボタン */
 .entryArea .entryButton {
   display: inline-block;
   transition: transform var(--transition-fast);
+  line-height: 0;
 }
 
 .entryArea .entryButton:hover {
@@ -505,8 +517,8 @@
 }
 
 .entryArea .entryButton img {
-  margin-bottom: 0;
   max-width: 300px;
+  height: auto;
 }
 
 /* 詳細情報の表示/非表示 */
@@ -546,6 +558,47 @@
   line-height: 1.6;
 }
 
+/* イベント詳細テーブル */
+#eventPlace table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+#eventPlace th,
+#eventPlace td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#eventPlace th {
+  background: var(--bg-tertiary);
+  font-weight: 600;
+  width: 30%;
+  white-space: nowrap;
+}
+
+#eventPlace td {
+  width: 70%;
+}
+
+#eventPlace tr:last-child th,
+#eventPlace tr:last-child td {
+  border-bottom: none;
+}
+
+#eventPlace .store {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+#eventPlace .store:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
 /* もっと見る/閉じる */
 .showMore {
   text-align: center;
@@ -574,6 +627,18 @@
   display: none;
 }
 
+/* デスクトップ用レイアウト */
+@media (min-width: 769px) {
+  .entryArea .row {
+    grid-template-columns: 300px 1fr;
+    align-items: start;
+  }
+  
+  .entryArea .row > div:first-child {
+    grid-row: span 5;
+  }
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .entryArea .row {
@@ -582,5 +647,25 @@
   
   .entryArea .entryButton img {
     max-width: 100%;
+  }
+  
+  #eventPlace th,
+  #eventPlace td {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm);
+  }
+  
+  #eventPlace th {
+    border-bottom: none;
+    background: transparent;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    padding-bottom: 0;
+  }
+  
+  #eventPlace td {
+    padding-top: 0;
+    padding-bottom: var(--spacing-md);
   }
 }

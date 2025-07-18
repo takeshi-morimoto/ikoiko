@@ -118,16 +118,15 @@ $content = $row['text'];
 		<div id="mainContent" class="general">
 			<div class="card">
 				<div class="card-body">
+					<?php print $free_text1 ; ?>
 
-            <?php print $free_text1 ; ?>
+					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
-
-            <?php print $content ; ?>
+					<?php print $content ; ?>
 	
-			<?php print $free_text2 ; ?>			
+					<?php print $free_text2 ; ?>			
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
 				</div>
 			</div>
 		</div>

@@ -68,7 +68,7 @@ while ( $eventData = $eventDataTmp->fetch() ):
           <div class='row'>
             <div class='image-container'>
               <img src='{$url}' alt='{$eventData['title']}'>
-              {$eventData['feature'] ? "<div class='feature'>{$eventData['feature']}</div>" : ""}
+              <div class='feature'>{$eventData['feature']}</div>
             </div>
             <div class='event-content'>
               <div class='event-header'>

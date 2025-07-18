@@ -40,6 +40,13 @@ $content = $row['text'];
 
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 
+<!-- モダンCSS追加 -->
+<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
+<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
+<link rel="stylesheet" href="/ikoiko/css/responsive.css">
+<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
+<link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
+
 <link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
 
 <!-- Open Graph -->
@@ -118,11 +125,8 @@ $content = $row['text'];
 
 <div id="topContainer">
 
-<div id="pageHeader">
-
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
-
-</div>
+<!-- モダンヘッダーに変更 -->
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
 
 <div id="mainVisual">
 
@@ -148,7 +152,7 @@ $content = $row['text'];
 
 <div id="sideContent">
 
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent.php") ?>
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_modern.php") ?>
 
 </div>
 </div>

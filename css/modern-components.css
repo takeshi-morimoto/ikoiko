@@ -538,10 +538,10 @@
 .entryArea .dateTime,
 .general .dateTime {
   color: var(--text-primary);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   line-height: 1.6;
   margin: 0;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -636,7 +636,7 @@
 
 .entryArea .entryButton img,
 .general .entryButton img {
-  max-width: 200px;
+  max-width: 240px;
   width: 100%;
   height: auto;
   display: block;

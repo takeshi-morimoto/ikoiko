@@ -46,6 +46,7 @@ $content = $row['text'];
 <link rel="stylesheet" href="/ikoiko/css/responsive.css">
 <link rel="stylesheet" href="/ikoiko/css/news-fix.css">
 <link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
+<link rel="stylesheet" href="/ikoiko/css/header-ultimate.css">
 
 <link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
 
@@ -124,8 +125,8 @@ $content = $row['text'];
 
 <div id="topContainer">
 
-<!-- モダンヘッダーに変更 -->
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
+<!-- 究極のヘッダーに変更 -->
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_ultimate.php") ?>
 
 <div id="mainVisual">
 

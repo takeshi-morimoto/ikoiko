@@ -21,6 +21,12 @@ $db->query("SET NAMES utf8");
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
 	
+	<!-- モダンCSS追加 -->
+	<link rel="stylesheet" href="css/modern-base.css">
+	<link rel="stylesheet" href="css/modern-components.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="css/news-fix.css">
+	
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/machi/" />
 	
 	<!-- Open Graph -->
@@ -69,11 +75,8 @@ $db->query("SET NAMES utf8");
 
 <div id="topContainer">
 	
-	<div id="pageHeader">
-		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_m.php") ?>
-
-	</div>
+	<!-- モダンなヘッダーに変更 -->
+	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
 
 	<div id="mainVisual">
 		
@@ -89,9 +92,16 @@ $db->query("SET NAMES utf8");
 
 	<div id="mainContainer">
 		<div id="mainContent">
-
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/machi/next10.php") ?>
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/new-article.machi.php") ?>
+			<!-- カード型レイアウトを適用 -->
+			<section class="card">
+				<h2 class="card-header">近日開催のイベント</h2>
+				<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/machi/next10.php") ?>
+			</section>
+			
+			<section class="card mt-4">
+				<h2 class="card-header">最新のお知らせ</h2>
+				<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/new-article.machi.php") ?>
+			</section>
 		</div>
 
 		<div id="sideContent">

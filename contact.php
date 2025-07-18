@@ -54,6 +54,11 @@ endif;
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 	
+	<!-- モダンCSS追加 -->
+	<link rel="stylesheet" href="css/modern-base.css">
+	<link rel="stylesheet" href="css/modern-components.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/contact.php" />
 	
 	<!-- Open Graph -->
@@ -110,11 +115,8 @@ endif;
 
 <div id="topContainer">
 	
-	<div id="pageHeader">
-		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
-
-	</div>
+	<!-- モダンなヘッダーに変更 -->
+	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
 	
 	<div id="mainVisual">
 					

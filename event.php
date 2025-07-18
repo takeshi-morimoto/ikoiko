@@ -40,6 +40,12 @@ $content = $row['text'];
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 	
+	<!-- モダンCSS追加 -->
+	<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
+	<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
+	<link rel="stylesheet" href="/ikoiko/css/responsive.css">
+	<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
+	
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
 	
 	<!-- Open Graph -->
@@ -102,11 +108,8 @@ $content = $row['text'];
 
 <div id="topContainer">
 	
-	<div id="pageHeader">
-		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
-
-	</div>
+	<!-- モダンなヘッダーに変更 -->
+	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
 	
 	<div id="mainVisual">
 		
@@ -116,18 +119,19 @@ $content = $row['text'];
 
 	<div id="mainContainer">
 		<div id="mainContent" class="general">
+			<div class="card">
+				<div class="card-body">
+					<?php print $free_text1 ; ?>
 
-            <?php print $free_text1 ; ?>
+					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
 
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+					<?php print $content ; ?>
+		
+					<?php print $free_text2 ; ?>			
 
-            <?php print $content ; ?>
-	
-			<?php print $free_text2 ; ?>			
-
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
-
-
+					<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/entryButton.php") ?>
+				</div>
+			</div>
 		</div>
 
 		<div id="sideContent">

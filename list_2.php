@@ -77,6 +77,12 @@ function buildPriceTable($price_m, $price_f) {
     <title>街コン開催スケジュール | 全国の恋活・婚活イベント - KOIKOI</title>
 
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
+    
+    <!-- モダンCSS追加 -->
+    <link rel="stylesheet" href="css/modern-base.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/news-fix.css">
 
     <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
@@ -119,9 +125,8 @@ function buildPriceTable($price_m, $price_f) {
 </div>
 
 <div id="topContainer">
-    <div id="pageHeader">
-        <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
-    </div>
+    <!-- モダンなヘッダーに変更 -->
+    <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
 
     <div id="mainVisual">
         <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/machi/mainVisual.php") ?>
@@ -133,7 +138,7 @@ function buildPriceTable($price_m, $price_f) {
 
     <div id="mainContainer">
         <div id="mainContent">
-            <div id="searchResult">
+            <div id="searchResult" class="card">
             <?php
             $today = date("Y") . '-' . date("m") . '-' . date("j");
 

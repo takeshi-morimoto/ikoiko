@@ -133,7 +133,7 @@ $db->query("SET NAMES utf8");
 
 		<aside id="sideContent">
 			
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent.php") ?>
+			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_modern.php") ?>
 
 		</aside>
 	</div>

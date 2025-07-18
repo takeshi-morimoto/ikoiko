@@ -107,22 +107,7 @@ function buildPriceTable($price_m, $price_f) {
 </head>
 <body>
 
-<div id="pageTop">
-    <div id="inner">
-        <ul>
-            <li><a href="https://koikoi.co.jp/ikoiko/">アニメコン</a></li>
-            <li><a href="https://koikoi.co.jp/ikoiko/machi/">街コン</a></li>
-            <!--
-            <li><a href="https://koikoi.co.jp/ikoiko/nazo/">謎解き</a></li>
-            <li><a href="https://koikoi.co.jp/ikoiko/off/">オフ会</a></li>
-            -->
-        </ul>        
-    </div>
-
-    <h1 id="catch" style="background-color:#FF3686;">
-        婚活・恋活・友活ならこいこい街コン
-    </h1>
-</div>
+<!-- pageTopは削除（モダンヘッダーに統合） -->
 
 <div id="topContainer">
     <!-- モダンなヘッダーに変更 -->
@@ -269,7 +254,7 @@ function buildPriceTable($price_m, $price_f) {
         </div>
 
         <div id="sideContent">
-            <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_m.php") ?>
+            <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_m_modern.php") ?>
         </div>
     </div>
 </div>

@@ -190,6 +190,10 @@
     position: relative;
     width: 40px;
     height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger-line {
@@ -197,48 +201,46 @@
     width: 24px;
     height: 2px;
     background-color: #2D3436;
-    margin: 5px 0;
     transition: all 0.3s ease;
-    position: absolute;
-    left: 8px;
+    position: relative;
 }
 
 .hamburger-line:nth-child(1) {
-    top: 10px;
+    margin-bottom: 6px;
 }
 
 .hamburger-line:nth-child(2) {
-    top: 19px;
+    margin-bottom: 6px;
 }
 
 .hamburger-line:nth-child(3) {
-    top: 28px;
+    /* 最後の線はマージン不要 */
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
-    transform: rotate(45deg);
-    top: 19px;
+    transform: rotate(45deg) translate(6px, 6px);
+    margin-bottom: 0;
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
     opacity: 0;
+    margin-bottom: 0;
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 19px;
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* モバイルナビゲーション */
 .mobile-nav {
     position: fixed;
-    top: 74px;
+    top: 0;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 74px);
+    height: 100vh;
     background-color: #ffffff;
     transition: left 0.3s ease;
-    z-index: 999;
+    z-index: 9999;
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 }
 
@@ -246,8 +248,52 @@
     left: 0;
 }
 
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 2px solid #E9ECEF;
+    background-color: #F8F9FA;
+}
+
+.mobile-nav-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2D3436;
+    margin: 0;
+}
+
+.mobile-nav-close {
+    background: none;
+    border: none;
+    font-size: 32px;
+    line-height: 1;
+    color: #636E72;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mobile-nav-close:hover {
+    background-color: #E9ECEF;
+    color: #2D3436;
+}
+
+.close-icon {
+    font-weight: 300;
+}
+
 .mobile-nav-content {
     padding: 24px;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
 }
 
 .mobile-nav-link {
@@ -312,7 +358,7 @@
     }
     
     .mobile-menu-toggle {
-        display: block;
+        display: flex; /* blockからflexに変更 */
     }
     
     .header-content {
@@ -358,29 +404,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // モバイルメニューのトグル
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.querySelector('.mobile-nav-close');
     
+    // メニューを開く
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            
-            // ボディのスクロールを制御
-            if (mobileNav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            this.classList.add('active');
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
+    }
+    
+    // メニューを閉じる関数
+    function closeMobileMenu() {
+        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+        if (mobileNav) mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // 閉じるボタンでメニューを閉じる
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', closeMobileMenu);
     }
     
     // モバイルメニューのリンククリックで閉じる
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     mobileNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenuToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // メニュー外をクリックしたら閉じる
+    mobileNav.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeMobileMenu();
+        }
     });
     
     // Google Analytics（既存のコード）

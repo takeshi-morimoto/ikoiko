@@ -457,9 +457,7 @@
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
   transition: all var(--transition-base);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+  text-align: center;
 }
 
 .entryArea .row:hover {
@@ -470,15 +468,32 @@
 /* 画像コンテナ */
 .entryArea .row > div:first-child {
   width: 100%;
+  margin-bottom: var(--spacing-md);
   overflow: hidden;
   border-radius: var(--border-radius-md);
 }
 
-.entryArea .row img {
+.entryArea .row > div:first-child img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--border-radius-md);
+}
+
+/* イベント情報コンテナ */
+.event-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+}
+
+.event-info-left {
+  flex: 1;
+}
+
+.event-info-right {
+  text-align: right;
 }
 
 .entryArea .feature {
@@ -489,7 +504,7 @@
   display: inline-block;
   font-size: var(--font-size-sm);
   font-weight: 600;
-  width: fit-content;
+  margin-bottom: var(--spacing-sm);
 }
 
 .entryArea .title {
@@ -497,12 +512,14 @@
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.4;
+  margin: 0;
 }
 
 .entryArea .dateTime {
   color: var(--text-secondary);
   margin: 0;
   font-size: var(--font-size-base);
+  white-space: nowrap;
 }
 
 /* エントリーボタン */
@@ -510,6 +527,7 @@
   display: inline-block;
   transition: transform var(--transition-fast);
   line-height: 0;
+  margin-bottom: var(--spacing-md);
 }
 
 .entryArea .entryButton:hover {
@@ -627,22 +645,25 @@
   display: none;
 }
 
-/* デスクトップ用レイアウト */
-@media (min-width: 769px) {
-  .entryArea .row {
-    grid-template-columns: 300px 1fr;
-    align-items: start;
-  }
-  
-  .entryArea .row > div:first-child {
-    grid-row: span 5;
-  }
-}
-
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
   .entryArea .row {
     padding: var(--spacing-md);
+  }
+  
+  .event-info-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .event-info-left,
+  .event-info-right {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .event-info-right {
+    margin-top: var(--spacing-sm);
   }
   
   .entryArea .entryButton img {

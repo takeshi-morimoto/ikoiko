@@ -66,21 +66,22 @@ while ( $eventData = $eventDataTmp->fetch() ):
   print 
         "
           <div class='row'>
-            <div><img src='{$url}' alt='{$eventData['title']}'></div>
-            <div class='event-info-wrapper'>
-              <div class='event-info-left'>
-                <div class='feature'>{$eventData['feature']}</div>
+            <div class='image-container'>
+              <img src='{$url}' alt='{$eventData['title']}'>
+              <div class='feature'>{$eventData['feature']}</div>
+            </div>
+            <div class='event-content'>
+              <div class='event-header'>
                 <h3 class='title'>{$eventData['title']}</h3>
-              </div>
-              <div class='event-info-right'>
                 <p class='dateTime'>
-                  {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']})<br>
-                  {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
+                  {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']}) {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
                 </p>
               </div>
+              <div class='button-area'>
+                <a class='entryButton' href='{$sale}'>このイベントに申込む</a>
+                {$meetingPoint}
+              </div>
             </div>
-            <a class='entryButton' href='{$sale}'><img src='//koikoi.co.jp/ikoiko/img/entry.jpg' alt='このイベントに申込む' /></a>
-            {$meetingPoint}
           </div> 
         ";
 

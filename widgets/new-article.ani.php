@@ -2,11 +2,9 @@
 	include_once( dirname(__FILE__) . '/../../wp-load.php' );
 	$posts = get_posts( array( 'category' => 12, ) );
 ?>
-<section id="newArticle">
-	<div class="inner">
-		<!-- h2タグ削除（親コンポーネントで設定するため） -->
-		<?php if (! $posts){ echo "<p>記事はまだ１件もありません。</p>"; } ?>
-		<ul>
+<div id="newArticle">
+	<?php if (! $posts){ echo "<p>記事はまだ１件もありません。</p>"; } ?>
+	<ul>
 			<?php 
 			global $post;
 			foreach ($posts as $post): ?>
@@ -37,6 +35,5 @@
 						</a>
 					</li>
 			<?php endforeach;?>
-		</ul>
-	</div>
-</section>
+	</ul>
+</div>

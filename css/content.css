@@ -1739,10 +1739,7 @@
 	
 	#newArticle {
 		/* 背景色を削除 */
-	}
-
-	#newArticle .inner {
-		/* padding削除 */
+		padding: 0;
 	}
 
 	#newArticle .machi {

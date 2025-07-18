@@ -68,16 +68,16 @@ while ( $eventData = $eventDataTmp->fetch() ):
           <div class='row'>
             <div><img src='{$url}'></div>
             <div class='feature'>{$eventData['feature']}</div>
-            <h3 class='title'>{$eventData['title']}</h3>
-            <div class='info-box'>
-              <div class='datetime-box'>
-                <p class='dateTime'>
+            <h3 class='title' style='text-align: center; margin: 10px 0; font-size: 1.25rem;'>{$eventData['title']}</h3>
+            <div class='info-box' style='display: flex; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 15px 0;'>
+              <div class='datetime-box' style='flex: 1; padding: 20px; background: #f8f9fa; display: flex; align-items: center; justify-content: center; border-right: 1px solid #ddd;'>
+                <p class='dateTime' style='margin: 0; font-size: 1.1rem; font-weight: 600; text-align: center;'>
                   {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']})<br>
                   {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
                 </p>
               </div>
-              <div class='button-box'>
-                <a class='entryButton' href='{$sale}'><img src='//koikoi.co.jp/ikoiko/img/entry.jpg' alt='' /></a>
+              <div class='button-box' style='flex: 1; padding: 20px; display: flex; align-items: center; justify-content: center;'>
+                <a class='entryButton' href='{$sale}' style='display: block;'><img src='//koikoi.co.jp/ikoiko/img/entry.jpg' alt='' style='max-width: 220px; width: 100%; height: auto;' /></a>
               </div>
             </div>
             {$meetingPoint}

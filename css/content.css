@@ -1738,11 +1738,11 @@
 /*----------------------------------*/
 	
 	#newArticle {
-		background: #f7f3e8;
+		/* 背景色を削除 */
 	}
 
 	#newArticle .inner {
-		padding-top: 1%;
+		/* padding削除 */
 	}
 
 	#newArticle .machi {
@@ -1754,7 +1754,7 @@
 		margin-top: 1.5%;
 		padding: 2%;
 		border: solid 1px #e5e5e5;
-		background: #fff;
+		/* 背景色削除 - カード内で既に白背景 */
 	}
 
 	#newArticle .row:nth-of-type(n+2) {
@@ -1833,13 +1833,7 @@
 		line-height: 150%;
 	}
 
-	#newArticle h2 {
-		margin: 2% 0 0;
-		padding-left: 0.5%;
-		border-bottom: solid 2px #D5B200;
-		font-size: 130%;
-		font-weight: normal;
-	}
+	/* h2スタイルは親コンポーネントで管理 */
 
 	#newArticle p {
 		padding: 1%;

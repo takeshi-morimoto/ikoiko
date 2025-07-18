@@ -4,7 +4,7 @@
 ?>
 <section id="newArticle">
 	<div class="inner">
-		<h2></span>最新ニュース</h2>
+		<!-- h2タグ削除（親コンポーネントで設定するため） -->
 		<?php if (! $posts){ echo "<p>記事はまだ１件もありません。</p>"; } ?>
 		<ul>
 			<?php 

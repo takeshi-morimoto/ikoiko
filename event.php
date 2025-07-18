@@ -115,7 +115,6 @@ $content = $row['text'];
 	}
 	</script>
 
-	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
 	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
 
 </head>

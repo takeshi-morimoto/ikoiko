@@ -98,10 +98,10 @@
 	<div id="footerInner">
 		<center>		
 		<ul>
-			<li><a target="blank" href="//koikoi.co.jp/">運営会社　｜　</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/ポリシー.php">プライバシーポリシー　｜　</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/特商法.php">特定商取引に基づく表記　｜　</a></li>
-			<li><a href="//koikoi.co.jp/ikoiko/参加ルール.php">参加ルール</a></li>
+			<li><a target="blank" href="https://koikoi.co.jp/">運営会社　｜　</a></li>
+			<li><a href="/ikoiko/ポリシー.php">プライバシーポリシー　｜　</a></li>
+			<li><a href="/ikoiko/特商法.php">特定商取引に基づく表記　｜　</a></li>
+			<li><a href="/ikoiko/参加ルール.php">参加ルール</a></li>
 		</ul>
 		
 		<p>Copyright © 株式会社KOIKOI All Rights Reserved.</p>

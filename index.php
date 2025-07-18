@@ -26,6 +26,16 @@ $db->query("SET NAMES utf8");
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/" />
 	<meta property="og:site_name" content="こいこい" />
+	<meta property="og:image" content="https://koikoi.co.jp/ikoiko/img/ogp/main-visual.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@machikonkoikoi" />
+	<meta name="twitter:title" content="アニメコン-総動員数NO.1！株式会社KOIKOI" />
+	<meta name="twitter:description" content="アニメ好きの集まる街コンを全国で開催中。婚活・恋活はもちろん、オタクのお友達探しにもおススメです。" />
+	<meta name="twitter:image" content="https://koikoi.co.jp/ikoiko/img/ogp/main-visual.jpg" />
 	
 	<!-- 構造化データ -->
 	<script type="application/ld+json">
@@ -37,7 +47,25 @@ $db->query("SET NAMES utf8");
 		"description": "アニメ好きの集まる街コンを全国で開催中",
 		"sameAs": [
 			"https://twitter.com/machikonkoikoi"
-		]
+		],
+		"logo": {
+			"@type": "ImageObject",
+			"url": "https://koikoi.co.jp/ikoiko/img/common/icon/logo.png"
+		}
+	}
+	</script>
+	
+	<!-- 構造化データ - パンくずリスト -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "ホーム",
+			"item": "https://koikoi.co.jp/ikoiko/"
+		}]
 	}
 	</script>
 
@@ -79,26 +107,26 @@ $db->query("SET NAMES utf8");
 
 	</div>
 
-	<div id="search">
+	<section id="search">
 
 		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/ani/search.php") ?>
 
-	</div>
+	</section>
 
 	<div id="mainContainer">
-		<div id="mainContent">
+		<main id="mainContent">
 
 			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/ani/next10.php") ?>
 			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/new-article.ani.php") ?>
 
 
-		</div>
+		</main>
 
-		<div id="sideContent">
+		<aside id="sideContent">
 			
 			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent.php") ?>
 
-		</div>
+		</aside>
 	</div>
 
 </div>

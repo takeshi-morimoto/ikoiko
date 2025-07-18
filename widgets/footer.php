@@ -96,16 +96,14 @@
 	</style>
 	
 	<div id="footerInner">
-		<center>		
-		<ul>
+		<ul style="text-align: center;">
 			<li><a target="blank" href="https://koikoi.co.jp/">運営会社　｜　</a></li>
 			<li><a href="/ikoiko/ポリシー.php">プライバシーポリシー　｜　</a></li>
 			<li><a href="/ikoiko/特商法.php">特定商取引に基づく表記　｜　</a></li>
 			<li><a href="/ikoiko/参加ルール.php">参加ルール</a></li>
 		</ul>
 		
-		<p>Copyright © 株式会社KOIKOI All Rights Reserved.</p>
-		</center>
+		<p style="text-align: center;">Copyright © 株式会社KOIKOI All Rights Reserved.</p>
 	</div>
 
 </div>

@@ -3,9 +3,9 @@
 <div id="slideshow">
 
 	<div id="slides">
-		<img id="slide_1" class="slide" src="//koikoi.co.jp/ikoiko/img/slide/ani/slide_1.jpg" alt="" />
-		<img id="slide_2" class="slide" src="//koikoi.co.jp/ikoiko/img/slide/ani/slide_2.jpg" alt="" />
-		<img id="slide_3" class="slide" src="//koikoi.co.jp/ikoiko/img/slide/ani/slide_3.jpg" alt="" />
+		<img id="slide_1" class="slide" src="//koikoi.co.jp/ikoiko/img/slide/ani/slide_1.jpg" alt="アニメコンイベントの様子 - 参加者が楽しむ会場風景" loading="lazy" />
+		<img id="slide_2" class="slide" src="//koikoi.co.jp/ikoiko/img/slide/ani/slide_2.jpg" alt="アニメコンでのコスプレイヤーの集合写真" loading="lazy" />
+		<img id="slide_3" class="slide" src="//koikoi.co.jp/ikoiko/img/slide/ani/slide_3.jpg" alt="アニメコンの展示ブースとグッズ販売の様子" loading="lazy" />
 	</div>
 	
 	

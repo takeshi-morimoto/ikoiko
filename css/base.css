@@ -201,7 +201,7 @@ div, th, td, section, header, nav, article {
 			margin-right: 1%;
 			width: 69%;
 			float: left;
-			background-color: #fff;
+			/* background-color: #fff; 削除 - カード型レイアウトで個別に背景設定 */
 		}
 
 
@@ -222,7 +222,7 @@ div, th, td, section, header, nav, article {
 		#mainContainer #mainContent {
 
 			margin-right: 1%;
-			background-color: #fff;
+			/* background-color: #fff; 削除 - カード型レイアウトで個別に背景設定 */
 		}
 
 

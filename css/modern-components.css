@@ -548,31 +548,20 @@
 /* エントリーボタン */
 .entryArea .entryButton,
 .general .entryButton {
-  display: block;
-  width: 100%;
-  background: var(--primary-color);
-  color: white;
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius-md);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all var(--transition-fast);
-  margin-bottom: var(--spacing-sm);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
+  display: inline-block;
+  transition: transform var(--transition-fast);
+  margin-bottom: var(--spacing-md);
 }
 
 .entryArea .entryButton:hover,
 .general .entryButton:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
 .entryArea .entryButton img,
 .general .entryButton img {
-  display: none;
+  max-width: 300px;
+  height: auto;
 }
 
 /* 詳細情報の表示/非表示 */

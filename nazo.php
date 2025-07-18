@@ -11,11 +11,50 @@ $db->query("SET NAMES utf8");
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>KOIKOI街コン｜謎解き</title>
+	<title>KOIKOI街コン｜謎解きイベント・謎解きコン</title>
 	<meta name="viewport" content="width=device-width" />
-
+	<meta name="description" content="謎解きイベント・謎解きコンを全国で開催中。推理力と協力が試される謎解きゲームを楽しみながら、新しい出会いを見つけませんか？初心者でも安心して参加できます。">
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
+	
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/nazo/" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="KOIKOI街コン｜謎解きイベント・謎解きコン" />
+	<meta property="og:description" content="謎解きイベント・謎解きコンを全国で開催中。推理力と協力が試される謎解きゲームを楽しみながら、新しい出会いを。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/nazo/" />
+	<meta property="og:site_name" content="こいこい" />
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="KOIKOI街コン｜謎解きイベント・謎解きコン" />
+	<meta name="twitter:description" content="謎解きゲームを楽しみながら新しい出会いを。初心者でも安心して参加できます。" />
+	
+	<!-- 構造化データ -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": "謎解きイベント・謎解きコン",
+		"description": "謎解きイベント・謎解きコンを全国で開催中",
+		"url": "https://koikoi.co.jp/ikoiko/nazo/",
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "ホーム",
+				"item": "https://koikoi.co.jp/ikoiko/"
+			},{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "謎解き",
+				"item": "https://koikoi.co.jp/ikoiko/nazo/"
+			}]
+		}
+	}
+	</script>
 
 	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
 

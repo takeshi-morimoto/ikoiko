@@ -49,9 +49,49 @@ endif;
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>お問い合わせ</title>
+	<title>お問い合わせ｜KOIKOI街コン</title>
+	<meta name="description" content="KOIKOI街コン・アニメコンに関するお問い合わせはこちらから。イベントに関するご質問、ご要望など、お気軽にお問い合わせください。">
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
+	
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/contact.php" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="お問い合わせ｜KOIKOI街コン" />
+	<meta property="og:description" content="KOIKOI街コン・アニメコンに関するお問い合わせはこちらから。お気軽にご連絡ください。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/contact.php" />
+	<meta property="og:site_name" content="こいこい" />
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="お問い合わせ｜KOIKOI街コン" />
+	<meta name="twitter:description" content="KOIKOI街コン・アニメコンに関するお問い合わせはこちらから。" />
+	
+	<!-- 構造化データ -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ContactPage",
+		"name": "お問い合わせ",
+		"description": "KOIKOI街コン・アニメコンに関するお問い合わせページ",
+		"url": "https://koikoi.co.jp/ikoiko/contact.php",
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "ホーム",
+				"item": "https://koikoi.co.jp/ikoiko/"
+			},{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "お問い合わせ",
+				"item": "https://koikoi.co.jp/ikoiko/contact.php"
+			}]
+		}
+	}
+	</script>
 
 		<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ4VFQRSYR"></script>

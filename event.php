@@ -35,10 +35,58 @@ $content = $row['text'];
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>楽しいイベント盛りだくさん</title>
-
+	<title><?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン</title>
+	<meta name="description" content="<?php echo $area_ja; ?>で開催される街コン・アニメコン・謎解きイベントの情報。参加費<?php echo number_format($price_l_m); ?>円〜、<?php echo $age_l_m; ?>歳〜<?php echo $age_h_m; ?>歳対象。完全着席形式で安心して参加できます。">
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
+	
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
+	
+	<!-- Open Graph -->
+	<meta property="og:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />
+	<meta property="og:description" content="<?php echo $area_ja; ?>で開催される街コン・アニメコン・謎解きイベントの情報。" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
+	<meta property="og:site_name" content="こいこい" />
+	
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />
+	<meta name="twitter:description" content="<?php echo $area_ja; ?>で開催される街コン・アニメコンの情報。" />
+	
+	<!-- 構造化データ -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Event",
+		"name": "<?php echo $area_ja; ?>の街コン・アニメコンイベント",
+		"description": "<?php echo strip_tags($free_text1); ?>",
+		"location": {
+			"@type": "Place",
+			"name": "<?php echo $area_ja; ?>",
+			"address": "<?php echo $ken; ?>"
+		},
+		"offers": {
+			"@type": "Offer",
+			"price": "<?php echo $price_l_m; ?>",
+			"priceCurrency": "JPY"
+		},
+		"breadcrumb": {
+			"@type": "BreadcrumbList",
+			"itemListElement": [{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "ホーム",
+				"item": "https://koikoi.co.jp/ikoiko/"
+			},{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "<?php echo $area_ja; ?>",
+				"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
+			}]
+		}
+	}
+	</script>
 
 	<script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/都道府県検索MB.js'></script>
 

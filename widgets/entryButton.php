@@ -69,10 +69,17 @@ while ( $eventData = $eventDataTmp->fetch() ):
             <div><img src='{$url}'></div>
             <div class='feature'>{$eventData['feature']}</div>
             <div class='title'>{$eventData['title']}</div>
-            <p class='dateTime'>
-              {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']}){$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
-            </p>
-            <a class='entryButton' href='{$sale}'><img src='//koikoi.co.jp/ikoiko/img/entry.jpg' alt='' /></a>
+            <div class='info-box'>
+              <div class='datetime-box'>
+                <p class='dateTime'>
+                  {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']})<br>
+                  {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
+                </p>
+              </div>
+              <div class='button-box'>
+                <a class='entryButton' href='{$sale}'><img src='//koikoi.co.jp/ikoiko/img/entry.jpg' alt='' /></a>
+              </div>
+            </div>
             {$meetingPoint}
           </div> 
         ";

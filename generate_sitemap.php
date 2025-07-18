@@ -83,7 +83,7 @@ foreach ($staticPages as $page) {
 $xml .= "\n</urlset>";
 
 // ファイルに保存
-$sitemap_path = "./analytics/sitemap.xml";
+$sitemap_path = "./sitemap.xml";
 if (file_put_contents($sitemap_path, $xml)) {
     echo "サイトマップが正常に生成されました: " . $sitemap_path . "\n";
     echo "生成されたURL数: " . substr_count($xml, '<url>') . "\n";

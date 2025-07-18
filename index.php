@@ -10,9 +10,9 @@ $db->query("SET NAMES utf8");
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>アニメコン-総動員数NO.1！株式会社KOIKOI</title>
+	<title>アニメコン・オタク街コン【公式】全国開催 | KOIKOI</title>
 
-	<meta name="description" content="アニメ好きの集まる街コンを全国で開催中。婚活・恋活はもちろん、オタクのお友達探しにもおススメです。完全着席形式で、マンガ・アニメ・ゲーム・コスプレ・声優など、好きなジャンルが一目でわかるプロフィールシート・マッチングゲームなどの工夫をしております。">
+	<meta name="description" content="アニメ・マンガ好きのための街コン＆婚活パーティー！全国主要都市で毎週開催中。完全着席形式で初参加でも安心。共通の趣味で繋がる恋活・婚活・友活イベント。20代〜40代まで幅広い年齢層が参加中。">
 	<!-- Google Search Console 確認用 - 確認後は削除可能 -->
 	<!-- <meta name="google-site-verification" content="ここにGoogle提供のコードを入力" /> -->
 
@@ -61,7 +61,7 @@ $db->query("SET NAMES utf8");
 
 	</div>
 
-	<h1 id="catch" style="background-color:#FF9933;">総動員数NO.1のアニメコン公式サイト オタクの友達作り・街コン・恋活・婚活パーティー</h1>
+	<h1 id="catch" style="background-color:#FF9933;">アニメコン公式サイト オタクの友達作り・街コン・恋活・婚活パーティー</h1>
 
 </div>
 

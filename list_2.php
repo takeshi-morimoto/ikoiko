@@ -74,7 +74,7 @@ function buildPriceTable($price_m, $price_f) {
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>楽しいイベント盛りだくさん</title>
+    <title>街コン開催スケジュール | 全国の恋活・婚活イベント - KOIKOI</title>
 
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 

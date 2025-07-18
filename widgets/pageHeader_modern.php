@@ -39,6 +39,12 @@
     
     <!-- モバイルナビゲーション -->
     <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+        <div class="mobile-nav-header">
+            <h2 class="mobile-nav-title">メニュー</h2>
+            <button class="mobile-nav-close" aria-label="メニューを閉じる">
+                <span class="close-icon">×</span>
+            </button>
+        </div>
         <div class="mobile-nav-content">
             <a href="/ikoiko/" class="mobile-nav-link">アニメコン</a>
             <a href="/ikoiko/machi/" class="mobile-nav-link">街コン</a>
@@ -93,6 +99,8 @@
     display: flex;
     gap: 24px;
     align-items: center;
+    flex: 1; /* 中央寄せのためのスペース確保 */
+    justify-content: center;
 }
 
 .nav-link {
@@ -131,6 +139,7 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-left: auto; /* 右寄せ */
 }
 
 .contact-info {

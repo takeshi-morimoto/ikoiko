@@ -66,22 +66,14 @@ while ( $eventData = $eventDataTmp->fetch() ):
   print 
         "
           <div class='row'>
-            <div class='image-container'>
-              <img src='{$url}' alt='{$eventData['title']}'>
-              <div class='feature'>{$eventData['feature']}</div>
-            </div>
-            <div class='event-content'>
-              <div class='event-header'>
-                <h3 class='title'>{$eventData['title']}</h3>
-                <p class='dateTime'>
-                  {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']}) {$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
-                </p>
-              </div>
-              <div class='button-area'>
-                <a class='entryButton' href='{$sale}'>このイベントに申込む</a>
-                {$meetingPoint}
-              </div>
-            </div>
+            <div><img src='{$url}'></div>
+            <div class='feature'>{$eventData['feature']}</div>
+            <div class='title'>{$eventData['title']}</div>
+            <p class='dateTime'>
+              {$dateTime['m']}月{$dateTime['d']}日({$dateTime['w']}){$dateTime['bh']}:{$dateTime['bm']}～{$dateTime['eh']}:{$dateTime['em']}
+            </p>
+            <a class='entryButton' href='{$sale}'><img src='//koikoi.co.jp/ikoiko/img/entry.jpg' alt='' /></a>
+            {$meetingPoint}
           </div> 
         ";
 

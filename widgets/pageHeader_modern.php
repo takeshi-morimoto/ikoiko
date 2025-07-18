@@ -12,8 +12,6 @@
             <nav class="header-nav desktop-only" role="navigation" aria-label="メインナビゲーション">
                 <a href="/ikoiko/" class="nav-link">アニメコン</a>
                 <a href="/ikoiko/machi/" class="nav-link">街コン</a>
-                <a href="/ikoiko/list_1/" class="nav-link">開催スケジュール</a>
-                <a href="/ikoiko/contact/" class="nav-link">お問い合わせ</a>
             </nav>
             
             <!-- コンタクト情報 -->
@@ -44,8 +42,6 @@
         <div class="mobile-nav-content">
             <a href="/ikoiko/" class="mobile-nav-link">アニメコン</a>
             <a href="/ikoiko/machi/" class="mobile-nav-link">街コン</a>
-            <a href="/ikoiko/list_1/" class="mobile-nav-link">開催スケジュール</a>
-            <a href="/ikoiko/contact/" class="mobile-nav-link">お問い合わせ</a>
             <div class="mobile-contact-info">
                 <a href="tel:03-6754-6371" class="mobile-phone">
                     <img src="/ikoiko/img/common/icon/icon_tel.png" alt="電話" class="icon-phone-mobile">

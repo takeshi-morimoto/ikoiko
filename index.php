@@ -100,11 +100,8 @@ $db->query("SET NAMES utf8");
 
 <div id="topContainer">
 	
-	<div id="pageHeader">
-		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader.php") ?>
-
-	</div>
+	<!-- モダンなヘッダーに変更 -->
+	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
 
 	<div id="mainVisual">
 		

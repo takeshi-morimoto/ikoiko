@@ -14,7 +14,8 @@
       "Bash(chmod:*)",
       "Bash(/mnt/c/Users/tmori/Code/ikoiko/update_manga_files.sh:*)",
       "Bash(grep:*)",
-      "Bash(diff:*)"
+      "Bash(diff:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }

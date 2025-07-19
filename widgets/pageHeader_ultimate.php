@@ -117,14 +117,7 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
 });
 
-// ヘッダーの高さ分のパディングを追加
-const updateBodyPadding = () => {
-    const headerHeight = header.offsetHeight;
-    document.body.style.paddingTop = headerHeight + 'px';
-};
-
-window.addEventListener('load', updateBodyPadding);
-window.addEventListener('resize', updateBodyPadding);
+// pageTopがあるため、ボディパディングは不要
 
 // パフォーマンス最適化のためのデバウンス
 function debounce(func, wait) {
@@ -152,14 +145,25 @@ window.addEventListener('scroll', debounce(() => {
 </script>
 
 <style>
-/* ヘッダーのためのボディパディング */
+/* pageTopの高さを考慮 */
+#pageTop {
+    position: relative;
+    z-index: 1;
+}
+
+/* ヘッダーのためのボディパディング削除（pageTopがあるため） */
 body {
-    padding-top: 80px;
-    transition: padding-top 0.3s ease;
+    padding-top: 0 !important;
 }
 
 /* モバイルメニューオープン時 */
 body.mobile-menu-open {
     overflow: hidden;
+}
+
+/* ヘッダーをpageTopの下に配置 */
+.site-header {
+    top: auto;
+    position: sticky;
 }
 </style>

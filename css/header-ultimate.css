@@ -534,7 +534,7 @@
 .global-nav .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0;
 }
 
 .global-nav-list {
@@ -548,7 +548,8 @@
 }
 
 .global-nav-list li {
-  position: relative;
+  flex: 1;
+  display: flex;
 }
 
 .global-nav-link {
@@ -556,12 +557,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 30px;
+  padding: 16px 20px;
   text-decoration: none;
   color: #2D3436;
   position: relative;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
+  width: 100%;
+  text-align: center;
+  min-height: 70px;
 }
 
 .global-nav-link:hover {
@@ -575,6 +579,7 @@
   margin-bottom: 4px;
   transition: color 0.3s ease;
   white-space: nowrap;
+  display: block;
 }
 
 .nav-sub {
@@ -583,6 +588,7 @@
   text-transform: uppercase;
   letter-spacing: 0.3px;
   transition: color 0.3s ease;
+  display: block;
 }
 
 .global-nav-link:hover .nav-main {

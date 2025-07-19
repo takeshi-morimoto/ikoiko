@@ -42,22 +42,28 @@
 
 .global-nav-clean .global-nav-list {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: stretch;
     list-style: none;
     margin: 0;
     padding: 0;
     gap: 0;
+    width: 100%;
 }
 
 .global-nav-clean .global-nav-list li {
-    flex: 1;
+    flex: 1 1 0;
+    display: flex;
     text-align: center;
 }
 
 .global-nav-clean .global-nav-link {
-    display: block;
-    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 30px;
     text-decoration: none;
     color: #333;
     font-weight: 600;
@@ -65,6 +71,7 @@
     transition: all 0.3s ease;
     position: relative;
     border-bottom: 3px solid transparent;
+    min-height: 70px;
 }
 
 .global-nav-clean .global-nav-link:hover {

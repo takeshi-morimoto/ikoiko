@@ -34,7 +34,7 @@
 }
 
 .global-nav-clean .container {
-    max-width: none;
+    max-width: 1400px; /* より広い最大幅 */
     width: 100%;
     margin: 0 auto;
     padding: 0 40px;

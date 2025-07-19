@@ -41,8 +41,6 @@
     </div>
 </header>
 
-<!-- グローバルナビゲーション（ヘッダー外に配置） -->
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/globalNavi_test.php") ?>
 
 <!-- モバイルナビゲーション -->
     <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">

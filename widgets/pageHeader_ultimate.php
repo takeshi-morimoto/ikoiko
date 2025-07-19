@@ -40,6 +40,38 @@
         </div>
     </div>
     
+    <!-- グローバルナビゲーション -->
+    <nav id="globalNavi" class="global-nav desktop-only">
+        <div class="container">
+            <ul class="global-nav-list">
+                <li><a href="/ikoiko/" class="global-nav-link">
+                    <span class="nav-main">TOP</span>
+                    <span class="nav-sub">anime</span>
+                </a></li>
+                <li><a href="/ikoiko/初めて.php" class="global-nav-link">
+                    <span class="nav-main">初めての方</span>
+                    <span class="nav-sub">for beginner</span>
+                </a></li>
+                <li><a href="/ikoiko/参加.php" class="global-nav-link">
+                    <span class="nav-main">参加までの流れ</span>
+                    <span class="nav-sub">arrange</span>
+                </a></li>
+                <li><a href="/ikoiko/よくある質問.php" class="global-nav-link">
+                    <span class="nav-main">よくある質問</span>
+                    <span class="nav-sub">FAQ</span>
+                </a></li>
+                <li><a href="/ikoiko/スタッフ募集.php" class="global-nav-link">
+                    <span class="nav-main">スタッフ募集</span>
+                    <span class="nav-sub">recruitment</span>
+                </a></li>
+                <li><a href="/ikoiko/contact.php" class="global-nav-link">
+                    <span class="nav-main">お問い合わせ</span>
+                    <span class="nav-sub">contact</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <!-- モバイルナビゲーション -->
     <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
         <div class="mobile-nav-header">
@@ -51,6 +83,16 @@
         <div class="mobile-nav-content">
             <a href="/ikoiko/" class="mobile-nav-link">アニメコン</a>
             <a href="/ikoiko/machi/" class="mobile-nav-link">街コン</a>
+            
+            <div class="mobile-nav-divider"></div>
+            
+            <a href="/ikoiko/" class="mobile-nav-link">TOP</a>
+            <a href="/ikoiko/初めて.php" class="mobile-nav-link">初めての方</a>
+            <a href="/ikoiko/参加.php" class="mobile-nav-link">参加までの流れ</a>
+            <a href="/ikoiko/よくある質問.php" class="mobile-nav-link">よくある質問</a>
+            <a href="/ikoiko/スタッフ募集.php" class="mobile-nav-link">スタッフ募集</a>
+            <a href="/ikoiko/contact.php" class="mobile-nav-link">お問い合わせ</a>
+            
             <div class="mobile-contact-info">
                 <a href="tel:03-6754-6371" class="mobile-phone">
                     <img src="/ikoiko/img/common/icon/icon_tel.png" alt="電話" class="icon-phone-mobile">

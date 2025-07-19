@@ -3,7 +3,7 @@
    KOIKOI アニメコン・街コン
    ========================================= */
 
-/* CSS変数定義 */
+/* CSS変数定義 - ヘッダー専用 */
 :root {
   --header-height: 70px;
   --global-nav-height: 60px;
@@ -11,9 +11,9 @@
   --header-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
   --nav-hover-bg: rgba(255, 107, 53, 0.08);
   --nav-active-color: #FF6B35;
-  --text-primary: #2D3436;
-  --text-secondary: #636E72;
-  --border-subtle: rgba(0, 0, 0, 0.06);
+  --header-text-primary: #2D3436;
+  --header-text-secondary: #636E72;
+  --header-border-subtle: rgba(0, 0, 0, 0.06);
   --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -30,7 +30,7 @@
 
 /* メインヘッダー部分 */
 .site-header > .container {
-  border-bottom: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--header-border-subtle);
 }
 
 /* ヘッダーコンテンツ */
@@ -81,7 +81,7 @@
 .nav-link {
   position: relative;
   padding: 10px 20px;
-  color: var(--text-primary);
+  color: var(--header-text-primary);
   font-weight: 500;
   font-size: 15px;
   text-decoration: none;
@@ -241,7 +241,7 @@
   transform: translateY(-50%);
   height: 20px;
   width: 1px;
-  background: var(--border-subtle);
+  background: var(--header-border-subtle);
 }
 
 .global-nav-link {
@@ -251,7 +251,7 @@
   justify-content: center;
   padding: 18px 20px;
   text-decoration: none;
-  color: var(--text-primary);
+  color: var(--header-text-primary);
   position: relative;
   transition: all 0.2s ease;
   width: 100%;
@@ -303,7 +303,7 @@
 
 .nav-sub {
   font-size: 10px;
-  color: var(--text-secondary);
+  color: var(--header-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: all 0.2s ease;
@@ -452,7 +452,7 @@
   margin: 8px 0;
   background: #F8F9FA;
   border-radius: 10px;
-  color: var(--text-primary);
+  color: var(--header-text-primary);
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -470,7 +470,7 @@
 /* モバイルナビ区切り線 */
 .mobile-nav-divider {
   height: 1px;
-  background: var(--border-subtle);
+  background: var(--header-border-subtle);
   margin: 20px 0;
 }
 
@@ -478,7 +478,7 @@
 .mobile-contact-info {
   margin-top: 30px;
   padding-top: 30px;
-  border-top: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--header-border-subtle);
 }
 
 .mobile-phone {
@@ -612,9 +612,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --header-bg: rgba(30, 30, 30, 0.98);
-    --text-primary: #E8E8E8;
-    --text-secondary: #B2B2B2;
-    --border-subtle: rgba(255, 255, 255, 0.1);
+    --header-text-primary: #E8E8E8;
+    --header-text-secondary: #B2B2B2;
+    --header-border-subtle: rgba(255, 255, 255, 0.1);
     --nav-hover-bg: rgba(255, 107, 53, 0.15);
   }
   

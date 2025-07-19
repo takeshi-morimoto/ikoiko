@@ -39,40 +39,12 @@
             </div>
         </div>
     </div>
-    
-    <!-- グローバルナビゲーション -->
-    <nav id="globalNavi" class="global-nav desktop-only">
-        <div class="container">
-            <ul class="global-nav-list">
-                <li><a href="/ikoiko/" class="global-nav-link">
-                    <span class="nav-main">TOP</span>
-                    <span class="nav-sub">anime</span>
-                </a></li>
-                <li><a href="/ikoiko/初めて.php" class="global-nav-link">
-                    <span class="nav-main">初めての方</span>
-                    <span class="nav-sub">for beginner</span>
-                </a></li>
-                <li><a href="/ikoiko/参加.php" class="global-nav-link">
-                    <span class="nav-main">参加までの流れ</span>
-                    <span class="nav-sub">arrange</span>
-                </a></li>
-                <li><a href="/ikoiko/よくある質問.php" class="global-nav-link">
-                    <span class="nav-main">よくある質問</span>
-                    <span class="nav-sub">FAQ</span>
-                </a></li>
-                <li><a href="/ikoiko/スタッフ募集.php" class="global-nav-link">
-                    <span class="nav-main">スタッフ募集</span>
-                    <span class="nav-sub">recruitment</span>
-                </a></li>
-                <li><a href="/ikoiko/contact.php" class="global-nav-link">
-                    <span class="nav-main">お問い合わせ</span>
-                    <span class="nav-sub">contact</span>
-                </a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <!-- モバイルナビゲーション -->
+</header>
+
+<!-- グローバルナビゲーション（ヘッダー外に配置） -->
+<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/globalNavi_clean.php") ?>
+
+<!-- モバイルナビゲーション -->
     <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
         <div class="mobile-nav-header">
             <h2 class="mobile-nav-title">メニュー</h2>

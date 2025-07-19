@@ -108,6 +108,7 @@
 let lastScrollTop = 0;
 const header = document.getElementById('pageHeader');
 const scrollThreshold = 100;
+let isScrolling;
 
 window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -127,6 +128,12 @@ window.addEventListener('scroll', () => {
     }
     
     lastScrollTop = scrollTop;
+    
+    // スクロール終了検知
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+        header.classList.remove('hidden');
+    }, 500);
 });
 
 // モバイルメニューの開閉

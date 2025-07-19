@@ -1,21 +1,24 @@
 <header id="pageHeader" class="site-header">
     <div class="container">
         <div class="header-content">
-            <!-- ロゴ -->
-            <div class="header-logo">
-                <a href="/ikoiko/" class="logo-link">
-                    <img id="logo" src="/ikoiko/img/common/icon/logo.png" alt="KOIKOI アニメコン・街コン公式サイト" loading="lazy">
-                </a>
+            <!-- 左側: ロゴとナビゲーション -->
+            <div class="header-left">
+                <!-- ロゴ -->
+                <div class="header-logo">
+                    <a href="/ikoiko/" class="logo-link">
+                        <img id="logo" src="/ikoiko/img/common/icon/logo.png" alt="KOIKOI アニメコン・街コン公式サイト" loading="lazy">
+                    </a>
+                </div>
+                
+                <!-- ナビゲーション（デスクトップ） -->
+                <nav class="header-nav desktop-only" role="navigation" aria-label="メインナビゲーション">
+                    <a href="/ikoiko/" class="nav-link">アニメコン</a>
+                    <a href="/ikoiko/machi/" class="nav-link">街コン</a>
+                </nav>
             </div>
             
-            <!-- ナビゲーション（デスクトップ） -->
-            <nav class="header-nav desktop-only" role="navigation" aria-label="メインナビゲーション">
-                <a href="/ikoiko/" class="nav-link">アニメコン</a>
-                <a href="/ikoiko/machi/" class="nav-link">街コン</a>
-            </nav>
-            
-            <!-- コンタクト情報 -->
-            <div class="header-contact">
+            <!-- 右側: コンタクト情報 -->
+            <div class="header-right">
                 <div class="contact-info">
                     <div class="payment-info">
                         <img src="/ikoiko/img/common/icon/icon_card.png" alt="カード決済" class="icon-payment" loading="lazy">

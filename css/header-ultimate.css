@@ -43,6 +43,20 @@
   transition: height 0.3s ease;
 }
 
+/* 左側コンテンツ */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* 右側コンテンツ */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .site-header.scrolled .header-content {
   height: 65px;
 }
@@ -94,8 +108,6 @@
   display: flex;
   gap: 0;
   align-items: center;
-  flex: 1;
-  justify-content: center;
 }
 
 .nav-link {
@@ -145,12 +157,6 @@
   transform: translateX(-50%) scaleX(1);
 }
 
-/* コンタクト情報 */
-.header-contact {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
 
 .contact-info {
   display: flex;

@@ -29,9 +29,10 @@
 
 /* コンテナ */
 .site-header .container {
-  max-width: 1400px;
+  max-width: none;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 /* ヘッダーコンテンツ */
@@ -41,6 +42,8 @@
   justify-content: space-between;
   height: 80px;
   transition: height 0.3s ease;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* 左側コンテンツ */

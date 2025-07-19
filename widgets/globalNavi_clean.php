@@ -1,5 +1,4 @@
 <!-- グローバルナビゲーション（クリーンバージョン） -->
-</div><!-- topContainerを一時的に閉じる -->
 <nav id="globalNavi" class="global-nav-clean desktop-only">
     <div class="container">
         <ul class="global-nav-list">
@@ -24,7 +23,6 @@
         </ul>
     </div>
 </nav>
-<div id="topContainer"><!-- topContainerを再開 -->
 
 <style>
 /* クリーンなグローバルナビゲーション */
@@ -60,20 +58,19 @@
 }
 
 .global-nav-clean .global-nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 100%;
-    padding: 20px 30px;
+    padding: 18px 10px;
     text-decoration: none;
     color: #333;
     font-weight: 600;
     font-size: 14px;
+    line-height: 1.4;
     transition: all 0.3s ease;
     position: relative;
     border-bottom: 3px solid transparent;
     min-height: 70px;
+    box-sizing: border-box;
 }
 
 .global-nav-clean .global-nav-link:hover {

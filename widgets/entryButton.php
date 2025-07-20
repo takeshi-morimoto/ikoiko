@@ -1,6 +1,6 @@
 <?php 
 
-$obj = $db->query("select * from area where `area` = '$area' ;");
+$obj = $db->query("select ken from area where `area` = '$area' ;");
 $tmp = $obj->fetch();
 
 //今日の日付を取得
@@ -51,49 +51,13 @@ while ( $eventData = $eventDataTmp->fetch() ):
               );
 
   if ( !empty($eventData['pr_comment']) ) {
-    
-    // 価格情報の組み立て
-    $priceHTML = "";
-    
-    // イベント個別の価格がある場合
-    if (!empty($eventData['price_m']) || !empty($eventData['price_f'])) {
-      if (!empty($eventData['price_m']) || !empty($eventData['price_f'])) {
-        $priceHTML .= "<tr><th>参加費</th><td>";
-        if (!empty($eventData['price_m'])) $priceHTML .= "男性：" . number_format($eventData['price_m']) . "円　";
-        if (!empty($eventData['price_f'])) $priceHTML .= "女性：" . number_format($eventData['price_f']) . "円";
-        $priceHTML .= "</td></tr>";
-      }
-    } 
-    // エリア共通の価格がある場合
-    else if (!empty($tmp['price_l'])) {
-      $price_l_m = strtok($tmp['price_l'], "/");
-      $price_l_w = strtok("/");
-      if ($price_l_m || $price_l_w) {
-        $priceHTML .= "<tr><th>参加費</th><td>";
-        if ($price_l_m) $priceHTML .= "男性：" . number_format($price_l_m) . "円～　";
-        if ($price_l_w) $priceHTML .= "女性：" . number_format($price_l_w) . "円～";
-        $priceHTML .= "</td></tr>";
-      }
-    }
-
-    // pr_commentがHTMLテーブルを含む場合と含まない場合の処理
-    $bodyContent = $eventData['pr_comment'];
-    if (!empty($priceHTML)) {
-      if (strpos($bodyContent, '<table') !== false) {
-        // 既存のテーブルに価格情報を追加
-        $bodyContent = str_replace('</table>', $priceHTML . '</table>', $bodyContent);
-      } else {
-        // 新しいテーブルを作成
-        $bodyContent = "<table id='eventPlace'>" . $priceHTML . "</table>" . $bodyContent;
-      }
-    }
 
     $meetingPoint = 
       "
       <div class='meetingPoint'>
         <div class='showBody'>詳細情報を表示</div>
         <div class='hideBody'>閉じる</div>
-        <div class='body'>{$bodyContent}</div>
+        <div class='body'>{$eventData['pr_comment']}</div>
       </div>
       ";
   }

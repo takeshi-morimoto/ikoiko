@@ -1,9 +1,7 @@
 <?php 
 
-$obj = $db->query("select ken, price_h, price_l from area where `area` = '$area' ;");
+$obj = $db->query("select ken from area where `area` = '$area' ;");
 $tmp = $obj->fetch();
-$area_price_h = $tmp['price_h'];
-$area_price_l = $tmp['price_l'];
 
 //今日の日付を取得
 $today = date('Y-m-j');

@@ -6,8 +6,14 @@ $tmp = $obj->fetch();
 //今日の日付を取得
 $today = date('Y-m-j');
 
-//イベントのデータを読み込み
-$eventDataTmp = $db->query("select * from events where `area` = '$area' and `date` >= '$today' order by date ;") ;
+//イベントのデータを読み込み（価格情報も含む）
+$eventDataTmp = $db->query("
+  SELECT e.*, a.price_h, a.price_l 
+  FROM events e 
+  JOIN area a ON e.area = a.area 
+  WHERE e.area = '$area' AND e.date >= '$today' 
+  ORDER BY e.date
+");
 
 $n = 0;
 $isExtra = false;
@@ -50,14 +56,36 @@ while ( $eventData = $eventDataTmp->fetch() ):
                 'eh' => strtok($eventData['end'], ':') , 'em' => strtok(':') ,                     //終了時刻
               );
 
-  if ( !empty($eventData['pr_comment']) ) {
+  if ( !empty($eventData['pr_comment']) || !empty($eventData['price_h']) || !empty($eventData['price_l']) ) {
+    
+    // 価格情報の処理
+    $priceInfo = "";
+    if (!empty($eventData['price_m']) && !empty($eventData['price_f'])) {
+      $priceInfo = "<tr><th>参加費</th><td>男性：" . number_format($eventData['price_m']) . "円　女性：" . number_format($eventData['price_f']) . "円</td></tr>";
+    } else if (!empty($eventData['price_h']) || !empty($eventData['price_l'])) {
+      $price_h_m = strtok($eventData['price_h'], "/");
+      $price_h_w = strtok("/");
+      $price_l_m = strtok($eventData['price_l'], "/");
+      $price_l_w = strtok("/");
+      if ($price_h_m || $price_l_m) {
+        $priceInfo = "<tr><th>参加費</th><td>";
+        if ($price_l_m) $priceInfo .= "男性：" . number_format($price_l_m) . "円～　";
+        if ($price_l_w) $priceInfo .= "女性：" . number_format($price_l_w) . "円～";
+        $priceInfo .= "</td></tr>";
+      }
+    }
 
     $meetingPoint = 
       "
       <div class='meetingPoint'>
         <div class='showBody'>詳細情報を表示</div>
         <div class='hideBody'>閉じる</div>
-        <div class='body'>{$eventData['pr_comment']}</div>
+        <div class='body'>
+          <table id='eventPlace'>
+            {$priceInfo}
+            {$eventData['pr_comment']}
+          </table>
+        </div>
       </div>
       ";
   }

@@ -51,35 +51,13 @@ while ( $eventData = $eventDataTmp->fetch() ):
               );
 
   if ( !empty($eventData['pr_comment']) ) {
-    
-    // 価格情報の処理
-    $priceInfo = "";
-    if (!empty($eventData['price_m']) && !empty($eventData['price_f'])) {
-      $priceInfo = "<tr><th>参加費</th><td>男性：" . number_format($eventData['price_m']) . "円　女性：" . number_format($eventData['price_f']) . "円</td></tr>";
-    } else if (!empty($area_price_h) || !empty($area_price_l)) {
-      $price_h_m = strtok($area_price_h, "/");
-      $price_h_w = strtok("/");
-      $price_l_m = strtok($area_price_l, "/");
-      $price_l_w = strtok("/");
-      if ($price_l_m || $price_l_w) {
-        $priceInfo = "<tr><th>参加費</th><td>";
-        if ($price_l_m) $priceInfo .= "男性：" . number_format($price_l_m) . "円～　";
-        if ($price_l_w) $priceInfo .= "女性：" . number_format($price_l_w) . "円～";
-        $priceInfo .= "</td></tr>";
-      }
-    }
 
     $meetingPoint = 
       "
       <div class='meetingPoint'>
         <div class='showBody'>詳細情報を表示</div>
         <div class='hideBody'>閉じる</div>
-        <div class='body'>
-          <table id='eventPlace'>
-            {$priceInfo}
-            {$eventData['pr_comment']}
-          </table>
-        </div>
+        <div class='body'>{$eventData['pr_comment']}</div>
       </div>
       ";
   }

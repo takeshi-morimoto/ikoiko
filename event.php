@@ -70,6 +70,26 @@ $content = $row['text'];
 "@type": "Event",
 "name": "<?php echo $area_ja; ?>の街コン・アニメコンイベント",
 "description": "<?php echo strip_tags($free_text1); ?>",
+"startDate": "<?php 
+// 最新のイベント日付を取得
+$eventQuery = $db->query("SELECT MIN(date) as next_date, begin FROM events JOIN area USING(area) WHERE area = '$area' AND date >= CURDATE();");
+$eventData = $eventQuery->fetch();
+if ($eventData && $eventData['next_date']) {
+    echo $eventData['next_date'] . 'T' . $eventData['begin'] . ':00+09:00';
+} else {
+    // デフォルト値として30日後の日付を使用
+    echo date('Y-m-d', strtotime('+30 days')) . 'T19:00:00+09:00';
+}
+?>",
+"endDate": "<?php 
+if ($eventData && $eventData['next_date']) {
+    // イベント開始日の3時間後を終了時刻とする
+    $endTime = date('H:i:s', strtotime($eventData['begin'] . ' +3 hours'));
+    echo $eventData['next_date'] . 'T' . $endTime . '+09:00';
+} else {
+    echo date('Y-m-d', strtotime('+30 days')) . 'T22:00:00+09:00';
+}
+?>",
 "location": {
 "@type": "Place",
 "name": "<?php echo $area_ja; ?>",
@@ -78,21 +98,22 @@ $content = $row['text'];
 "offers": {
 "@type": "Offer",
 "price": "<?php echo $price_l_m; ?>",
-"priceCurrency": "JPY"
-		},
-		"breadcrumb": {
-			"@type": "BreadcrumbList",
-			"itemListElement": [{
-				"@type": "ListItem",
-				"position": 1,
-				"name": "ホーム",
-				"item": "https://koikoi.co.jp/ikoiko/"
-			},{
-				"@type": "ListItem",
-				"position": 2,
-				"name": "<?php echo $area_ja; ?>",
-				"item": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
-			}]
+"priceCurrency": "JPY",
+"availability": "https://schema.org/InStock",
+"validFrom": "<?php echo date('Y-m-d'); ?>T00:00:00+09:00",
+"url": "https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/"
+},
+"eventStatus": "https://schema.org/EventScheduled",
+"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+"organizer": {
+"@type": "Organization",
+"name": "株式会社KOIKOI",
+"url": "https://koikoi.co.jp/"
+},
+"image": "https://koikoi.co.jp/ikoiko/images/og-image.jpg",
+"performer": {
+"@type": "Organization",  
+"name": "KOIKOI運営チーム"
 }
 }
 </script>

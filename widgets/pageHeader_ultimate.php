@@ -41,9 +41,8 @@
     </div>
 </header>
 
-
 <!-- モバイルナビゲーション -->
-    <nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
+<nav class="mobile-nav" id="mobileNav" aria-label="モバイルナビゲーション">
         <div class="mobile-nav-header">
             <h2 class="mobile-nav-title">メニュー</h2>
             <button class="mobile-nav-close" aria-label="メニューを閉じる">
@@ -70,7 +69,7 @@
                 </a>
             </div>
         </div>
-    </nav>
+</nav>
 
 <script>
 // ヘッダースクロールエフェクト

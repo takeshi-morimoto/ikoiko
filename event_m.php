@@ -125,10 +125,10 @@ if ($eventData && $eventData['next_date']) {
 
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageTop_m.php") ?>
 
-<div id="topContainer">
-
 <!-- 究極のヘッダーに変更 -->
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_ultimate.php") ?>
+
+<div id="topContainer">
 
 <div id="mainVisual">
 

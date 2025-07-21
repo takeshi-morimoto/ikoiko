@@ -29,6 +29,11 @@ $ps->execute();
 $row = $ps->fetch();
 $content = $row['text'];
 
+// Mixed Content対策: HTTPをHTTPSに置換
+$content = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $content);
+$free_text1 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_text1);
+$free_text2 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_text2);
+
 ?>
 
 <!DOCTYPE html>

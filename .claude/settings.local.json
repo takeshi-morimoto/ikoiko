@@ -16,7 +16,12 @@
       "Bash(grep:*)",
       "Bash(diff:*)",
       "Bash(mv:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git config:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }

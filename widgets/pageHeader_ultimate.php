@@ -164,26 +164,3 @@ window.addEventListener('scroll', debounce(() => {
 }, 10));
 </script>
 
-<style>
-/* pageTopの高さを考慮 */
-#pageTop {
-    position: relative;
-    z-index: 1;
-}
-
-/* ヘッダーのためのボディパディング削除（pageTopがあるため） */
-body {
-    padding-top: 0 !important;
-}
-
-/* モバイルメニューオープン時 */
-body.mobile-menu-open {
-    overflow: hidden;
-}
-
-/* ヘッダーをpageTopの下に配置 */
-.site-header {
-    top: auto;
-    position: sticky;
-}
-</style>

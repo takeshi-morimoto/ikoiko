@@ -71,7 +71,6 @@
             </div>
         </div>
     </nav>
-</header>
 
 <script>
 // ヘッダースクロールエフェクト

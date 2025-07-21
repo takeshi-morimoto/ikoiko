@@ -1,5 +1,5 @@
 <header id="pageHeader" class="site-header">
-    <div class="container">
+    <div class="header-container">
         <div class="header-content">
             <!-- 左側: ロゴとナビゲーション -->
             <div class="header-left">

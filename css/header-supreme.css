@@ -23,8 +23,8 @@
   top: 0;
   z-index: 9999;
   background: var(--header-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
   transition: all 0.3s var(--transition-smooth);
 }
 
@@ -611,7 +611,8 @@
   outline-offset: 2px;
 }
 
-/* ダークモード対応 */
+/* ダークモード対応（一時的に無効化） */
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --header-bg: rgba(30, 30, 30, 0.98);
@@ -633,6 +634,7 @@
     background: #2A2A2A;
   }
 }
+*/
 
 /* パフォーマンス最適化 */
 @media (prefers-reduced-motion: reduce) {

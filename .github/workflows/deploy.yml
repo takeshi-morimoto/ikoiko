@@ -1,9 +1,10 @@
 name: FTP Deploy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:  # 手動実行のみに変更
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   ftp-deploy:
@@ -22,3 +23,17 @@ jobs:
           local-dir: "./"                # ローカルのディレクトリを指定
           server-dir: "/ikoiko/"            # サーバー上のデプロイ先ディレクトリ
           protocol: "ftp"                # プロトコルをFTPに設定
+          state-name: .ftp-deploy-sync-state.json  # 同期状態を保存
+          dry-run: false                  # 実際にデプロイ
+          log-level: verbose              # 詳細ログ
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            .claude/**
+            CLAUDE.md
+            README.md
+            *.log
+            .DS_Store
+            .ftp-deploy-sync-state.json

@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/onepcssgrid.css" />
 <link rel="icon" href="https://koikoi.co.jp/ikoiko/img/favicon.ico" />
 
-<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js'></script>
+<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/jquery-3.7.1.min.js'></script>
+<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/jquery-migrate-3.4.1.min.js'></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ4VFQRSYR"></script>
 <script>

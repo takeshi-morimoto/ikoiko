@@ -75,7 +75,8 @@ $db->query("SET NAMES utf8");
 	}
 	</script>
 
-	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.7.1.min.js"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-migrate-3.4.1.min.js"></script>
 	<script src="https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js"></script>
 	
 	<!-- モダンJavaScript -->

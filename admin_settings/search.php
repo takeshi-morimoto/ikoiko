@@ -333,7 +333,8 @@ endif;
 	<meta charset="UTF-8" />
 	<title>街コン設定用コントロールパネル</title>
 	<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/admin.css">
-	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-migrate-3.4.1.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -645,7 +646,7 @@ endif;
 
 <script type='text/javascript'>
 
-			$('a[id^=id]').bind('click' , function() {
+			$('a[id^=id]').on('click' , function() {
 
 				name = $(this).attr('id');
 

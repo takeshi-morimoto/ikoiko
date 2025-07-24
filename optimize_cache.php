@@ -28,7 +28,7 @@
         <h2>✅ 現在のサイト最適化状況</h2>
         <ul>
             <li class="success">OPcache: 有効</li>
-            <li class="success">jQuery: v3.1.0に統一（94KB削減）</li>
+            <li class="success">jQuery: v3.7.1に統一（94KB削減）</li>
             <li class="success">画像: 遅延読み込み実装</li>
             <li class="success">Gzip圧縮: 有効</li>
         </ul>
@@ -108,7 +108,8 @@ FileETag None
 
 &lt;!-- 重要なリソースの先読み --&gt;
 &lt;link rel="preload" href="/ikoiko/css/base.css" as="style"&gt;
-&lt;link rel="preload" href="/ikoiko/js/jquery-3.1.0.min.js" as="script"&gt;
+&lt;link rel="preload" href="/ikoiko/js/jquery-3.7.1.min.js" as="script"&gt;
+&lt;link rel="preload" href="/ikoiko/js/jquery-migrate-3.4.1.min.js" as="script"&gt;
 
 &lt;!-- 次のページの先読み（オプション） --&gt;
 &lt;link rel="prefetch" href="/ikoiko/event.php"&gt;
@@ -126,7 +127,8 @@ self.addEventListener('install', function(event) {
                 '/ikoiko/css/content.css',
                 '/ikoiko/css/globalMenu.css',
                 '/ikoiko/css/onepcssgrid.css',
-                '/ikoiko/js/jquery-3.1.0.min.js',
+                '/ikoiko/js/jquery-3.7.1.min.js',
+                '/ikoiko/js/jquery-migrate-3.4.1.min.js',
                 '/ikoiko/img/logo.png'
             ]);
         })

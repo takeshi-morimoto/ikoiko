@@ -585,7 +585,8 @@ Tel ：070-5025-0546（平日11:00～19:00）
 	<title></title>
 	<link rel="stylesheet" href="https://koikoi.co.jp/ikoiko/css/admin.css">
 
-	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js" type="text/javascript"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-3.7.1.min.js" type="text/javascript"></script>
+	<script src="https://koikoi.co.jp/ikoiko/js/jquery-migrate-3.4.1.min.js" type="text/javascript"></script>
 
 	<script type="text/javascript">
 

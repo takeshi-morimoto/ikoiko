@@ -25,16 +25,16 @@
         <strong>問題:</strong> 複数のjQueryバージョンが読み込まれている
         <ul>
             <li>jQuery.js (v1.11.2) - 94KB - メインサイト全体</li>
-            <li>jquery-3.1.0.min.js (v3.1.0) - 85KB - 管理画面の一部</li>
+            <li>jquery-3.7.1.min.js (v3.7.1) - 85KB - 管理画面の一部</li>
             <li>Google CDN jQuery v1.8.2 - 管理画面の一部</li>
         </ul>
     </div>
     
     <div class="solution">
-        <strong>解決策:</strong> jQuery v3.1.0に統一
+        <strong>解決策:</strong> jQuery v3.7.1に統一
         <ol>
             <li>既存のjQuery.jsを削除</li>
-            <li>outputHead.phpでjquery-3.1.0.min.jsを読み込むよう変更</li>
+            <li>outputHead.phpでjquery-3.7.1.min.jsを読み込むよう変更</li>
             <li>jQuery移行プラグインを追加（互換性のため）</li>
         </ol>
     </div>
@@ -47,8 +47,8 @@
 &lt;script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jQuery.js' defer&gt;&lt;/script&gt;
 
 &lt;!-- 変更後 --&gt;
-&lt;script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jquery-3.1.0.min.js' defer&gt;&lt;/script&gt;
-&lt;script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jquery-migrate-3.0.0.min.js' defer&gt;&lt;/script&gt;
+&lt;script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jquery-3.7.1.min.js' defer&gt;&lt;/script&gt;
+&lt;script type='text/javascript' src='//koikoi.co.jp/ikoiko/js/jquery-migrate-3.4.1.min.js' defer&gt;&lt;/script&gt;
     </div>
     
     <h2>2. CSS/JSの結合と最小化</h2>

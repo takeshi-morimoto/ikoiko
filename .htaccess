@@ -3,6 +3,9 @@
     RewriteEngine On
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # index_modern.phpからindex.phpへのリダイレクト
+    RewriteRule ^index_modern\.php$ /ikoiko/ [L,R=301]
 </IfModule>
 
 # カスタムphp.iniの読み込み

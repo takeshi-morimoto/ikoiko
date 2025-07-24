@@ -69,8 +69,10 @@
   transform: scale(1.02);
 }
 
-#logo {
-  height: 45px;
+#pageHeader #logo,
+.site-header #logo {
+  height: 45px !important;
+  width: auto;
   transition: all 0.3s ease;
 }
 
@@ -540,7 +542,7 @@
 }
 
 .site-header.scrolled #logo {
-  height: 38px;
+  height: 38px !important;
 }
 
 /* ヘッダー非表示アニメーション */
@@ -582,7 +584,7 @@
   }
   
   #logo {
-    height: 38px;
+    height: 38px !important;
   }
   
   .global-nav {

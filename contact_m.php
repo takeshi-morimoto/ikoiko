@@ -49,22 +49,30 @@ endif;
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>お問い合わせ</title>
+	<title>お問い合わせ - 街コン | KOIKOI</title>
+	<meta name="description" content="街コンに関するお問い合わせフォーム。イベントに関するご質問、ご要望などお気軽にお問い合わせください。">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 
+	<!-- モダンCSS追加 -->
+	<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
+	<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
+	<link rel="stylesheet" href="/ikoiko/css/responsive.css">
+	<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
+	<link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
+	<link rel="stylesheet" href="/ikoiko/css/header-supreme.css">
+
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/contact_m.php" />
+
 </head>
-<body class="machi">
+<body>
 
 <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageTop_m.php") ?>
 
 <div id="topContainer">
-	
-	<div id="pageHeader">
-		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_m.php") ?>
-
-	</div>
+	<!-- 究極のヘッダーに変更 -->
+	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_ultimate.php") ?>
 	
 	<div id="mainVisual">
 					
@@ -137,7 +145,7 @@ endif;
 
 		<div id="sideContent">
 			
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_m.php") ?>
+			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_m_modern.php") ?>
 
 		</div>
 	</div>

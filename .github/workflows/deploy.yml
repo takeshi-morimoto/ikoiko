@@ -1,10 +1,10 @@
 name: FTP Deploy
 
 on:
-  workflow_dispatch:  # 手動実行のみに変更
-  # push:
-  #   branches:
-  #     - main
+  workflow_dispatch:  # 手動実行も可能
+  push:
+    branches:
+      - main
 
 jobs:
   ftp-deploy:

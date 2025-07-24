@@ -22,11 +22,12 @@ $db->query("SET NAMES utf8");
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php"); ?>
 	
 	<!-- モダンCSS追加 -->
-	<link rel="stylesheet" href="css/modern-base.css">
-	<link rel="stylesheet" href="css/modern-components.css">
-	<link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/news-fix.css">
-	<link rel="stylesheet" href="css/layout-spacing.css">
+	<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
+	<link rel="stylesheet" href="/ikoiko/css/modern-components.css">
+	<link rel="stylesheet" href="/ikoiko/css/responsive.css">
+	<link rel="stylesheet" href="/ikoiko/css/news-fix.css">
+	<link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
+	<link rel="stylesheet" href="/ikoiko/css/header-supreme.css">
 	
 	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/machi/" />
 	
@@ -76,8 +77,8 @@ $db->query("SET NAMES utf8");
 
 <div id="topContainer">
 	
-	<!-- モダンなヘッダーに変更 -->
-	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
+	<!-- 究極のヘッダーに変更 -->
+	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_ultimate.php") ?>
 
 	<div id="mainVisual">
 		

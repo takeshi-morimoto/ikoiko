@@ -6,6 +6,12 @@
     
     # index_modern.phpからindex.phpへのリダイレクト
     RewriteRule ^index_modern\.php$ /ikoiko/ [L,R=301]
+    
+    # ディレクトリURLを対応するPHPファイルにリダイレクト
+    RewriteRule ^machi/?$ /ikoiko/machi.php [L]
+    RewriteRule ^ani/?$ /ikoiko/index.php [L]
+    RewriteRule ^nazo/?$ /ikoiko/nazo.php [L]
+    RewriteRule ^off/?$ /ikoiko/off.php [L]
 </IfModule>
 
 # カスタムphp.iniの読み込み

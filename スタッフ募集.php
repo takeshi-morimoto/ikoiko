@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>スタッフ募集 - こいこい街コン</title>
+    <meta name="description" content="こいこい街コン・アニメコンのイベントスタッフ募集情報。運営サポート、受付、会場セッティングなど。未経験歓迎、シフト自由、交通費支給。">
+    <link rel="canonical" href="https://koikoi.co.jp/ikoiko/スタッフ募集.php" />
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 </head>
 <body>

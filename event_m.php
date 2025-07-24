@@ -54,7 +54,7 @@ $free_text2 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_t
 <link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 <link rel="stylesheet" href="/ikoiko/css/header-supreme.css">
 
-<link rel="canonical" href="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
+<link rel="canonical" href="https://koikoi.co.jp/ikoiko/event_m/<?php echo $area; ?>/" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />

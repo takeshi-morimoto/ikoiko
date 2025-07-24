@@ -67,7 +67,9 @@ $db->query("SET NAMES utf8");
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>楽しいイベント盛りだくさん</title>
+	<title>謎解きイベント開催スケジュール | 体験型謎解きゲーム - KOIKOI</title>
+	<meta name="description" content="全国で開催される謎解きイベントの開催スケジュール一覧。体験型謎解きゲームや脱出ゲームイベントの最新情報を掲載。">
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/list_3.php" />
 
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>

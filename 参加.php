@@ -2,7 +2,9 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8" />
-    <title>参加までの流れ</title>
+    <title>参加までの流れ - こいこい街コン</title>
+    <meta name="description" content="こいこい街コン・アニメコンへの参加方法を詳しく解説。イベント探しから申込み、支払い、当日の流れまで、ステップごとにわかりやすくご案内します。">
+    <link rel="canonical" href="https://koikoi.co.jp/ikoiko/参加.php" />
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 </head>
 <body>

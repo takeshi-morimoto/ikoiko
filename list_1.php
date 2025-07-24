@@ -75,6 +75,8 @@ function buildPriceTable($price_m, $price_f) {
 <head>
     <meta charset="UTF-8" />
     <title>アニメコン開催スケジュール | 全国のアニメ街コン一覧 - KOIKOI</title>
+    <meta name="description" content="全国で開催されるアニメコンの開催スケジュール一覧。アニメ・マンガ・ゲーム好きのための婚活・交流イベント情報を掲載。">
+    <link rel="canonical" href="https://koikoi.co.jp/ikoiko/list_1.php" />
 
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
     

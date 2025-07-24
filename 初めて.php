@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>初めての方へ - こいこい街コン</title>
+    <meta name="description" content="街コン・アニメコンに初めて参加される方へ。イベントの流れ、参加方法、服装、料金システムなど、初心者でも安心して参加できる情報をご案内。">
+    <link rel="canonical" href="https://koikoi.co.jp/ikoiko/初めて.php" />
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 </head>
 <body>

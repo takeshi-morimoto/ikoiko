@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>よくある質問 - こいこい街コン</title>
+    <meta name="description" content="こいこい街コン・アニメコンに関するよくある質問と回答。参加方法、料金、服装、キャンセルポリシーなど、初めての方も安心して参加できる情報を掲載。">
+    <link rel="canonical" href="https://koikoi.co.jp/ikoiko/よくある質問.php" />
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 </head>
 <body>

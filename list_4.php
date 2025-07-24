@@ -67,7 +67,9 @@ $db->query("SET NAMES utf8");
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>楽しいイベント盛りだくさん</title>
+	<title>その他のイベント開催スケジュール | オフ会・交流会 - KOIKOI</title>
+	<meta name="description" content="全国で開催されるオフ会・交流会・趣味イベントの開催スケジュール一覧。様々なジャンルの交流イベント情報を掲載。">
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/list_4.php" />
 
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>

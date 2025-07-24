@@ -2,8 +2,9 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8" />
-	<title>こいこいマンガ｜アニメコン-総動員数NO.1！株式会社KOIKOI</title>
-	<meta name="description" content="アニメ好きの集まる街コンを全国で開催中。婚活・恋活はもちろん、オタクのお友達探しにもおススメです。完全着席形式で、マンガ・アニメ・ゲーム・コスプレ・声優など、好きなジャンルが一目でわかるプロフィールシート・マッチングゲームなどの工夫をしております。">
+	<title>こいこいマンガ 第10話｜アニメコン-総動員数NO.1！株式会社KOIKOI</title>
+	<meta name="description" content="こいこいマンガ第10話。アニメコンの成功例特集！実際にカップルになった参加者たちのエピソードを描いたオリジナルマンガです。">
+	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/manga/manga_10.php">
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
 	<link rel="stylesheet" href="/ikoiko/css/manga.css">

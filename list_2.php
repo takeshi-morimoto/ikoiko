@@ -75,6 +75,8 @@ function buildPriceTable($price_m, $price_f) {
 <head>
     <meta charset="UTF-8" />
     <title>街コン開催スケジュール | 全国の恋活・婚活イベント - KOIKOI</title>
+    <meta name="description" content="全国で開催される街コンの開催スケジュール一覧。恋活・婚活イベントの最新情報を掲載。完全着席形式で安心して参加できます。">
+    <link rel="canonical" href="https://koikoi.co.jp/ikoiko/list_2.php" />
 
     <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
     

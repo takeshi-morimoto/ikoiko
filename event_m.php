@@ -60,7 +60,7 @@ $free_text2 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_t
 <meta property="og:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />
 <meta property="og:description" content="<?php echo $area_ja; ?>で開催される街コン・アニメコン・謎解きイベントの情報。" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://koikoi.co.jp/ikoiko/event/<?php echo $area; ?>/" />
+<meta property="og:url" content="https://koikoi.co.jp/ikoiko/event_m/<?php echo $area; ?>/" />
 <meta property="og:site_name" content="こいこい" />
 
 <!-- Twitter Card -->

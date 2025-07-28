@@ -12,6 +12,13 @@
     RewriteRule ^ani/?$ /ikoiko/index.php [L]
     RewriteRule ^nazo/?$ /ikoiko/nazo.php [L]
     RewriteRule ^off/?$ /ikoiko/off.php [L]
+    
+    # 末尾スラッシュの正規化（event, event_mページ用）
+    RewriteCond %{REQUEST_URI} ^/ikoiko/event/[^/]+$
+    RewriteRule ^(.*)$ $1/ [L,R=301]
+    
+    RewriteCond %{REQUEST_URI} ^/ikoiko/event_m/[^/]+$
+    RewriteRule ^(.*)$ $1/ [L,R=301]
 </IfModule>
 
 # カスタムphp.iniの読み込み

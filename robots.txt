@@ -15,3 +15,9 @@ Disallow: *.tmp
 # 重複コンテンツの回避
 Disallow: /*?*sort=
 Disallow: /*?*page=
+Disallow: /*?*session=
+Disallow: /*?*sid=
+
+# 末尾スラッシュの統一（正規URLはスラッシュ付き）
+Allow: /ikoiko/event/*/
+Allow: /ikoiko/event_m/*/

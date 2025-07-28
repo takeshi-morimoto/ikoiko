@@ -57,6 +57,9 @@ else:
 
 endif;
 
+// Canonical URL helper
+require_once("./canonical_helper.php");
+
 //DBの初期化
 require("./db_data/db_init.php");
 $db->query("SET NAMES utf8");
@@ -69,7 +72,23 @@ $db->query("SET NAMES utf8");
 	<meta charset="UTF-8" />
 	<title>謎解きイベント開催スケジュール | 体験型謎解きゲーム - KOIKOI</title>
 	<meta name="description" content="全国で開催される謎解きイベントの開催スケジュール一覧。体験型謎解きゲームや脱出ゲームイベントの最新情報を掲載。">
-	<link rel="canonical" href="https://koikoi.co.jp/ikoiko/list_3.php" />
+	<?php
+	// PATH_INFOがある場合でも、常に正規URLを指定
+	$canonical_url = "https://koikoi.co.jp/ikoiko/list_3.php";
+	
+	// 古い日付のページはnoindex
+	$is_old_content = false;
+	if (!empty($searchDate)) {
+		$date_parts = explode('-', $searchDate);
+		if (count($date_parts) >= 1 && intval($date_parts[0]) < 2025) {
+			$is_old_content = true;
+		}
+	}
+	
+	$robots_meta = $is_old_content ? 'noindex, follow' : 'index, follow';
+	?>
+	<meta name="robots" content="<?php echo $robots_meta; ?>">
+	<link rel="canonical" href="<?php echo $canonical_url; ?>" />
 
 
 	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>

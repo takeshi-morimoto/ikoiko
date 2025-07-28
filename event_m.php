@@ -3,6 +3,9 @@
 //Noticeエラーを非表示にする
 error_reporting(E_ALL & ~E_NOTICE);
 
+// Canonical URL helper
+require_once("./canonical_helper.php");
+
 //DBの初期化
 require_once("./db_data/db_init.php");
 $db->query("SET NAMES utf8");
@@ -54,7 +57,16 @@ $free_text2 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_t
 <link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 <link rel="stylesheet" href="/ikoiko/css/header-supreme.css">
 
-<link rel="canonical" href="https://koikoi.co.jp/ikoiko/event_m/<?php echo $area; ?>/" />
+<?php
+// コンテンツの有無をチェック
+$has_content = !empty($content) && strlen($content) > 100;
+$robots_meta = get_robots_meta($has_content, $has_content);
+
+// 正規URLを生成
+$canonical_url = get_canonical_url("https://koikoi.co.jp/ikoiko/event_m/{$area}", $_SERVER['PATH_INFO'] ?? '');
+?>
+<meta name="robots" content="<?php echo $robots_meta; ?>">
+<link rel="canonical" href="<?php echo $canonical_url; ?>" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="<?php echo $area_ja; ?>のイベント情報｜KOIKOI街コン" />

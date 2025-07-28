@@ -21,3 +21,9 @@ Disallow: /*?*sid=
 # 末尾スラッシュの統一（正規URLはスラッシュ付き）
 Allow: /ikoiko/event/*/
 Allow: /ikoiko/event_m/*/
+
+# PATH_INFO形式のURLを除外
+Disallow: /ikoiko/*.php/
+Disallow: /ikoiko/list_*/
+Disallow: /ikoiko/machi/
+Disallow: /ikoiko/ani/

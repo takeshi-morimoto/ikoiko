@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Area;
 use App\Models\Prefecture;
+use App\Repositories\EventRepository;
+use App\Repositories\PrefectureRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Traits\EventFilterable;
 
 class AnimeController extends Controller
 {
     use EventFilterable;
+    
+    public function __construct(
+        private EventRepository $eventRepository,
+        private PrefectureRepository $prefectureRepository
+    ) {}
     /**
      * アニメコン一覧ページ
      */
@@ -57,17 +64,7 @@ class AnimeController extends Controller
             ->firstOrFail();
 
         // 同じエリアの他のイベント
-        $relatedEvents = Event::with(['area.prefecture', 'eventType'])
-            ->where('area_id', $event->area_id)
-            ->where('id', '!=', $event->id)
-            ->whereHas('eventType', function ($q) {
-                $q->where('slug', 'anime');
-            })
-            ->where('status', 'published')
-            ->where('event_date', '>=', now())
-            ->orderBy('event_date', 'asc')
-            ->limit(3)
-            ->get();
+        $relatedEvents = $this->eventRepository->getRelatedEvents($event, 3);
 
         return view('anime.show', [
             'event' => $event,

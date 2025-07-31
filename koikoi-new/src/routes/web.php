@@ -49,7 +49,6 @@ Route::prefix('entry')->middleware('throttle:60,1')->name('entry.')->group(funct
     Route::get('/{event}', [RegistrationController::class, 'show'])->name('show');
     Route::post('/{event}/confirm', [RegistrationController::class, 'confirm'])->name('confirm');
     Route::post('/{event}/complete', [RegistrationController::class, 'complete'])->name('complete');
-    Route::get('/thanks/{registration}', [RegistrationController::class, 'thanks'])->name('thanks');
 });
 
 // 静的ページ

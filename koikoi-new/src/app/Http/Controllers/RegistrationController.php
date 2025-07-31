@@ -111,76 +111,32 @@ class RegistrationController extends Controller
         $registrationData = Session::get('registration_data');
         
         if (!$registrationData || $registrationData['event_id'] != $event->id) {
-            return redirect()->route('entry.show', $event)->with('error', 'セッションが切れました。もう一度お申し込みください。');
+            return redirect()->route('event.show', ['eventType' => $event->eventType->slug, 'slug' => $event->slug])
+                ->with('error', 'セッションが切れました。もう一度お申し込みください。');
         }
 
-        // CSRF保護は既にミドルウェアで実施済み
-
-        DB::beginTransaction();
-        
         try {
-            // 申込番号生成
-            $registrationNumber = $this->generateRegistrationNumber($event);
+            // サービスクラスで申込処理
+            $customer = $this->eventService->registerCustomer($event, $registrationData);
             
-            // 顧客情報登録
-            $customer = Customer::create([
-                'event_id' => $event->id,
-                'registration_number' => $registrationNumber,
-                'name' => $registrationData['name'],
-                'name_kana' => $registrationData['name_kana'],
-                'email' => $registrationData['email'],
-                'phone' => $registrationData['phone'],
-                'gender' => $registrationData['gender'],
-                'birthdate' => $registrationData['birthdate'],
-                'postal_code' => $registrationData['postal_code'],
-                'address' => $registrationData['address'],
-                'notes' => $registrationData['notes'] ?? null,
-                'status' => 'registered', // 決済なしなので即登録完了
-                'registered_at' => now(),
-            ]);
-            
-            // イベントの参加人数を更新
-            if ($registrationData['gender'] === 'male') {
-                $event->increment('registered_male');
-            } else {
-                $event->increment('registered_female');
-            }
-            
-            DB::commit();
-            
+            // 確認メール送信
+            $this->customerService->sendConfirmationEmail($customer);
+
             // セッションクリア
             Session::forget('registration_data');
             
-            // メール送信（将来実装）
-            // Mail::to($customer->email)->send(new RegistrationComplete($customer, $event));
-            
-            return redirect()->route('entry.thanks', ['registration' => $customer->registration_number]);
+            return view('registration.thanks', [
+                'event' => $event,
+                'customer' => $customer,
+                'theme' => $event->eventType->slug
+            ]);
             
         } catch (\Exception $e) {
-            DB::rollback();
             \Log::error('Registration error: ' . $e->getMessage());
-            return redirect()->route('entry.show', $event)->with('error', '申込処理中にエラーが発生しました。');
+            return redirect()->route('event.show', ['eventType' => $event->eventType->slug, 'slug' => $event->slug])
+                ->with('error', '申込処理中にエラーが発生しました。');
         }
     }
 
-    /**
-     * 申込完了画面
-     */
-    public function thanks($registrationNumber)
-    {
-        $customer = Customer::where('registration_number', $registrationNumber)->first();
-        
-        if (!$customer) {
-            return redirect()->route('home')->with('error', '申込情報が見つかりません。');
-        }
-        
-        $event = Event::with(['area.prefecture', 'eventType'])->find($customer->event_id);
-        
-        return view('registration.thanks', [
-            'customer' => $customer,
-            'event' => $event,
-            'theme' => $event->eventType->slug
-        ]);
-    }
 
 }

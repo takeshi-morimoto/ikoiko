@@ -45,4 +45,68 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
+    /**
+     * スタッフプロフィール
+     */
+    public function staffProfile()
+    {
+        return $this->hasOne(StaffProfile::class);
+    }
+    
+    /**
+     * スタッフシフト
+     */
+    public function shifts()
+    {
+        return $this->hasMany(StaffShift::class, 'staff_id');
+    }
+    
+    /**
+     * シフト希望
+     */
+    public function shiftRequests()
+    {
+        return $this->hasMany(ShiftRequest::class, 'staff_id');
+    }
+    
+    /**
+     * 勤務記録
+     */
+    public function workRecords()
+    {
+        return $this->hasMany(StaffWorkRecord::class, 'staff_id');
+    }
+    
+    /**
+     * スキル評価
+     */
+    public function skillEvaluations()
+    {
+        return $this->hasMany(StaffSkillEvaluation::class, 'staff_id');
+    }
+    
+    /**
+     * イベント役割
+     */
+    public function eventRoles()
+    {
+        return $this->hasMany(EventRole::class, 'staff_id');
+    }
+    
+    /**
+     * スタッフかどうかを判定
+     */
+    public function isStaff()
+    {
+        return $this->staffProfile()->exists();
+    }
+    
+    /**
+     * アクティブなスタッフかどうかを判定
+     */
+    public function isActiveStaff()
+    {
+        return $this->staffProfile()->where('is_active', true)->exists();
+    }
 }

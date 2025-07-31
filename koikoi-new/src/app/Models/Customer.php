@@ -48,6 +48,21 @@ class Customer extends Model
         return $this->belongsTo(Event::class);
     }
     
+    public function specialNotes()
+    {
+        return $this->hasMany(CustomerSpecialNote::class);
+    }
+    
+    public function seating()
+    {
+        return $this->hasOne(EventSeating::class);
+    }
+    
+    public function analytics()
+    {
+        return $this->hasOne(CustomerAnalytics::class);
+    }
+    
     // スコープ
     public function scopeRegistered($query)
     {

@@ -33,14 +33,16 @@ COPY php.ini /usr/local/etc/php/conf.d/custom.ini
 # 作業ディレクトリの設定
 WORKDIR /var/www/html
 
-# ユーザーとグループの作成
-RUN groupadd -g 1000 www && useradd -u 1000 -ms /bin/bash -g www www
+# エントリーポイントスクリプトをコピー
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
-# 権限の設定
-RUN chown -R www:www /var/www/html
-
-USER www
+# www-dataユーザーのUIDとGIDを1000に変更（ホストユーザーと一致させる）
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
 EXPOSE 9000
 
-CMD ["php-fpm"]
+# rootユーザーでエントリーポイントを実行（権限設定のため）
+USER root
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]

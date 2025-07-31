@@ -143,6 +143,60 @@ class Event extends Model
         return $this->hasMany(Customer::class);
     }
 
+    /**
+     * イベント運営関連のリレーション
+     */
+    public function schedules()
+    {
+        return $this->hasMany(EventSchedule::class)->orderBy('time');
+    }
+
+    public function equipment()
+    {
+        return $this->hasMany(EventEquipment::class);
+    }
+
+    public function roles()
+    {
+        return $this->hasMany(EventRole::class);
+    }
+
+    public function seating()
+    {
+        return $this->hasMany(EventSeating::class);
+    }
+
+    public function checklist()
+    {
+        return $this->hasMany(EventChecklist::class);
+    }
+
+    public function specialNotes()
+    {
+        return $this->hasMany(CustomerSpecialNote::class);
+    }
+
+    /**
+     * 分析関連のリレーション
+     */
+    public function revenueSummary()
+    {
+        return $this->hasOne(EventRevenueSummary::class);
+    }
+
+    public function participantAnalytics()
+    {
+        return $this->hasOne(EventParticipantAnalytics::class);
+    }
+
+    /**
+     * スタッフシフト
+     */
+    public function staffShifts()
+    {
+        return $this->hasMany(StaffShift::class);
+    }
+
     // 男性の残席数を取得
     public function getRemainingMaleSeatsAttribute()
     {

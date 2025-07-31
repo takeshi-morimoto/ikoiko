@@ -80,10 +80,57 @@ Route::get('/area/{prefecture}/{area}', [EventController::class, 'byArea'])->nam
 // 管理画面（簡易認証）
 Route::prefix('admin')->name('admin.')->middleware(['auth.basic'])->group(function () {
     Route::get('/', function () {
-        return redirect()->route('admin.events.index');
+        return redirect()->route('admin.dashboard');
     })->name('index');
     
+    // ダッシュボード
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+    
+    // イベント管理
     Route::prefix('events')->name('events.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\EventController::class, 'index'])->name('index');
+    });
+    
+    // イベント運営管理
+    Route::prefix('operations')->name('operations.')->group(function () {
+        Route::get('/{event}', [App\Http\Controllers\Admin\EventOperationController::class, 'index'])->name('index');
+        Route::get('/{event}/schedules', [App\Http\Controllers\Admin\EventOperationController::class, 'schedules'])->name('schedules');
+        Route::post('/{event}/schedules', [App\Http\Controllers\Admin\EventOperationController::class, 'storeSchedule'])->name('schedules.store');
+        Route::get('/{event}/equipment', [App\Http\Controllers\Admin\EventOperationController::class, 'equipment'])->name('equipment');
+        Route::patch('/{event}/equipment/{equipment}', [App\Http\Controllers\Admin\EventOperationController::class, 'updateEquipmentStatus'])->name('equipment.update');
+        Route::get('/{event}/roles', [App\Http\Controllers\Admin\EventOperationController::class, 'roles'])->name('roles');
+        Route::get('/{event}/seating', [App\Http\Controllers\Admin\EventOperationController::class, 'seating'])->name('seating');
+        Route::post('/{event}/seating/auto-assign', [App\Http\Controllers\Admin\EventOperationController::class, 'autoAssignSeating'])->name('seating.auto-assign');
+        Route::get('/{event}/checklist', [App\Http\Controllers\Admin\EventOperationController::class, 'checklist'])->name('checklist');
+        Route::patch('/{event}/checklist/{item}', [App\Http\Controllers\Admin\EventOperationController::class, 'completeChecklistItem'])->name('checklist.complete');
+        Route::get('/{event}/special-notes', [App\Http\Controllers\Admin\EventOperationController::class, 'specialNotes'])->name('special-notes');
+    });
+    
+    // 分析・レポート
+    Route::prefix('analytics')->name('analytics.')->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Admin\AnalyticsController::class, 'dashboard'])->name('dashboard');
+        Route::get('/events', [App\Http\Controllers\Admin\AnalyticsController::class, 'events'])->name('events');
+        Route::get('/customers', [App\Http\Controllers\Admin\AnalyticsController::class, 'customers'])->name('customers');
+        Route::get('/revenue', [App\Http\Controllers\Admin\AnalyticsController::class, 'revenue'])->name('revenue');
+        Route::post('/generate-report', [App\Http\Controllers\Admin\AnalyticsController::class, 'generateReport'])->name('generate-report');
+        Route::post('/update', [App\Http\Controllers\Admin\AnalyticsController::class, 'updateAnalytics'])->name('update');
+    });
+    
+    // スタッフ管理
+    Route::prefix('staff')->name('staff.')->group(function () {
+        Route::get('/', [App\Http\Controllers\Admin\StaffController::class, 'index'])->name('index');
+        Route::get('/{staff}', [App\Http\Controllers\Admin\StaffController::class, 'show'])->name('show');
+        Route::get('/shifts', [App\Http\Controllers\Admin\StaffController::class, 'shifts'])->name('shifts');
+        Route::post('/shifts', [App\Http\Controllers\Admin\StaffController::class, 'storeShift'])->name('shifts.store');
+        Route::get('/shift-requests', [App\Http\Controllers\Admin\StaffController::class, 'shiftRequests'])->name('shift-requests');
+        Route::patch('/shift-requests/{request}/approve', [App\Http\Controllers\Admin\StaffController::class, 'approveShiftRequest'])->name('shift-requests.approve');
+        Route::get('/work-records', [App\Http\Controllers\Admin\StaffController::class, 'workRecords'])->name('work-records');
+        Route::post('/work-records', [App\Http\Controllers\Admin\StaffController::class, 'storeWorkRecord'])->name('work-records.store');
+        Route::get('/{staff}/skill-evaluations', [App\Http\Controllers\Admin\StaffController::class, 'skillEvaluations'])->name('skill-evaluations');
+        Route::post('/{staff}/skill-evaluations', [App\Http\Controllers\Admin\StaffController::class, 'storeSkillEvaluation'])->name('skill-evaluations.store');
+        Route::get('/shift-templates', [App\Http\Controllers\Admin\StaffController::class, 'shiftTemplates'])->name('shift-templates');
+        Route::post('/events/{event}/apply-template', [App\Http\Controllers\Admin\StaffController::class, 'applyTemplate'])->name('apply-template');
     });
 });

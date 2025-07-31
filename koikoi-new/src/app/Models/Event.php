@@ -10,6 +10,88 @@ class Event extends Model
 {
     use HasFactory;
 
+    /**
+     * 公開中のイベントのみ取得
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('status', 'published')
+                     ->where('event_date', '>=', now());
+    }
+
+    /**
+     * イベントタイプで絞り込み
+     */
+    public function scopeOfType($query, string $type)
+    {
+        return $query->whereHas('eventType', function ($q) use ($type) {
+            $q->where('slug', $type);
+        });
+    }
+
+    /**
+     * 都道府県で絞り込み
+     */
+    public function scopeInPrefecture($query, string $prefectureCode)
+    {
+        return $query->whereHas('area.prefecture', function ($q) use ($prefectureCode) {
+            $q->where('code_en', $prefectureCode);
+        });
+    }
+
+    /**
+     * 月で絞り込み
+     */
+    public function scopeInMonth($query, int $month)
+    {
+        return $query->whereMonth('event_date', $month);
+    }
+
+    /**
+     * 年齢範囲で絞り込み
+     */
+    public function scopeForAge($query, int $age)
+    {
+        return $query->where(function ($q) use ($age) {
+            $q->where(function ($q2) use ($age) {
+                $q2->where('age_min_male', '<=', $age)
+                   ->where('age_max_male', '>=', $age);
+            })->orWhere(function ($q2) use ($age) {
+                $q2->where('age_min_female', '<=', $age)
+                   ->where('age_max_female', '>=', $age);
+            });
+        });
+    }
+
+    /**
+     * 価格範囲で絞り込み
+     */
+    public function scopeWithinPrice($query, int $maxPrice)
+    {
+        return $query->where(function ($q) use ($maxPrice) {
+            $q->where('price_male', '<=', $maxPrice)
+              ->orWhere('price_female', '<=', $maxPrice);
+        });
+    }
+
+    /**
+     * 検索キーワードで絞り込み
+     */
+    public function scopeSearch($query, string $keyword)
+    {
+        return $query->where(function ($q) use ($keyword) {
+            $q->where('title', 'like', "%{$keyword}%")
+              ->orWhere('description', 'like', "%{$keyword}%")
+              ->orWhere('venue_name', 'like', "%{$keyword}%")
+              ->orWhereHas('area', function ($q2) use ($keyword) {
+                  $q2->where('name', 'like', "%{$keyword}%");
+              })
+              ->orWhereHas('area.prefecture', function ($q2) use ($keyword) {
+                  $q2->where('name', 'like', "%{$keyword}%");
+              });
+        });
+    }
+
     protected $fillable = [
         'event_code', 'slug', 'title', 'event_type_id', 'area_id',
         'event_date', 'day_of_week', 'start_time', 'end_time',

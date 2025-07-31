@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use App\View\Composers\EventComposer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // ビューコンポーザーの登録
+        View::composer([
+            'anime.index',
+            'machi.index',
+            'events.index'
+        ], EventComposer::class);
     }
 }

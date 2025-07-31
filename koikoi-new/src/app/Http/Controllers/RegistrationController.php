@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Customer;
+use App\Http\Requests\EventRegistrationRequest;
+use App\Services\EventService;
+use App\Services\CustomerService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -11,6 +14,10 @@ use Illuminate\Support\Str;
 
 class RegistrationController extends Controller
 {
+    public function __construct(
+        private EventService $eventService,
+        private CustomerService $customerService
+    ) {}
     /**
      * 申込フォーム表示
      */
@@ -52,60 +59,23 @@ class RegistrationController extends Controller
     /**
      * 申込内容確認
      */
-    public function confirm(Event $event, Request $request)
+    public function confirm(Event $event, EventRegistrationRequest $request)
     {
-        $gender = $request->input('gender');
-        
-        // バリデーション
-        $rules = [
-            'gender' => 'required|in:male,female',
-            'name' => 'required|string|max:100',
-            'name_kana' => 'required|string|max:100|regex:/^[ァ-ヶー]+$/u',
-            'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:20|regex:/^[0-9-]+$/',
-            'birth_date' => 'required|date|before:today|after:' . now()->subYears(60)->format('Y-m-d'),
-            'postal_code' => 'required|string|size:7|regex:/^[0-9]+$/',
-            'prefecture' => 'required|string|max:10',
-            'city' => 'required|string|max:100',
-            'address' => 'required|string|max:255',
-            'emergency_contact' => 'nullable|string|max:20',
-            'emergency_name' => 'nullable|string|max:100',
-            'comment' => 'nullable|string|max:500',
-            'terms' => 'required|accepted'
-        ];
-
-        $messages = [
-            'name.required' => 'お名前を入力してください。',
-            'name_kana.required' => 'お名前（カナ）を入力してください。',
-            'name_kana.regex' => 'お名前（カナ）は全角カタカナで入力してください。',
-            'email.required' => 'メールアドレスを入力してください。',
-            'email.email' => '有効なメールアドレスを入力してください。',
-            'phone.required' => '電話番号を入力してください。',
-            'phone.regex' => '電話番号は半角数字とハイフンで入力してください。',
-            'birth_date.required' => '生年月日を入力してください。',
-            'birth_date.before' => '有効な生年月日を入力してください。',
-            'postal_code.required' => '郵便番号を入力してください。',
-            'postal_code.size' => '郵便番号は7桁で入力してください。',
-            'postal_code.regex' => '郵便番号は半角数字で入力してください。',
-            'prefecture.required' => '都道府県を選択してください。',
-            'city.required' => '市区町村を入力してください。',
-            'address.required' => '番地を入力してください。',
-            'terms.accepted' => '利用規約に同意していただく必要があります。'
-        ];
-
-        $validatedData = $request->validate($rules, $messages);
+        // バリデーション済みデータ取得
+        $validatedData = $request->validated();
+        $gender = $validatedData['gender'];
 
         // 年齢チェック
-        $birthDate = new \DateTime($validatedData['birth_date']);
+        $birthDate = new \DateTime($validatedData['birthdate']);
         $age = $birthDate->diff(new \DateTime())->y;
         
         if ($gender === 'male') {
             if ($age < $event->age_min_male || $age > $event->age_max_male) {
-                return back()->withErrors(['birth_date' => "このイベントの男性参加条件は{$event->age_min_male}歳〜{$event->age_max_male}歳です。"])->withInput();
+                return back()->withErrors(['birthdate' => "このイベントの男性参加条件は{$event->age_min_male}歳〜{$event->age_max_male}歳です。"])->withInput();
             }
         } else {
             if ($age < $event->age_min_female || $age > $event->age_max_female) {
-                return back()->withErrors(['birth_date' => "このイベントの女性参加条件は{$event->age_min_female}歳〜{$event->age_max_female}歳です。"])->withInput();
+                return back()->withErrors(['birthdate' => "このイベントの女性参加条件は{$event->age_min_female}歳〜{$event->age_max_female}歳です。"])->withInput();
             }
         }
 
@@ -161,15 +131,10 @@ class RegistrationController extends Controller
                 'email' => $registrationData['email'],
                 'phone' => $registrationData['phone'],
                 'gender' => $registrationData['gender'],
-                'birth_date' => $registrationData['birth_date'],
-                'age' => $registrationData['age'],
+                'birthdate' => $registrationData['birthdate'],
                 'postal_code' => $registrationData['postal_code'],
-                'prefecture' => $registrationData['prefecture'],
-                'city' => $registrationData['city'],
                 'address' => $registrationData['address'],
-                'emergency_contact' => $registrationData['emergency_contact'] ?? null,
-                'emergency_name' => $registrationData['emergency_name'] ?? null,
-                'comment' => $registrationData['comment'] ?? null,
+                'notes' => $registrationData['notes'] ?? null,
                 'status' => 'registered', // 決済なしなので即登録完了
                 'registered_at' => now(),
             ]);
@@ -218,15 +183,4 @@ class RegistrationController extends Controller
         ]);
     }
 
-    /**
-     * 申込番号生成
-     */
-    private function generateRegistrationNumber(Event $event)
-    {
-        $prefix = strtoupper(substr($event->eventType->slug, 0, 1));
-        $timestamp = now()->format('ymdHis');
-        $random = str_pad(rand(0, 999), 3, '0', STR_PAD_LEFT);
-        
-        return "{$prefix}{$timestamp}{$random}";
-    }
 }

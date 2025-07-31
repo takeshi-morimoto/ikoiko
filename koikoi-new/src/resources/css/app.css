@@ -1,0 +1,632 @@
+@import 'tailwindcss';
+
+/* カスタムフォント */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* カスタムプロパティ */
+:root {
+    --color-anime-primary: #FF6B6B;
+    --color-anime-secondary: #FFE0E0;
+    --color-machi-primary: #4ECDC4;
+    --color-machi-secondary: #E0F8F7;
+    --color-text-primary: #2C3E50;
+    --color-text-secondary: #7F8C8D;
+    --color-border: #E1E8ED;
+}
+
+@theme {
+    --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+    
+    --color-anime-50: #fff5f5;
+    --color-anime-100: #ffe0e0;
+    --color-anime-500: #ff6b6b;
+    --color-anime-600: #ff5252;
+    
+    --color-machi-50: #e0f8f7;
+    --color-machi-100: #c1f1ed;
+    --color-machi-500: #4ecdc4;
+    --color-machi-600: #45b7aa;
+}
+
+/* ベーススタイル */
+body {
+    @apply text-gray-800 leading-relaxed;
+}
+
+/* ヘッダー */
+.site-header {
+    @apply bg-white border-b border-gray-200 sticky top-0 z-50;
+}
+
+.header-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.header-content {
+    @apply flex items-center justify-between h-16 lg:h-20;
+}
+
+.logo {
+    @apply flex items-center;
+}
+
+.main-nav {
+    @apply hidden lg:flex items-center space-x-8;
+}
+
+.main-nav ul {
+    @apply flex items-center space-x-8 list-none m-0 p-0;
+}
+
+.main-nav li {
+    @apply flex;
+}
+
+.main-nav a {
+    @apply text-gray-700 hover:text-gray-900 font-medium transition-colors;
+}
+
+.nav-anime:hover {
+    color: var(--color-anime-primary);
+}
+
+.nav-machi:hover {
+    color: var(--color-machi-primary);
+}
+
+.header-actions {
+    @apply hidden lg:flex items-center space-x-4;
+}
+
+/* ボタン */
+.btn {
+    @apply inline-block px-6 py-3 rounded-full font-medium transition-all duration-300 text-center;
+}
+
+.btn-anime {
+    @apply bg-red-400 text-white hover:bg-red-500 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-machi {
+    @apply bg-teal-400 text-white hover:bg-teal-500 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-outline-anime {
+    @apply border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white;
+}
+
+.btn-outline-machi {
+    @apply border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white;
+}
+
+.btn-primary {
+    @apply bg-purple-600 text-white hover:bg-purple-700;
+}
+
+.btn-large {
+    @apply px-8 py-4 text-lg;
+}
+
+/* ヒーローセクション */
+.hero-section {
+    @apply bg-gradient-to-br from-purple-600 to-purple-800 text-white py-16 lg:py-24;
+}
+
+.hero-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
+}
+
+.hero-title {
+    @apply text-3xl lg:text-5xl font-bold mb-4;
+}
+
+.hero-subtitle {
+    @apply text-lg lg:text-xl opacity-90 mb-12;
+}
+
+/* サービスカード */
+.service-cards {
+    @apply grid md:grid-cols-2 gap-8 lg:gap-12 mt-12;
+}
+
+.service-card {
+    @apply bg-white rounded-2xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 text-gray-800;
+}
+
+.anime-card {
+    @apply border-t-4 border-red-400;
+}
+
+.machi-card {
+    @apply border-t-4 border-teal-400;
+}
+
+.card-icon {
+    @apply mb-6;
+}
+
+.service-card h2 {
+    @apply text-2xl lg:text-3xl font-bold mb-4;
+}
+
+.feature-list {
+    @apply space-y-3 my-6 text-left;
+}
+
+.feature-list li {
+    @apply pl-6 relative;
+}
+
+.feature-list li::before {
+    @apply absolute left-0 top-1 text-green-500;
+    content: "✓";
+}
+
+/* 統計セクション */
+.stats-section {
+    @apply bg-gray-50 py-16;
+}
+
+.stats-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center;
+}
+
+.stat-number {
+    @apply text-4xl lg:text-5xl font-bold text-gray-800 mb-2;
+}
+
+.stat-label {
+    @apply text-gray-600;
+}
+
+/* イベントセクション */
+.upcoming-events {
+    @apply py-16 lg:py-20;
+}
+
+.anime-events {
+    background-color: var(--color-anime-secondary);
+}
+
+.machi-events {
+    background-color: var(--color-machi-secondary);
+}
+
+.section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+    @apply text-3xl lg:text-4xl font-bold text-center mb-12 flex items-center justify-center gap-3;
+}
+
+/* ページヘッダー */
+.page-header {
+    @apply py-16 lg:py-20 text-white text-center;
+}
+
+.anime-header {
+    @apply bg-gradient-to-r from-red-400 to-pink-400;
+}
+
+.machi-header {
+    @apply bg-gradient-to-r from-teal-400 to-green-400;
+}
+
+.events-header {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600;
+}
+
+.page-header-container {
+    @apply max-w-4xl mx-auto px-4;
+}
+
+.page-title {
+    @apply text-3xl lg:text-5xl font-bold mb-4;
+}
+
+.page-subtitle {
+    @apply text-lg lg:text-xl opacity-90;
+}
+
+/* フィルターセクション */
+.filter-section {
+    @apply bg-gray-50 py-8;
+}
+
+.filter-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.filter-form {
+    @apply flex flex-wrap items-end gap-4;
+}
+
+.filter-group {
+    @apply flex flex-col gap-2;
+}
+
+.filter-group label {
+    @apply text-sm font-medium text-gray-700;
+}
+
+.filter-select {
+    @apply px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500;
+}
+
+.filter-reset {
+    @apply text-purple-600 hover:text-purple-700 font-medium px-4 py-2;
+}
+
+/* 検索セクション */
+.search-section {
+    @apply bg-gray-100 py-8;
+}
+
+.search-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-4 items-center justify-between;
+}
+
+.search-form {
+    @apply flex gap-2 flex-1 max-w-2xl;
+}
+
+.search-input {
+    @apply flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500;
+}
+
+.search-button {
+    @apply bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors font-medium;
+}
+
+.search-links {
+    @apply flex gap-4;
+}
+
+.calendar-link {
+    @apply text-purple-600 hover:text-purple-700 font-medium flex items-center gap-2;
+}
+
+/* イベントグリッド */
+.event-grid {
+    @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10;
+}
+
+.event-card {
+    @apply bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row;
+}
+
+.event-date {
+    @apply text-white p-6 text-center flex flex-col justify-center min-w-[100px];
+}
+
+.anime-theme .event-date {
+    background-color: var(--color-anime-primary);
+}
+
+.machi-theme .event-date {
+    background-color: var(--color-machi-primary);
+}
+
+.event-content {
+    @apply p-6 flex-1;
+}
+
+.event-title {
+    @apply text-xl font-bold mb-4;
+}
+
+.event-title a {
+    @apply text-gray-800 hover:text-gray-600 transition-colors;
+}
+
+.event-info {
+    @apply flex flex-wrap gap-4 mb-4 text-sm text-gray-600;
+}
+
+.event-capacity {
+    @apply flex gap-6 mb-4;
+}
+
+.capacity-item {
+    @apply text-sm;
+}
+
+.event-price {
+    @apply text-sm text-gray-600;
+}
+
+/* CTAセクション */
+.cta-section {
+    @apply bg-gradient-to-r from-purple-600 to-pink-600 text-white py-16 text-center;
+}
+
+.cta-container {
+    @apply max-w-3xl mx-auto px-4;
+}
+
+.cta-section h2 {
+    @apply text-3xl lg:text-4xl font-bold mb-4;
+}
+
+.cta-section p {
+    @apply text-lg mb-8 opacity-90;
+}
+
+/* イベントセクション */
+.events-section {
+    @apply py-12 lg:py-16;
+}
+
+.section-header {
+    @apply flex items-center justify-between mb-8;
+}
+
+.result-count {
+    @apply text-lg font-normal text-gray-600 ml-3;
+}
+
+/* フィーチャーセクション */
+.features-section {
+    @apply py-16 bg-gray-50;
+}
+
+.features-grid {
+    @apply grid md:grid-cols-3 gap-8 mt-12;
+}
+
+.feature-card {
+    @apply bg-white p-8 rounded-xl text-center;
+}
+
+.feature-icon {
+    @apply text-5xl mb-4;
+}
+
+.feature-title {
+    @apply text-xl font-bold mb-3;
+}
+
+.feature-text {
+    @apply text-gray-600;
+}
+
+/* CTAバリエーション */
+.anime-cta {
+    @apply bg-gradient-to-r from-red-400 to-pink-400;
+}
+
+.machi-cta {
+    @apply bg-gradient-to-r from-teal-400 to-green-400;
+}
+
+.cta-buttons {
+    @apply flex flex-wrap gap-4 justify-center;
+}
+
+.btn-white {
+    @apply bg-white text-purple-600 hover:bg-gray-100;
+}
+
+.btn-block {
+    @apply w-full text-center;
+}
+
+/* イベント詳細ページ */
+.event-detail-header {
+    @apply py-12 lg:py-16 text-white;
+}
+
+.anime-header {
+    @apply bg-gradient-to-r from-red-400 to-pink-400;
+}
+
+.breadcrumb {
+    @apply text-sm mb-4 opacity-90;
+}
+
+.breadcrumb a {
+    @apply hover:underline;
+}
+
+.event-detail-title {
+    @apply text-2xl lg:text-4xl font-bold mb-4;
+}
+
+.event-detail-subtitle {
+    @apply text-lg opacity-90 mb-4;
+}
+
+.event-detail-meta {
+    @apply flex flex-wrap gap-3;
+}
+
+.event-type-badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium;
+}
+
+.event-type-badge.anime {
+    @apply bg-white text-red-500;
+}
+
+.event-type-badge.machi {
+    @apply bg-white text-teal-500;
+}
+
+.status-badge {
+    @apply px-4 py-2 rounded-full text-sm font-medium;
+}
+
+.status-badge.ended {
+    @apply bg-gray-600 text-white;
+}
+
+.status-badge.closed {
+    @apply bg-gray-500 text-white;
+}
+
+.status-badge.urgent {
+    @apply bg-red-600 text-white;
+}
+
+.event-detail-section {
+    @apply py-12;
+}
+
+.event-detail-grid {
+    @apply grid lg:grid-cols-3 gap-8;
+}
+
+.event-detail-main {
+    @apply lg:col-span-2 space-y-8;
+}
+
+.detail-card {
+    @apply bg-white rounded-lg shadow-md p-8;
+}
+
+.detail-card-title {
+    @apply text-xl font-bold mb-6 pb-3 border-b;
+}
+
+.detail-list {
+    @apply space-y-4;
+}
+
+.detail-list dt {
+    @apply font-medium text-gray-700;
+}
+
+.detail-list dd {
+    @apply text-gray-900 mb-4;
+}
+
+.prose {
+    @apply text-gray-700 leading-relaxed;
+}
+
+.event-detail-sidebar {
+    @apply space-y-6;
+}
+
+.sidebar-card {
+    @apply bg-white rounded-lg shadow-md p-6 sticky top-24;
+}
+
+.sidebar-card-title {
+    @apply font-bold mb-4;
+}
+
+.price-info {
+    @apply space-y-3;
+}
+
+.price-item {
+    @apply flex justify-between items-center;
+}
+
+.price-item .gender {
+    @apply font-medium;
+}
+
+.price-item .amount {
+    @apply text-xl font-bold;
+}
+
+.early-price {
+    @apply text-sm text-green-600 block;
+}
+
+.capacity-info {
+    @apply space-y-4;
+}
+
+.capacity-header {
+    @apply flex justify-between text-sm mb-2;
+}
+
+.capacity-bar {
+    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+}
+
+.capacity-progress {
+    @apply h-full bg-blue-500 transition-all;
+}
+
+.capacity-progress.female {
+    @apply bg-pink-500;
+}
+
+.capacity-item .remaining {
+    @apply text-sm text-green-600 mt-1;
+}
+
+.capacity-item .full {
+    @apply text-sm text-red-600 mt-1;
+}
+
+.apply-buttons {
+    @apply space-y-3 mt-6;
+}
+
+.related-events-section {
+    @apply py-16 bg-gray-50;
+}
+
+/* フッター */
+.site-footer {
+    @apply bg-gray-800 text-gray-300 pt-16 pb-8;
+}
+
+.footer-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.footer-content {
+    @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-8 mb-12;
+}
+
+.footer-section h3 {
+    @apply text-white font-bold mb-4;
+}
+
+.footer-section ul {
+    @apply space-y-2;
+}
+
+.footer-section a {
+    @apply text-gray-400 hover:text-white transition-colors;
+}
+
+.footer-bottom {
+    @apply text-center pt-8 border-t border-gray-700 text-gray-500;
+}
+
+/* モバイルメニュー */
+.mobile-menu-toggle {
+    @apply lg:hidden p-2;
+}
+
+.mobile-menu-toggle span {
+    @apply block w-6 h-0.5 bg-gray-700 my-1 transition-all;
+}
+
+.mobile-menu {
+    @apply hidden fixed top-16 left-0 right-0 bg-white shadow-lg z-40;
+}
+
+.mobile-menu.active {
+    @apply block;
+}
+
+.mobile-menu nav {
+    @apply p-4;
+}
+
+.mobile-menu ul {
+    @apply space-y-2;
+}
+
+.mobile-menu a {
+    @apply block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded;
+}

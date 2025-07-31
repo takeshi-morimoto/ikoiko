@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./docker/nginx
+    container_name: koikoi_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - php
+    networks:
+      - koikoi-network
+
+  php:
+    build: ./docker/php
+    container_name: koikoi_php
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      - DB_HOST=mysql
+      - REDIS_HOST=redis
+    networks:
+      - koikoi-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: koikoi_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: koikoi_new
+      MYSQL_USER: koikoi_user
+      MYSQL_PASSWORD: koikoi_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - koikoi-network
+
+  redis:
+    image: redis:alpine
+    container_name: koikoi_redis
+    ports:
+      - "6380:6379"
+    networks:
+      - koikoi-network
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: koikoi_mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - koikoi-network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  koikoi-network:
+    driver: bridge

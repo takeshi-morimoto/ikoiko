@@ -77,20 +77,25 @@ Route::get('/{eventType}/{slug}', [EventController::class, 'show'])
 Route::get('/area/{prefecture}', [EventController::class, 'byPrefecture'])->name('area.prefecture');
 Route::get('/area/{prefecture}/{area}', [EventController::class, 'byArea'])->name('area.detail');
 
-// 管理画面（簡易認証）
-Route::prefix('admin')->name('admin.')->middleware(['auth.basic'])->group(function () {
+// 管理画面（一時的に認証無効化）
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', function () {
         return redirect()->route('admin.dashboard');
     })->name('index');
     
     // ダッシュボード
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/api/monthly-revenue', [App\Http\Controllers\Admin\DashboardController::class, 'getMonthlyRevenue'])->name('api.monthly-revenue');
+    Route::post('/api/update-stats', [App\Http\Controllers\Admin\DashboardController::class, 'updateStats'])->name('api.update-stats');
     
     // イベント管理
     Route::prefix('events')->name('events.')->group(function () {
         Route::get('/', [App\Http\Controllers\Admin\EventController::class, 'index'])->name('index');
+        Route::get('/create', [App\Http\Controllers\Admin\EventController::class, 'create'])->name('create');
+        Route::post('/', [App\Http\Controllers\Admin\EventController::class, 'store'])->name('store');
+        Route::get('/{event}/edit', [App\Http\Controllers\Admin\EventController::class, 'edit'])->name('edit');
+        Route::put('/{event}', [App\Http\Controllers\Admin\EventController::class, 'update'])->name('update');
+        Route::delete('/{event}', [App\Http\Controllers\Admin\EventController::class, 'destroy'])->name('destroy');
     });
     
     // イベント運営管理

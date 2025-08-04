@@ -1,0 +1,111 @@
+/**
+ * エラーページ用スタイル
+ */
+
+.error-page {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+/* エラーコード表示 */
+.error-code {
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 1;
+    color: #dee2e6;
+    margin-bottom: 20px;
+}
+
+/* アニメーション */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* アイコンアニメーション */
+.error-icon-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.error-icon-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.error-icon-shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+.error-icon-rotate {
+    animation: rotate 4s linear infinite;
+}
+
+/* ボタンスタイル */
+.error-page .btn {
+    min-width: 150px;
+    padding: 12px 24px;
+    font-weight: 500;
+}
+
+/* 情報ボックス */
+.error-info-box {
+    background: #f8f9fa;
+    border-left: 4px solid var(--bs-primary);
+    padding: 20px;
+    border-radius: 4px;
+    margin: 30px 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .error-code {
+        font-size: 80px;
+    }
+    
+    .error-page h1,
+    .error-page h2 {
+        font-size: 1.5rem;
+    }
+    
+    .error-icon i {
+        font-size: 60px !important;
+    }
+}

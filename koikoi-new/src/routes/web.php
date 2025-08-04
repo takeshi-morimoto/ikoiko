@@ -7,6 +7,7 @@ use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\MachiController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ImageUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,14 @@ Route::get('/{eventType}/{slug}', [EventController::class, 'show'])
 // 地域別ページ（SEO用）
 Route::get('/area/{prefecture}', [EventController::class, 'byPrefecture'])->name('area.prefecture');
 Route::get('/area/{prefecture}/{area}', [EventController::class, 'byArea'])->name('area.detail');
+
+// 画像アップロード関連
+Route::prefix('images')->middleware(['auth.basic'])->group(function () {
+    Route::post('/upload', [ImageUploadController::class, 'upload'])->name('images.upload');
+    Route::post('/bulk-upload', [ImageUploadController::class, 'bulkUpload'])->name('images.bulk-upload');
+    Route::get('/info', [ImageUploadController::class, 'info'])->name('images.info');
+    Route::delete('/delete', [ImageUploadController::class, 'delete'])->name('images.delete');
+});
 
 // 管理画面（一時的に認証無効化）
 Route::prefix('admin')->name('admin.')->group(function () {

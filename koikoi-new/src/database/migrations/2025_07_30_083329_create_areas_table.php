@@ -11,15 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // 都道府県マスタ
-        Schema::create('prefectures', function (Blueprint $table) {
-            $table->id();
-            $table->string('code', 2)->unique(); // 都道府県コード
-            $table->string('name', 10); // 都道府県名
-            $table->integer('display_order')->default(0); // 表示順
-            $table->timestamps();
-        });
-
         // エリアマスタ（地域・会場情報）
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
@@ -43,6 +34,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('areas');
-        Schema::dropIfExists('prefectures');
     }
 };

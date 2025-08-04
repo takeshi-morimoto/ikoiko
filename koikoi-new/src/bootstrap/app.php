@@ -11,8 +11,29 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // グローバルミドルウェア
+        $middleware->append([
+            \App\Http\Middleware\SecurityHeaders::class,
+            \App\Http\Middleware\XssProtection::class,
+        ]);
+        
+        // エイリアス
         $middleware->alias([
             'auth.basic' => \App\Http\Middleware\BasicAuth::class,
+            'security.headers' => \App\Http\Middleware\SecurityHeaders::class,
+            'xss.protection' => \App\Http\Middleware\XssProtection::class,
+            'input.validation' => \App\Http\Middleware\InputValidation::class,
+            'rate.limit' => \App\Http\Middleware\RateLimiting::class,
+        ]);
+        
+        // Web用ミドルウェアグループ
+        $middleware->web(append: [
+            \App\Http\Middleware\SecurityHeaders::class,
+        ]);
+        
+        // API用ミドルウェアグループ
+        $middleware->api(append: [
+            \App\Http\Middleware\RateLimiting::class.':api',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

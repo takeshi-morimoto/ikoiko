@@ -16,12 +16,13 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-// トップページ
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// トップページ（イベント一覧）
+Route::get('/', [EventController::class, 'index'])->name('home');
 
-// 全イベント一覧
-Route::get('/events', [EventController::class, 'index'])->name('events.index');
-Route::get('/events/calendar', [EventController::class, 'calendar'])->name('events.calendar');
+// 旧URLからのリダイレクト（後方互換性）
+Route::get('/events', function () {
+    return redirect()->route('home');
+});
 
 // アニメコン専用セクション
 Route::prefix('anime')->name('anime.')->group(function () {
@@ -37,12 +38,6 @@ Route::prefix('machi')->name('machi.')->group(function () {
     Route::get('/{slug}', [MachiController::class, 'show'])->name('show');
 });
 
-// 謎解きイベント（将来的な拡張用）
-Route::prefix('nazo')->name('nazo.')->group(function () {
-    Route::get('/', function () {
-        return view('coming-soon', ['type' => 'nazo']);
-    })->name('index');
-});
 
 // イベント登録フロー
 Route::prefix('entry')->middleware('throttle:60,1')->name('entry.')->group(function () {
@@ -69,9 +64,12 @@ Route::get('/contact', function () {
 })->name('contact');
 
 // イベント詳細（SEO対応URL）
+Route::get('/event/{slug}', [EventController::class, 'show'])->name('event.show');
+
+// カテゴリ別イベント詳細（後方互換性）
 Route::get('/{eventType}/{slug}', [EventController::class, 'show'])
-    ->name('event.show')
-    ->where('eventType', 'anime|machi|nazo|other');
+    ->name('event.show.legacy')
+    ->where('eventType', 'anime|machi|other');
 
 // 地域別ページ（SEO用）
 Route::get('/area/{prefecture}', [EventController::class, 'byPrefecture'])->name('area.prefecture');

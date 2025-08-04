@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('build/assets/admin-D0mbUumA.css') }}" rel="stylesheet">
     
     @stack('styles')
 </head>
@@ -44,6 +44,13 @@
     <!-- Sidebar -->
     <nav class="admin-sidebar" id="sidebar">
         <ul class="sidebar-nav">
+            <li>
+                <a href="{{ route('home') }}" target="_blank">
+                    <i class="fas fa-home"></i>
+                    サイトを見る
+                </a>
+            </li>
+            
             <li>
                 <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                     <i class="fas fa-tachometer-alt"></i>
@@ -142,8 +149,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('build/assets/admin-CjUbDXxY.js') }}" type="module"></script>
     
     @stack('scripts')
 </body>

@@ -1,0 +1,111 @@
+/**
+ * グラデーションスタイル
+ * ページヘッダーとCTAセクション用
+ */
+
+/* アニメコングラデーション */
+.page-header.anime-header,
+.cta-section.anime-cta {
+    background: var(--anime-gradient) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header.anime-header::before,
+.cta-section.anime-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* 街コングラデーション */
+.page-header.machi-header,
+.cta-section.machi-cta {
+    background: var(--machi-gradient) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header.machi-header::before,
+.cta-section.machi-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* 共通スタイル */
+.page-header {
+    padding: var(--spacing-xl) 0;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.page-header-container {
+    position: relative;
+    z-index: 1;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.page-title {
+    font-size: var(--font-4xl);
+    font-weight: bold;
+    margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+    font-size: var(--font-xl);
+    opacity: 0.9;
+}
+
+/* CTAセクション */
+.cta-section {
+    padding: var(--spacing-xl) 0;
+    color: white;
+    text-align: center;
+}
+
+.cta-container h2 {
+    font-size: var(--font-3xl);
+    font-weight: bold;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-container p {
+    font-size: var(--font-lg);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+/* ボタン */
+.btn-white {
+    background: white;
+    color: var(--anime-primary);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    display: inline-block;
+    transition: all var(--transition-base);
+}
+
+.btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.machi-cta .btn-white {
+    color: var(--machi-primary);
+}

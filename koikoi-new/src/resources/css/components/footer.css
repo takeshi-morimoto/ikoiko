@@ -1,0 +1,20 @@
+/**
+ * フッターコンポーネントスタイル
+ */
+
+.main-footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.main-footer a {
+    color: #BDC3C7;
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.main-footer a:hover {
+    color: white;
+}

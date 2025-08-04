@@ -1,0 +1,63 @@
+/**
+ * CSS変数定義
+ * 一元管理により保守性を向上
+ */
+
+:root {
+    /* アニメコンカラー */
+    --anime-primary: #0575E6;
+    --anime-secondary: #21D4FD;
+    --anime-gradient: linear-gradient(135deg, var(--anime-primary) 0%, var(--anime-secondary) 100%);
+    
+    /* 街コンカラー */
+    --machi-primary: #FA709A;
+    --machi-secondary: #FEE140;
+    --machi-gradient: linear-gradient(135deg, var(--machi-primary) 0%, var(--machi-secondary) 100%);
+    
+    /* 共通カラー */
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #45B7D1;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --bg-light: #F8F9FA;
+    --border-color: #E1E8ED;
+    
+    /* スペーシング */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    
+    /* フォントサイズ */
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 2rem;
+    --font-4xl: 2.5rem;
+    
+    /* レイアウト */
+    --container-max: 1200px;
+    --header-height: 4rem;
+    
+    /* トランジション */
+    --transition-fast: 150ms ease;
+    --transition-base: 300ms ease;
+    --transition-slow: 500ms ease;
+    
+    /* 影 */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+    
+    /* 角丸 */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+}

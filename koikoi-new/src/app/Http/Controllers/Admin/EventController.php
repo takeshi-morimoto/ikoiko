@@ -19,9 +19,9 @@ class EventController extends Controller
         $query = Event::with(['area', 'eventType'])
             ->withCount('customers');
         
-        // 日付フィルタ
-        if ($request->has('date')) {
-            $date = Carbon::parse($request->date);
+        // 日付フィルタ（カレンダーから選択）
+        if ($request->has('filter_date')) {
+            $date = Carbon::parse($request->filter_date);
             $query->whereDate('event_date', $date);
         }
         

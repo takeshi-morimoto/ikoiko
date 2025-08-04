@@ -3,16 +3,13 @@
 /* カスタムフォント */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
-/* カスタムプロパティ */
-:root {
-    --color-anime-primary: #4A90E2;
-    --color-anime-secondary: #E3F2FD;
-    --color-machi-primary: #FF6B6B;
-    --color-machi-secondary: #FFE0E0;
-    --color-text-primary: #2C3E50;
-    --color-text-secondary: #7F8C8D;
-    --color-border: #E1E8ED;
-}
+/* CSS変数とコンポーネント */
+@import './variables.css';
+@import './components/header.css';
+@import './components/gradients.css';
+@import './components/footer.css';
+
+/* カスタムプロパティはvariables.cssに移動 */
 
 @theme {
     --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;

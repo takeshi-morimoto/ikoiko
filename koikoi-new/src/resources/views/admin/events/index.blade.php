@@ -1,236 +1,302 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>イベント管理 - KOIKOI Admin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100">
-    <div class="min-h-screen">
-        <!-- ヘッダー -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center py-6">
-                    <h1 class="text-2xl font-bold text-gray-900">KOIKOI 管理画面</h1>
-                    <a href="{{ route('home') }}" class="text-blue-600 hover:text-blue-500">
-                        サイトに戻る
+@extends('layouts.admin')
+
+@section('title', 'イベント管理')
+
+@section('breadcrumb')
+<x-admin.breadcrumb :items="[
+    ['title' => 'ダッシュボード', 'href' => route('admin.dashboard'), 'icon' => 'fas fa-tachometer-alt'],
+    ['title' => 'イベント管理', 'icon' => 'fas fa-calendar-alt']
+]" />
+@endsection
+
+@section('content')
+<div class="row">
+    <div class="col-lg-3">
+        <!-- カレンダーフィルタ -->
+        <h6 class="mb-3">
+            <i class="fas fa-calendar-alt me-2"></i>日付で絞り込み
+        </h6>
+        <x-calendar-sidebar 
+            :events="$events ?? []"
+            :selected-date="request('filter_date')"
+            :show-months="2" />
+        
+        <!-- フィルタサイドバー -->
+        <x-admin.card title="その他のフィルタ" icon="fas fa-filter">
+            <!-- イベントタイプフィルタ -->
+            <div class="filter-section">
+                <h6 class="mb-3">イベントタイプ</h6>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="anime" id="filterAnime" 
+                           {{ in_array('anime', explode(',', request('types', ''))) || !request('types') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="filterAnime">
+                        アニメコン
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="machi" id="filterMachi"
+                           {{ in_array('machi', explode(',', request('types', ''))) || !request('types') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="filterMachi">
+                        街コン
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="nazo" id="filterNazo"
+                           {{ in_array('nazo', explode(',', request('types', ''))) || !request('types') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="filterNazo">
+                        謎解き
+                    </label>
+                </div>
+            </div>
+            
+            <div class="filter-section mt-4">
+                <h6 class="mb-3">ステータス</h6>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="published" id="filterPublished"
+                           {{ in_array('published', explode(',', request('statuses', 'published'))) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="filterPublished">
+                        公開中
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="draft" id="filterDraft"
+                           {{ in_array('draft', explode(',', request('statuses', ''))) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="filterDraft">
+                        下書き
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" value="cancelled" id="filterCancelled"
+                           {{ in_array('cancelled', explode(',', request('statuses', ''))) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="filterCancelled">
+                        キャンセル
+                    </label>
+                </div>
+            </div>
+            
+            <div class="mt-4">
+                <button class="btn btn-primary btn-sm w-100" onclick="applyFilters()">
+                    <i class="fas fa-search me-2"></i>フィルタを適用
+                </button>
+                <button class="btn btn-outline-secondary btn-sm w-100 mt-2" onclick="resetFilters()">
+                    <i class="fas fa-undo me-2"></i>リセット
+                </button>
+            </div>
+        </x-admin.card>
+    </div>
+    
+    <div class="col-lg-9">
+        <!-- イベントリスト -->
+        <x-admin.card 
+            title="イベント一覧" 
+            icon="fas fa-calendar-alt"
+            :badge="($events->total() ?? 0) . '件'">
+            
+            <x-slot name="headerActions">
+                <a href="{{ route('admin.events.create') ?? '#' }}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-plus me-2"></i>新規作成
+                </a>
+            </x-slot>
+            
+            <!-- 検索バー -->
+            <div class="mb-4">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="イベント名で検索..." 
+                           id="eventSearch" value="{{ request('search') }}">
+                </div>
+            </div>
+            
+            @if(request('filter_date'))
+                <div class="alert alert-info mb-3">
+                    <i class="fas fa-calendar-check me-2"></i>
+                    {{ Carbon\Carbon::parse(request('filter_date'))->format('Y年n月j日') }}のイベントを表示中
+                    <a href="{{ route('admin.events.index') }}" class="float-end">
+                        <i class="fas fa-times"></i>
                     </a>
                 </div>
-            </div>
-        </header>
-
-        <!-- メインコンテンツ -->
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <!-- 統計情報 -->
-            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5 mb-8">
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                    <div class="p-5">
-                        <div class="flex items-center">
-                            <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-500">全イベント</p>
-                                <p class="mt-1 text-3xl font-semibold text-gray-900">{{ $stats['total'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                    <div class="p-5">
-                        <div class="flex items-center">
-                            <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-500">開催予定</p>
-                                <p class="mt-1 text-3xl font-semibold text-green-600">{{ $stats['upcoming'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                    <div class="p-5">
-                        <div class="flex items-center">
-                            <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-500">開催済み</p>
-                                <p class="mt-1 text-3xl font-semibold text-gray-400">{{ $stats['past'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                    <div class="p-5">
-                        <div class="flex items-center">
-                            <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-500">公開中</p>
-                                <p class="mt-1 text-3xl font-semibold text-blue-600">{{ $stats['published'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                    <div class="p-5">
-                        <div class="flex items-center">
-                            <div class="flex-1">
-                                <p class="text-sm font-medium text-gray-500">下書き</p>
-                                <p class="mt-1 text-3xl font-semibold text-yellow-600">{{ $stats['draft'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- フィルター -->
-            <div class="bg-white shadow rounded-lg mb-8">
-                <div class="p-6">
-                    <h2 class="text-lg font-medium text-gray-900 mb-4">フィルター</h2>
-                    <form method="GET" action="{{ route('admin.events.index') }}" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">イベントタイプ</label>
-                            <select name="event_type_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                                <option value="">すべて</option>
-                                @foreach($eventTypes as $type)
-                                    <option value="{{ $type->id }}" {{ request('event_type_id') == $type->id ? 'selected' : '' }}>
-                                        {{ $type->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">都道府県</label>
-                            <select name="prefecture_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                                <option value="">すべて</option>
-                                @foreach($prefectures as $prefecture)
-                                    <option value="{{ $prefecture->id }}" {{ request('prefecture_id') == $prefecture->id ? 'selected' : '' }}>
-                                        {{ $prefecture->name }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">ステータス</label>
-                            <select name="status" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                                <option value="">すべて</option>
-                                <option value="published" {{ request('status') == 'published' ? 'selected' : '' }}>公開</option>
-                                <option value="draft" {{ request('status') == 'draft' ? 'selected' : '' }}>下書き</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">検索</label>
-                            <input type="text" name="search" value="{{ request('search') }}" 
-                                   placeholder="タイトル、コード、会場名"
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">開催日（開始）</label>
-                            <input type="date" name="date_from" value="{{ request('date_from') }}" 
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700">開催日（終了）</label>
-                            <input type="date" name="date_to" value="{{ request('date_to') }}" 
-                                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm">
-                        </div>
-                        
-                        <div class="sm:col-span-2 lg:col-span-4 flex gap-2">
-                            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
-                                フィルター適用
-                            </button>
-                            <a href="{{ route('admin.events.index') }}" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400">
-                                リセット
-                            </a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- イベント一覧 -->
-            <div class="bg-white shadow rounded-lg overflow-hidden">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                イベント情報
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                開催日時
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                参加状況
-                            </th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                ステータス
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach($events as $event)
+            @endif
+            
+            <!-- イベントテーブル -->
+            @if(isset($events) && $events->count() > 0)
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div>
-                                        <div class="text-sm font-medium text-gray-900">
-                                            {{ $event->title }}
-                                        </div>
-                                        <div class="text-sm text-gray-500">
-                                            {{ $event->event_code }} | {{ $event->eventType->name }}
-                                        </div>
-                                        <div class="text-sm text-gray-500">
-                                            {{ $event->area->prefecture->name }} {{ $event->area->name }}
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm text-gray-900">
-                                        {{ $event->event_date->format('Y/m/d') }} ({{ $event->day_of_week }})
-                                    </div>
-                                    <div class="text-sm text-gray-500">
-                                        {{ $event->start_time ? $event->start_time->format('H:i') : '' }} -
-                                        {{ $event->end_time ? $event->end_time->format('H:i') : '' }}
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="text-sm">
-                                        <div>男性: {{ $event->registered_male }}/{{ $event->capacity_male }}</div>
-                                        <div>女性: {{ $event->registered_female }}/{{ $event->capacity_female }}</div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    @if($event->status === 'published')
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                            公開中
-                                        </span>
-                                    @else
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                            下書き
-                                        </span>
-                                    @endif
-                                    
-                                    @if($event->event_date < now())
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
-                                            終了
-                                        </span>
-                                    @elseif(!$event->is_accepting_male && !$event->is_accepting_female)
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                            受付終了
-                                        </span>
-                                    @endif
-                                </td>
+                                <th>イベント名</th>
+                                <th>日時</th>
+                                <th>場所</th>
+                                <th>参加者数</th>
+                                <th>ステータス</th>
+                                <th width="120">アクション</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach($events as $event)
+                                <tr>
+                                    <td>
+                                        <div class="fw-bold">{{ $event->title }}</div>
+                                        <small class="text-muted">{{ $event->eventType->name ?? 'その他' }}</small>
+                                    </td>
+                                    <td>
+                                        <div>{{ $event->event_date->format('Y/m/d') }}</div>
+                                        <small class="text-muted">{{ $event->start_time }} - {{ $event->end_time }}</small>
+                                    </td>
+                                    <td>{{ $event->area->name ?? '未設定' }}</td>
+                                    <td>
+                                        <div class="progress" style="height: 20px;">
+                                            @php
+                                                $capacity = $event->capacity ?? 100;
+                                                $participants = $event->customers_count ?? 0;
+                                                $percentage = $capacity > 0 ? ($participants / $capacity) * 100 : 0;
+                                            @endphp
+                                            <div class="progress-bar" style="width: {{ $percentage }}%">
+                                                {{ $participants }}/{{ $capacity }}
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @php
+                                            $statusColors = [
+                                                'published' => 'success',
+                                                'draft' => 'secondary',
+                                                'cancelled' => 'danger'
+                                            ];
+                                            $statusLabels = [
+                                                'published' => '公開中',
+                                                'draft' => '下書き',
+                                                'cancelled' => 'キャンセル'
+                                            ];
+                                        @endphp
+                                        <span class="badge bg-{{ $statusColors[$event->status] ?? 'secondary' }}">
+                                            {{ $statusLabels[$event->status] ?? $event->status }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="{{ route('admin.events.edit', $event) ?? '#' }}" 
+                                               class="btn btn-outline-primary"
+                                               title="編集">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{{ route('admin.operations.index', $event) ?? '#' }}" 
+                                               class="btn btn-outline-info"
+                                               title="運営管理">
+                                                <i class="fas fa-cogs"></i>
+                                            </a>
+                                            <button class="btn btn-outline-danger"
+                                                    onclick="deleteEvent({{ $event->id }})"
+                                                    title="削除">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
                 
                 <!-- ページネーション -->
-                <div class="bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
+                <div class="d-flex justify-content-center mt-4">
                     {{ $events->appends(request()->query())->links() }}
                 </div>
-            </div>
-        </main>
+            @else
+                <x-admin.empty-state 
+                    title="イベントがありません"
+                    description="新しいイベントを作成してください"
+                    icon="fas fa-calendar-times"
+                    action-text="イベントを作成"
+                    :action-href="route('admin.events.create') ?? '#'" />
+            @endif
+        </x-admin.card>
     </div>
-</body>
-</html>
+</div>
+@endsection
+
+@push('scripts')
+<script>
+    // フィルタを適用
+    function applyFilters() {
+        const url = new URL(window.location);
+        
+        // 既存の日付フィルタは保持
+        const currentDate = url.searchParams.get('filter_date');
+        
+        // イベントタイプ
+        const types = [];
+        if (document.getElementById('filterAnime').checked) types.push('anime');
+        if (document.getElementById('filterMachi').checked) types.push('machi');
+        if (document.getElementById('filterNazo').checked) types.push('nazo');
+        if (types.length > 0) {
+            url.searchParams.set('types', types.join(','));
+        } else {
+            url.searchParams.delete('types');
+        }
+        
+        // ステータス
+        const statuses = [];
+        if (document.getElementById('filterPublished').checked) statuses.push('published');
+        if (document.getElementById('filterDraft').checked) statuses.push('draft');
+        if (document.getElementById('filterCancelled').checked) statuses.push('cancelled');
+        if (statuses.length > 0) {
+            url.searchParams.set('statuses', statuses.join(','));
+        } else {
+            url.searchParams.delete('statuses');
+        }
+        
+        window.location.href = url.toString();
+    }
+    
+    // フィルタをリセット
+    function resetFilters() {
+        const url = new URL(window.location);
+        url.searchParams.delete('filter_date');
+        url.searchParams.delete('types');
+        url.searchParams.delete('statuses');
+        url.searchParams.delete('search');
+        window.location.href = url.toString();
+    }
+    
+    // イベント削除
+    function deleteEvent(id) {
+        if (confirm('このイベントを削除してもよろしいですか？')) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = `/admin/events/${id}`;
+            
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            
+            const csrfInput = document.createElement('input');
+            csrfInput.type = 'hidden';
+            csrfInput.name = '_token';
+            csrfInput.value = csrfToken;
+            
+            const methodInput = document.createElement('input');
+            methodInput.type = 'hidden';
+            methodInput.name = '_method';
+            methodInput.value = 'DELETE';
+            
+            form.appendChild(csrfInput);
+            form.appendChild(methodInput);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    }
+    
+    // 検索機能
+    document.getElementById('eventSearch')?.addEventListener('keyup', function(e) {
+        if (e.key === 'Enter') {
+            const url = new URL(window.location);
+            if (this.value) {
+                url.searchParams.set('search', this.value);
+            } else {
+                url.searchParams.delete('search');
+            }
+            window.location.href = url.toString();
+        }
+    });
+</script>
+@endpush

@@ -1,0 +1,225 @@
+/**
+ * メインスタイルシート
+ * CSS変数とコンポーネントスタイルを定義
+ */
+
+/* CSS変数定義 */
+:root {
+    /* アニメコンカラー */
+    --anime-primary: #0575E6;
+    --anime-secondary: #21D4FD;
+    --anime-gradient: linear-gradient(135deg, var(--anime-primary) 0%, var(--anime-secondary) 100%);
+    
+    /* 街コンカラー */
+    --machi-primary: #FA709A;
+    --machi-secondary: #FEE140;
+    --machi-gradient: linear-gradient(135deg, var(--machi-primary) 0%, var(--machi-secondary) 100%);
+    
+    /* 共通カラー */
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #45B7D1;
+    --text-dark: #2C3E50;
+    --text-light: #7F8C8D;
+    --bg-light: #F8F9FA;
+}
+
+/* ベーススタイル */
+body {
+    font-family: 'Noto Sans JP', 'Segoe UI', sans-serif;
+    color: var(--text-dark);
+}
+
+/* ヘッダー */
+.main-header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex-grow: 1;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        display: none !important;
+    }
+    .navbar-collapse.show {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover:not(.disabled) {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.navbar-nav .nav-link.disabled {
+    color: #dee2e6;
+    padding: 0.5rem 0;
+}
+
+/* グラデーション */
+.page-header.anime-header,
+.cta-section.anime-cta {
+    background: var(--anime-gradient) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header.anime-header::before,
+.cta-section.anime-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.page-header.machi-header,
+.cta-section.machi-cta {
+    background: var(--machi-gradient) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header.machi-header::before,
+.cta-section.machi-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* ページヘッダー */
+.page-header {
+    padding: 4rem 0;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.page-header-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* CTAセクション */
+.cta-section {
+    padding: 4rem 0;
+    color: white;
+    text-align: center;
+}
+
+.cta-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cta-container p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.btn-white {
+    background: white;
+    color: var(--anime-primary);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.machi-cta .btn-white {
+    color: var(--machi-primary);
+}
+
+/* フッター */
+.main-footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.main-footer a {
+    color: #BDC3C7;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    color: white;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item.mx-2 {
+        display: none;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}

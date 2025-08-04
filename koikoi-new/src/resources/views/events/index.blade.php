@@ -11,7 +11,7 @@
     subtitle="アニメコン・街コンなど様々な婚活イベントを開催中" />
 
 <!-- フィルタセクション -->
-<x-filter-section :action="route('events.index')">
+<x-filter-section :action="route('home')">
     <x-filter-group 
         label="イベントタイプ"
         name="type"
@@ -63,11 +63,6 @@
 <section class="search-section">
     <div class="search-container">
         <x-search-form />
-        <div class="search-links">
-            <a href="{{ route('events.calendar') }}" class="calendar-link">
-                <i class="icon-calendar"></i> カレンダー表示
-            </a>
-        </div>
     </div>
 </section>
 

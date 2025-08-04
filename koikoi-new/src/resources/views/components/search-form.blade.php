@@ -1,4 +1,4 @@
-@props(['action' => route('events.index'), 'placeholder' => 'イベント名、エリア、会場名で検索'])
+@props(['action' => route('home'), 'placeholder' => 'イベント名、エリア、会場名で検索'])
 
 <form method="GET" action="{{ $action }}" class="search-form">
     <input type="text" name="q" placeholder="{{ $placeholder }}" 

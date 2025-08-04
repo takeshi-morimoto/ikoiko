@@ -5,10 +5,10 @@
 
 /* カスタムプロパティ */
 :root {
-    --color-anime-primary: #FF6B6B;
-    --color-anime-secondary: #FFE0E0;
-    --color-machi-primary: #4ECDC4;
-    --color-machi-secondary: #E0F8F7;
+    --color-anime-primary: #4A90E2;
+    --color-anime-secondary: #E3F2FD;
+    --color-machi-primary: #FF6B6B;
+    --color-machi-secondary: #FFE0E0;
     --color-text-primary: #2C3E50;
     --color-text-secondary: #7F8C8D;
     --color-border: #E1E8ED;
@@ -17,15 +17,15 @@
 @theme {
     --font-sans: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
     
-    --color-anime-50: #fff5f5;
-    --color-anime-100: #ffe0e0;
-    --color-anime-500: #ff6b6b;
-    --color-anime-600: #ff5252;
+    --color-anime-50: #e3f2fd;
+    --color-anime-100: #bbdefb;
+    --color-anime-500: #4a90e2;
+    --color-anime-600: #2196f3;
     
-    --color-machi-50: #e0f8f7;
-    --color-machi-100: #c1f1ed;
-    --color-machi-500: #4ecdc4;
-    --color-machi-600: #45b7aa;
+    --color-machi-50: #fff5f5;
+    --color-machi-100: #ffe0e0;
+    --color-machi-500: #ff6b6b;
+    --color-machi-600: #ff5252;
 }
 
 /* ベーススタイル */
@@ -84,19 +84,19 @@ body {
 }
 
 .btn-anime {
-    @apply bg-red-400 text-white hover:bg-red-500 hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-blue-500 text-white hover:bg-blue-600 hover:shadow-lg hover:-translate-y-0.5;
 }
 
 .btn-machi {
-    @apply bg-teal-400 text-white hover:bg-teal-500 hover:shadow-lg hover:-translate-y-0.5;
+    @apply bg-red-400 text-white hover:bg-red-500 hover:shadow-lg hover:-translate-y-0.5;
 }
 
 .btn-outline-anime {
-    @apply border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white;
+    @apply border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white;
 }
 
 .btn-outline-machi {
-    @apply border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white;
+    @apply border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-white;
 }
 
 .btn-primary {
@@ -134,11 +134,11 @@ body {
 }
 
 .anime-card {
-    @apply border-t-4 border-red-400;
+    @apply border-t-4 border-blue-500;
 }
 
 .machi-card {
-    @apply border-t-4 border-teal-400;
+    @apply border-t-4 border-red-400;
 }
 
 .card-icon {
@@ -206,11 +206,11 @@ body {
 }
 
 .anime-header {
-    @apply bg-gradient-to-r from-red-400 to-pink-400;
+    @apply bg-gradient-to-r from-blue-400 to-blue-500;
 }
 
 .machi-header {
-    @apply bg-gradient-to-r from-teal-400 to-green-400;
+    @apply bg-gradient-to-r from-red-400 to-pink-400;
 }
 
 .events-header {
@@ -393,11 +393,11 @@ body {
 
 /* CTAバリエーション */
 .anime-cta {
-    @apply bg-gradient-to-r from-red-400 to-pink-400;
+    @apply bg-gradient-to-r from-blue-400 to-blue-500;
 }
 
 .machi-cta {
-    @apply bg-gradient-to-r from-teal-400 to-green-400;
+    @apply bg-gradient-to-r from-red-400 to-pink-400;
 }
 
 .cta-buttons {
@@ -446,11 +446,11 @@ body {
 }
 
 .event-type-badge.anime {
-    @apply bg-white text-red-500;
+    @apply bg-white text-blue-500;
 }
 
 .event-type-badge.machi {
-    @apply bg-white text-teal-500;
+    @apply bg-white text-red-500;
 }
 
 .status-badge {

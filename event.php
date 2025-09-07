@@ -33,9 +33,12 @@ $row = $ps->fetch();
 $content = $row['text'];
 
 // Mixed Content対策: HTTPをHTTPSに置換
-$content = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $content);
-$free_text1 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_text1);
-$free_text2 = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $free_text2);
+$domains = ['koikoi.co.jp', 'www.koikoi.co.jp', 'assets.lolipop.jp', 'js.ad-stir.com', 'adm.shinobi.jp'];
+foreach ($domains as $domain) {
+    $content = str_replace('http://' . $domain, 'https://' . $domain, $content);
+    $free_text1 = str_replace('http://' . $domain, 'https://' . $domain, $free_text1);
+    $free_text2 = str_replace('http://' . $domain, 'https://' . $domain, $free_text2);
+}
 
 ?>
 
@@ -155,6 +158,7 @@ if ($eventData && $eventData['next_date']) {
 	</script>
 
 	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/checkUA.js'></script>
 
 </head>
 <body>

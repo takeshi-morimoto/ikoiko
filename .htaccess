@@ -13,6 +13,13 @@
     RewriteRule ^nazo/?$ /ikoiko/nazo.php [L]
     RewriteRule ^off/?$ /ikoiko/off.php [L]
     
+    # eventディレクトリURLをevent.phpに転送（PATH_INFO付き）
+    RewriteCond %{REQUEST_URI} ^/ikoiko/event/(.+)/$
+    RewriteRule ^event/(.+)/$ /ikoiko/event.php/$1 [L]
+    
+    RewriteCond %{REQUEST_URI} ^/ikoiko/event_m/(.+)/$
+    RewriteRule ^event_m/(.+)/$ /ikoiko/event_m.php/$1 [L]
+    
     # 末尾スラッシュの正規化（event, event_mページ用）
     RewriteCond %{REQUEST_URI} ^/ikoiko/event/[^/]+$
     RewriteRule ^(.*)$ $1/ [L,R=301]

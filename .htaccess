@@ -43,9 +43,10 @@
 </IfModule>
 
 # PHPINIディレクティブ（Lolipop用）
-<IfModule mod_php.c>
-    php_value auto_prepend_file "/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/php.ini"
-</IfModule>
+# 注意: auto_prepend_fileにphp.iniを指定するとその内容が出力されるため無効化
+# <IfModule mod_php.c>
+#     php_value auto_prepend_file "/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/php.ini"
+# </IfModule>
 
 # OPcache設定（PHP 7.0以降）
 <IfModule mod_php7.c>
@@ -75,6 +76,14 @@
     php_flag opcache.save_comments 1
     php_flag opcache.jit 1
     php_value opcache.jit_buffer_size 100M
+</IfModule>
+
+# MIMEタイプの設定
+<IfModule mod_mime.c>
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType application/x-javascript .js
+    AddType text/javascript .js
 </IfModule>
 
 # セキュリティヘッダー

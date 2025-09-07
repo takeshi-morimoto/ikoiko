@@ -97,7 +97,7 @@ function buildPriceTable($price_m, $price_f) {
     <meta name="robots" content="<?php echo $robots_meta; ?>">
     <link rel="canonical" href="<?php echo $canonical_url; ?>" />
 
-    <?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
+    <?php include(__DIR__ . "/widgets/outputHead.php") ?>
     
     <!-- モダンCSS追加 -->
     <link rel="stylesheet" href="/ikoiko/css/modern-base.css">

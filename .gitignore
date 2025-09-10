@@ -1,2 +1,39 @@
+# Claude settings
 .claude/settings.local.json
+
+# FTP deploy state
 .ftp-deploy-sync-state.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+error_log
+
+# Temporary files
+*.tmp
+/tmp/
+/temp/
+/cache/
+
+# Backup files
+*.bak
+/backup/
+
+# Environment files
+.env
+.env.local
+
+# Database credentials (security)
+/db_data/db_info/db_info.csv
+/db_data/db_info/db_info_local.php
+
+# Development scripts
+server.php

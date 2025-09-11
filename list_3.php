@@ -170,6 +170,10 @@ $db->query("SET NAMES utf8");
 
 			      list( $find, $date, $week, $begin, $end, $pr_comment, $page, $place, $price_h, $area, $area_ja ) = $row ;
 
+			      // Mixed Content対策: HTTPをHTTPSに変換
+			      $pr_comment = str_replace('http://koikoi.co.jp', 'https://koikoi.co.jp', $pr_comment);
+			      $pr_comment = str_replace('http://www.koikoi.co.jp', 'https://www.koikoi.co.jp', $pr_comment);
+
 			      //$dateから日付データを年、月、日に分割
 			          $y = strtok($date, '-');
 			          $m = strtok('-');

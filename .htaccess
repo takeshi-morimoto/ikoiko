@@ -27,10 +27,14 @@
     RewriteCond %{REQUEST_URI} ^/ikoiko/event_m/[^/]+$
     RewriteRule ^(.*)$ $1/ [L,R=301]
     
+    # listディレクトリURLをlist_*.phpに転送（PATH_INFO付き）
+    RewriteCond %{REQUEST_URI} ^/ikoiko/list_([1-4])/(.+)$
+    RewriteRule ^list_([1-4])/(.+)$ /ikoiko/list_$1.php/$2 [L]
+    
     # PATH_INFOを使用するページのリダイレクト（正規化）
     # list_1.php, list_2.phpなどのPATH_INFO付きURLを正規URLにリダイレクト
-    RewriteCond %{REQUEST_URI} ^/ikoiko/(list_[1-4]\.php|list_[1-4])/(.+)$
-    RewriteRule ^ikoiko/(list_[1-4])(\.php)?/(.+)$ /ikoiko/$1.php [L,R=301]
+    RewriteCond %{REQUEST_URI} ^/ikoiko/(list_[1-4])\.php/(.+)$
+    RewriteRule ^(list_[1-4])\.php/(.+)$ /ikoiko/$1/$2 [L,R=301]
     
     # event.php, event_m.phpのPATH_INFO形式を正規化
     RewriteCond %{REQUEST_URI} ^/ikoiko/event\.php/(.+)$

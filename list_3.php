@@ -101,6 +101,7 @@ $db->query("SET NAMES utf8");
 	<link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 
 	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
+	<script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/checkUA.js'></script>
 
 </head>
 <body>

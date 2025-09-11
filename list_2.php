@@ -107,6 +107,7 @@ function buildPriceTable($price_m, $price_f) {
     <link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 
     <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
+    <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/checkUA.js'></script>
 
     <!-- テーブルの簡易的なCSS例 -->
     <style>

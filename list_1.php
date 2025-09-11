@@ -107,6 +107,7 @@ function buildPriceTable($price_m, $price_f) {
     <link rel="stylesheet" href="/ikoiko/css/layout-spacing.css">
 
     <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/prefecture-search-mb.js'></script>
+    <script type='text/javascript' src='https://koikoi.co.jp/ikoiko/js/checkUA.js'></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ4VFQRSYR"></script>
@@ -270,6 +271,22 @@ function buildPriceTable($price_m, $price_f) {
                 // 画像URLが未設定の場合は旧の処理
                 if (empty($img_url)) {
                     $img_url = "/ikoiko/img/img_thamb/{$find}";
+                }
+                
+                // Mixed Content対策: HTTP URLをHTTPSに置換
+                $domains_to_replace = [
+                    'koikoi.co.jp', 
+                    'www.koikoi.co.jp',
+                    'assets.lolipop.jp',
+                    'js.ad-stir.com',
+                    'adm.shinobi.jp'
+                ];
+                
+                foreach ($domains_to_replace as $domain) {
+                    $img_url = str_replace('http://' . $domain, 'https://' . $domain, $img_url);
+                    $pr_comment = str_replace('http://' . $domain, 'https://' . $domain, $pr_comment);
+                    $title = str_replace('http://' . $domain, 'https://' . $domain, $title);
+                    $feature = str_replace('http://' . $domain, 'https://' . $domain, $feature);
                 }
 
                 // テーブル用HTMLを組み立て

@@ -30,8 +30,10 @@
     # listディレクトリURLをlist_*.phpに転送（PATH_INFO付き）
     # 内部リライトのみ、リダイレクトはしない
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_URI} ^/ikoiko/list_([1-4])/(.+)$
-    RewriteRule ^list_([1-4])/(.+)$ /ikoiko/list_$1.php/$2 [L]
+    RewriteRule ^ikoiko/list_1/(.+)$ /ikoiko/list_1.php/$1 [L]
+    RewriteRule ^ikoiko/list_2/(.+)$ /ikoiko/list_2.php/$1 [L]
+    RewriteRule ^ikoiko/list_3/(.+)$ /ikoiko/list_3.php/$1 [L]
+    RewriteRule ^ikoiko/list_4/(.+)$ /ikoiko/list_4.php/$1 [L]
     
     # event.php, event_m.phpのPATH_INFO形式を正規化
     RewriteCond %{REQUEST_URI} ^/ikoiko/event\.php/(.+)$

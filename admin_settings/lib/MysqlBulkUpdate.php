@@ -17,9 +17,11 @@ class MysqlBulkUpdate
 		$this->DBCon = $PDO;
 		$this->tableName = $tableName;
 
-		// 主キーを取得
-		$res = $PDO->query('SHOW INDEXES FROM events where Key_name = "PRIMARY";')->fetch(PDO::FETCH_ASSOC);
-		$this->primaryKey = $res['Column_name'];
+		// 主キーを取得（テーブル名を動的に使用）
+		$res = $PDO->query("SHOW INDEXES FROM {$tableName} where Key_name = 'PRIMARY';")->fetch(PDO::FETCH_ASSOC);
+		if ($res) {
+			$this->primaryKey = $res['Column_name'];
+		}
 	}
 
 	public function setTable($tableName = '')
@@ -89,7 +91,17 @@ class MysqlBulkUpdate
 				$target 		= rtrim($target, ',');
 				$placeHolder 	= rtrim($placeHolder, ',');
 
-				$sql = "insert into {$table} ({$target}) values ({$placeHolder});";
+				// INSERT ON DUPLICATE KEY UPDATEを使用して重複を回避
+				$updatePart = '';
+				foreach ($record as $colName => $val) {
+					if ($colName !== $this->primaryKey) {
+						$updatePart .= "{$colName} = VALUES({$colName}),";
+					}
+				}
+				$updatePart = rtrim($updatePart, ',');
+				
+				$sql = "INSERT INTO {$table} ({$target}) VALUES ({$placeHolder}) 
+						ON DUPLICATE KEY UPDATE {$updatePart};";
 				$insert = $this->DBCon->prepare($sql);
 				$insert->execute($record);
 

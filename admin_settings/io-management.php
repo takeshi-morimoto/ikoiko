@@ -34,7 +34,7 @@ if ( isset($_POST['import_e']) || isset($_POST['import_a']) ) {
 
 		} elseif ( isset($_POST['import_a']) ){
 			$mbu = new MysqlBulkUpdate($db, 'area');
-			$mbu->setLockedCol([ 'area', ]);
+			$mbu->setPrimaryKey('area'); // areaを主キーとして扱う
 			$mbu->update($data);
 
 		}

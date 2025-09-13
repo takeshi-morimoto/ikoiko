@@ -2,11 +2,6 @@
 // エラーログを有効化
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/error.log');
-
-// デバッグ情報をファイルに記録
-file_put_contents(__DIR__ . '/debug.log', date('Y-m-d H:i:s') . " - area_set.php started\n", FILE_APPEND);
 
 // 出力バッファリングを開始
 ob_start();

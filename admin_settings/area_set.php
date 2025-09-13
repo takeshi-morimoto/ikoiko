@@ -1,10 +1,7 @@
 <?php 
-// エラーログを有効化
+// エラー表示を有効化
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-// 出力バッファリングを開始
-ob_start();
 
 //表示する内容の切り替え（フォーム未入力、入力済み、完了画面）
 if ( isset($_POST['submit_1']) ):

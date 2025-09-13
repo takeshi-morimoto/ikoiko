@@ -29,8 +29,12 @@ endif;
 if ( $pagePat === 0 ):
 
 	//データベースの初期化
-	require_once("../db_data/db_init.php");
-	$db->query("SET NAMES utf8");
+	try {
+		require_once("../db_data/db_init.php");
+		$db->exec("SET NAMES utf8");
+	} catch (Exception $e) {
+		die("データベース接続エラー: " . $e->getMessage());
+	}
 
  ?>
 
@@ -337,8 +341,12 @@ elseif ( $pagePat === 2 )://確認完了ボタンが押されたので入力内�
 
 
 	//データベースの初期化
-	require_once("../db_data/db_init.php");
-	$db->query("SET NAMES utf8");
+	try {
+		require_once("../db_data/db_init.php");
+		$db->exec("SET NAMES utf8");
+	} catch (Exception $e) {
+		die("データベース接続エラー: " . $e->getMessage());
+	}
 
 
 	$sendData = array_values($_POST);

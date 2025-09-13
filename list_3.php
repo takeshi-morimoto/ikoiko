@@ -91,7 +91,7 @@ $db->query("SET NAMES utf8");
 	<link rel="canonical" href="<?php echo $canonical_url; ?>" />
 
 
-	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/outputHead.php") ?>
+	<?php include("./widgets/outputHead.php") ?>
 	
 	<!-- モダンCSS追加 -->
 	<link rel="stylesheet" href="/ikoiko/css/modern-base.css">
@@ -126,16 +126,16 @@ $db->query("SET NAMES utf8");
 <div id="topContainer">
 	
 	<!-- モダンなヘッダーに変更 -->
-	<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/pageHeader_modern.php") ?>
+	<?php include("./widgets/pageHeader_modern.php") ?>
 
 	<div id="mainVisual">
 		
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/nazo/mainVisual.php") ?>
+		<?php include("./widgets/nazo/mainVisual.php") ?>
 
 	</div>
 
 	<div id="search">
-		<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/nazo/search.php") ?>
+		<?php include("./widgets/nazo/search.php") ?>
 	</div>
 
 	<div id="mainContainer">
@@ -249,7 +249,7 @@ $db->query("SET NAMES utf8");
 
 		<div id="sideContent">
 			
-			<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/sideContent_modern.php") ?>
+			<?php include("./widgets/sideContent_modern.php") ?>
 
 		</div>
 
@@ -259,7 +259,7 @@ $db->query("SET NAMES utf8");
 
 </div>
 
-<?php include("/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/widgets/footer.php") ?>
+<?php include("./widgets/footer.php") ?>
 
 
 </body>

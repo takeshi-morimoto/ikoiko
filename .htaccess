@@ -45,6 +45,11 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^list_4/(.+)$ list_4.php/$1 [L]
     
+    # admin_settingsディレクトリ内のPHPファイルへのリダイレクト
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^admin_settings/([^/]+)$ /ikoiko/admin_settings/$1.php [L]
+    
     # event.php, event_m.phpのPATH_INFO形式を正規化
     RewriteCond %{REQUEST_URI} ^/ikoiko/event\.php/(.+)$
     RewriteRule ^ikoiko/event\.php/(.+)$ /ikoiko/event/$1/ [L,R=301]

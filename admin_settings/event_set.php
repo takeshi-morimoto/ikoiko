@@ -45,8 +45,12 @@ endif;
 if ( $pagePat === 0 )://パターン０：何も入力されてない場合・入力フォームと一覧表示を出力
 
 	//データベースの初期化
-	require_once("../db_data/db_init.php");
-	$db->query("SET NAMES utf8");
+	try {
+		require_once("../db_data/db_init.php");
+		$db->exec("SET NAMES utf8");
+	} catch (Exception $e) {
+		die("データベース接続エラー: " . $e->getMessage());
+	}
 
 	?>
 
@@ -450,8 +454,12 @@ elseif ( $pagePat === 1 )://パターン１：フォームにデータが入力�
 elseif ( $pagePat === 2 )://パターン２：確認画面から入力完了ボタンが押された場合・内容をDBに格納（登録完了画面を表示）
 
 	//DBの初期化
-	require_once("../db_data/db_init.php");
-	$db->query("SET NAMES utf8");
+	try {
+		require_once("../db_data/db_init.php");
+		$db->exec("SET NAMES utf8");
+	} catch (Exception $e) {
+		die("データベース接続エラー: " . $e->getMessage());
+	}
 
 	//POSTで送られてきたデータを配列に格納
 	$toDb = array_values($_POST);

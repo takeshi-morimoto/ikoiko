@@ -321,7 +321,7 @@ elseif ( $pagePat === 1 )://フォームにデータが入力された場合、�
 	for ( $n = 0 ; $n <= 10 ; $n += 1 ):
 
 		print "<input type='hidden' name='data_" . $n . "' value='" . $td[$n] . "'>" .
-			"<tr><th width='30%' height='40px'>" . $th[$n] . "</th><td width='30%'>" . $td{$n} . "</td></tr>" ;
+			"<tr><th width='30%' height='40px'>" . $th[$n] . "</th><td width='30%'>" . $td[$n] . "</td></tr>" ;
 
 	endfor;
 

@@ -423,7 +423,7 @@ elseif ( $pagePat === 1 )://パターン１：フォームにデータが入力�
 	//テーブルのセルをFor文で出力
 	for ( $n = 0 ; $n <= 5 ; $n += 1 ):
 
-		print "<tr><th width='30%' height='40px'>" . $th[$n] . "</th><td width='30%'>" . $td{$n} . "</td></tr>" ;
+		print "<tr><th width='30%' height='40px'>" . $th[$n] . "</th><td width='30%'>" . $td[$n] . "</td></tr>" ;
 
 	endfor;
 

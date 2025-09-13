@@ -1,4 +1,6 @@
 <?php 
+// 出力バッファリングを開始
+ob_start();
 
 // エラー表示を有効化（デバッグ用）
 ini_set('display_errors', 1);

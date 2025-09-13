@@ -1,10 +1,10 @@
 <?php 
-
+// 出力バッファリングを開始
+ob_start();
 
 // エラー表示を有効化（デバッグ用）
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
 
 //表示する内容の切り替え（フォーム未入力、入力済み、完了画面）
 if ( isset($_POST['submit_1']) ):

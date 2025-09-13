@@ -1,0 +1,101 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^machikon.koikoi.co.jp //koikoi.co.jp/ikoiko/ [R=301,L]
+
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+
+# add a trailing slash to /wp-admin
+RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+RewriteRule . index.php [L]
+
+</IfModule>
+
+# END WordPress
+# BEGIN Lolipop [ //lolipop.jp/manual/blog/wp-htaccess/ ]
+
+<Files wp-login.php>
+ErrorDocument 403 /lolipop_service_documents/wp-login-deny.html
+Order deny,allow
+Deny  from all
+Allow from 219.165.0.185
+Allow from 182.249.246.157
+Allow from 153.184.226.3
+Allow from 125.196.24.154
+Allow from 114.179.107.60
+Allow from 182.249.246.144
+Allow from 111.169.103.125
+Allow from 180.235.15.73
+Allow from 106.188.35.63
+Allow from 124.44.1.19
+Allow from 180.25.222.248
+Allow from g245.115-65-118.ppp.wakwak.ne.jp
+Allow from ppp.wakwak.ne.jp
+Allow from 106.146.199.117
+Allow from 180.235.12.66
+Allow from 14. 3. 132. 163
+Allow from 59.136.7.194
+Allow from 59.136.10.136
+Allow from 59.136.15.27
+Allow from 106.149.210.118
+Allow from 106.146.223.149
+Allow from 106.138.106.199
+Allow from 115.176.178.229
+Allow from 106.138.119.207
+Allow from 106.138.124.206
+Allow from 111.100.156.81
+Allow from 114.159.8.100
+Allow from 116.83.38.246
+Allow from 111.168.200.114
+Allow from 219.107.157.115
+Allow from 115.176.178.184
+Allow from 125.198.179.253
+</Files>
+
+# END Lolipop
+
+# OPcache設定（PHP 7.0以降）
+<IfModule mod_php7.c>
+    php_flag opcache.enable On
+    php_value opcache.memory_consumption 128
+    php_value opcache.interned_strings_buffer 8
+    php_value opcache.max_accelerated_files 4000
+    php_value opcache.revalidate_freq 60
+    php_value opcache.fast_shutdown 1
+    php_flag opcache.enable_cli Off
+    php_value opcache.max_wasted_percentage 5
+    php_value opcache.validate_timestamps 1
+    php_flag opcache.save_comments 1
+</IfModule>
+
+# PHP 8.0以降の場合
+<IfModule mod_php.c>
+    php_flag opcache.enable On
+    php_value opcache.memory_consumption 128
+    php_value opcache.interned_strings_buffer 8
+    php_value opcache.max_accelerated_files 4000
+    php_value opcache.revalidate_freq 60
+    php_value opcache.fast_shutdown 1
+    php_flag opcache.enable_cli Off
+    php_value opcache.max_wasted_percentage 5
+    php_value opcache.validate_timestamps 1
+    php_flag opcache.save_comments 1
+    php_flag opcache.jit 1
+    php_value opcache.jit_buffer_size 100M
+</IfModule>
+
+# セキュリティヘッダー
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

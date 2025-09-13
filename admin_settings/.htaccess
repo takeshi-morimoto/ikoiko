@@ -1,30 +1,5 @@
-
-# BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-
-RewriteRule ^machikon.koikoi.co.jp //koikoi.co.jp/ikoiko/ [R=301,L]
-
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-
-# add a trailing slash to /wp-admin
-RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
-
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
-RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
-RewriteRule . index.php [L]
-
-</IfModule>
-
-# END WordPress
-# BEGIN Lolipop [ //lolipop.jp/manual/blog/wp-htaccess/ ]
-
+# アクセス制限（必要に応じてIPアドレスを追加）
 <Files wp-login.php>
-ErrorDocument 403 /lolipop_service_documents/wp-login-deny.html
 Order deny,allow
 Deny  from all
 Allow from 219.165.0.185
@@ -42,7 +17,7 @@ Allow from g245.115-65-118.ppp.wakwak.ne.jp
 Allow from ppp.wakwak.ne.jp
 Allow from 106.146.199.117
 Allow from 180.235.12.66
-Allow from 14. 3. 132. 163
+Allow from 14.3.132.163
 Allow from 59.136.7.194
 Allow from 59.136.10.136
 Allow from 59.136.15.27
@@ -61,36 +36,10 @@ Allow from 115.176.178.184
 Allow from 125.198.179.253
 </Files>
 
-# END Lolipop
-
-# OPcache設定（PHP 7.0以降）
-<IfModule mod_php7.c>
-    php_flag opcache.enable On
-    php_value opcache.memory_consumption 128
-    php_value opcache.interned_strings_buffer 8
-    php_value opcache.max_accelerated_files 4000
-    php_value opcache.revalidate_freq 60
-    php_value opcache.fast_shutdown 1
-    php_flag opcache.enable_cli Off
-    php_value opcache.max_wasted_percentage 5
-    php_value opcache.validate_timestamps 1
-    php_flag opcache.save_comments 1
-</IfModule>
-
-# PHP 8.0以降の場合
+# PHP設定
 <IfModule mod_php.c>
-    php_flag opcache.enable On
-    php_value opcache.memory_consumption 128
-    php_value opcache.interned_strings_buffer 8
-    php_value opcache.max_accelerated_files 4000
-    php_value opcache.revalidate_freq 60
-    php_value opcache.fast_shutdown 1
-    php_flag opcache.enable_cli Off
-    php_value opcache.max_wasted_percentage 5
-    php_value opcache.validate_timestamps 1
-    php_flag opcache.save_comments 1
-    php_flag opcache.jit 1
-    php_value opcache.jit_buffer_size 100M
+    php_flag display_errors On
+    php_value error_reporting E_ALL
 </IfModule>
 
 # セキュリティヘッダー

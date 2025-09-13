@@ -197,9 +197,12 @@ if ( $pagePat === 0 ):
 					<select name="content">
 
 						<?php 
-							
-							$ps = $db->prepare('select num, title from content;');
-							$ps->execute();
+							try {
+								$ps = $db->prepare('select num, title from content;');
+								$ps->execute();
+							} catch (PDOException $e) {
+								echo "SQLエラー(content): " . $e->getMessage() . "<br>";
+							}
 
 							while( $row = $ps->fetch() ):
 
@@ -234,12 +237,17 @@ if ( $pagePat === 0 ):
 
 //登録済み開催地ページの一覧表示部分[ここから]
 
-$ps = $db->query("select area.ken,area.area_ja,area.place,area.price_h,area.price_l,area.age_m,area.age_w,count(events.find) as count , area ,area.page as page
+try {
+	$ps = $db->query("select area.ken,area.area_ja,area.place,area.price_h,area.price_l,area.age_m,area.age_w,count(events.find) as count , area.area ,area.page as page
 					from events 
 					right join area 
 					using(area)
 					group by area.area
 					order by count desc;") ;
+} catch (PDOException $e) {
+	echo "SQLエラー: " . $e->getMessage() . "<br>";
+	die();
+}
 
 //WHILE文でテーブルを出力
 print '<center><form action="form_fix" method="POST" accept-charset="utf-8"><table border="1" width="80%">' . 

@@ -72,7 +72,12 @@ if ( $pagePat === 0 )://パターン０：何も入力されてない場合・�
 						<?php 
 
 						//作成済みの開催エリアを取得してセレクトボックスで出力
-						$ps = $db->query("select `page`,`area`,`ken`,`area_ja`, `price_h` from area order by `ken`") ;
+						try {
+							$ps = $db->query("select `page`,`area`,`ken`,`area_ja`, `price_h` from area order by `ken`") ;
+						} catch (PDOException $e) {
+							echo "SQLエラー(area): " . $e->getMessage() . "<br>";
+							die();
+						}
 						
 						while ($row = $ps->fetch()):
 
@@ -191,11 +196,16 @@ if ( $pagePat === 0 )://パターン０：何も入力されてない場合・�
 
 	$day = date('Y-m-j');
 
-	$ps = $db->query("select concat( events.date,'(',events.week,')' ) as date , area.area_ja as area , events.state_m , events.state_w , events.find as find, events.title as title 
+	try {
+		$ps = $db->query("select concat( events.date,'(',events.week,')' ) as date , area.area_ja as area , events.state_m , events.state_w , events.find as find, events.title as title 
 						from events  
 						join area using(area)
 						where events.date >= '$day'
 						order by events.date;") ;
+	} catch (PDOException $e) {
+		echo "SQLエラー(events): " . $e->getMessage() . "<br>";
+		die();
+	}
 						
 	//WHILE文でテーブルを出力
 	print '<form action="form_fix" method="POST" accept-charset="utf-8"><table id="eventsTable">';

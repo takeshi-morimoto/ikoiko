@@ -1,10 +1,15 @@
 <?php 
+// エラーログを有効化
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/error.log');
+
+// デバッグ情報をファイルに記録
+file_put_contents(__DIR__ . '/debug.log', date('Y-m-d H:i:s') . " - area_set.php started\n", FILE_APPEND);
+
 // 出力バッファリングを開始
 ob_start();
-
-// エラー表示を有効化（デバッグ用）
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 //表示する内容の切り替え（フォーム未入力、入力済み、完了画面）
 if ( isset($_POST['submit_1']) ):

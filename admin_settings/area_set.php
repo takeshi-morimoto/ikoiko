@@ -1,7 +1,5 @@
 <?php 
-// エラー表示を有効化
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 //表示する内容の切り替え（フォーム未入力、入力済み、完了画面）
 if ( isset($_POST['submit_1']) ):
@@ -196,12 +194,9 @@ if ( $pagePat === 0 ):
 					<select name="content">
 
 						<?php 
-							try {
-								$ps = $db->prepare('select num, title from content;');
-								$ps->execute();
-							} catch (PDOException $e) {
-								echo "SQLエラー(content): " . $e->getMessage() . "<br>";
-							}
+							
+							$ps = $db->prepare('select num, title from content;');
+							$ps->execute();
 
 							while( $row = $ps->fetch() ):
 
@@ -236,17 +231,12 @@ if ( $pagePat === 0 ):
 
 //登録済み開催地ページの一覧表示部分[ここから]
 
-try {
-	$ps = $db->query("select area.ken,area.area_ja,area.place,area.price_h,area.price_l,area.age_m,area.age_w,count(events.find) as count , area.area ,area.page as page
+$ps = $db->query("select area.ken,area.area_ja,area.place,area.price_h,area.price_l,area.age_m,area.age_w,count(events.find) as count , area.area ,area.page as page
 					from events 
 					right join area 
 					using(area)
 					group by area.area
 					order by count desc;") ;
-} catch (PDOException $e) {
-	echo "SQLエラー: " . $e->getMessage() . "<br>";
-	die();
-}
 
 //WHILE文でテーブルを出力
 print '<center><form action="form_fix" method="POST" accept-charset="utf-8"><table border="1" width="80%">' . 

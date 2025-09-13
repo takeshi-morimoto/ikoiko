@@ -1,8 +1,9 @@
 <?php 
 
 
-//Noticeエラーを非表示にする
-error_reporting(E_ALL & ~E_NOTICE);
+// エラー表示を有効化（デバッグ用）
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
 
 //表示する内容の切り替え（フォーム未入力、入力済み、完了画面）

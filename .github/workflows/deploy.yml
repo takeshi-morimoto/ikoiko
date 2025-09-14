@@ -65,3 +65,29 @@ jobs:
             convert_*.php
             update_*.php
             generate_*.php
+            img/img_main/**
+            img/event_img/**
+            img/banner/**
+            **/*.jpg
+            **/*.jpeg
+            **/*.png
+            **/*.gif
+            **/*.webp
+            **/*.sql
+            **/*.bak
+            **/*.backup
+            **/*.old
+            **/*.swp
+            **/*.swo
+            **/*.csv
+            **/*.xlsx
+            **/*.xls
+            admin_settings/tmp/**
+            **/*.zip
+            **/*.tar
+            **/*.gz
+            **/*.rar
+            **/*.7z
+            **/Thumbs.db
+            **/.DS_Store
+            database_improvements.sql

@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 2  # 最新の2コミットのみ取得（高速化）
 
       - name: Download FTP Deploy State
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ftp-deploy-state
           path: ./
@@ -95,7 +95,7 @@ jobs:
       
       - name: Upload FTP Deploy State
         if: success()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ftp-deploy-state
           path: .ftp-deploy-sync-state.json

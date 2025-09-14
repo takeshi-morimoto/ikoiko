@@ -27,13 +27,13 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./"
-          server-dir: ${{ secrets.REMOTE_DIR }}/
+          server-dir: ${{ secrets.REMOTE_DIR || '/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/' }}
           protocol: "ftp"
-          port: ${{ secrets.FTP_PORT }}
+          port: ${{ secrets.FTP_PORT || 21 }}
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
           log-level: minimal  # verboseからminimalに変更（ログ出力削減）

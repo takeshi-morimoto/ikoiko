@@ -1,5 +1,11 @@
 <?php 
 
+// テストモード
+if (isset($_GET['test'])) {
+    echo "EVENT_FIX.PHP - VERSION 4.0 - TEST MODE<br>";
+    echo "File is successfully deployed and accessible.<br>";
+    exit;
+}
 
 //Noticeエラーを非表示にする
 error_reporting(E_ALL & ~E_NOTICE);

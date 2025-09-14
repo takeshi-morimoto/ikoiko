@@ -4,6 +4,8 @@
 //Noticeエラーを非表示にする
 error_reporting(E_ALL & ~E_NOTICE);
 
+//最終更新: 2025-09-14 - 未定義変数の修正
+
 
 //表示する内容の切り替え（編集画面、完了画面）
 if ( isset($_POST['submit']) ):

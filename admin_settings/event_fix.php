@@ -53,7 +53,10 @@ if ( $pagePat === 0 )://送信ボタンが押されてない場合編集画面
 		events.pr_comment,
 		events.sale,
 		events.feature,
-		events.img_url
+		events.img_url,
+		events.state_m,
+		events.state_w,
+		events.meetingpoint
 		from events join area using(area) where events.find = '{$find}'");
 
 	// pr_commentは集合場所として使われています。
@@ -75,12 +78,39 @@ if ( $pagePat === 0 )://送信ボタンが押されてない場合編集画面
 		$sale,
 		$feature,
 		$imgURL,
+		$state_m,
+		$state_w,
+		$meetingpoint,
 	) = $eventData ;
 
 	//$dateを年と月と日に分割
 	$y = strtok( $date , '-' );
 	$m = strtok( '-' );
 	$d = strtok( '-' );
+
+	// チェックボックス用変数の初期化
+	$beginTimeCheck_00 = '';
+	$beginTimeCheck_01 = '';
+	$beginTimeCheck_02 = '';
+	$endTimeCheck_00 = '';
+	$endTimeCheck_01 = '';
+	$endTimeCheck_02 = '';
+	$staCheck_m_00 = '';
+	$staCheck_m_01 = '';
+	$staCheck_m_02 = '';
+	$staCheck_m_03 = '';
+	$staCheck_m_04 = '';
+	$staCheck_w_00 = '';
+	$staCheck_w_01 = '';
+	$staCheck_w_02 = '';
+	$staCheck_w_03 = '';
+	$staCheck_w_04 = '';
+	$beginHour = '';
+	$beginMin = '';
+	$endHour = '';
+	$endMin = '';
+	$mpCheck_00 = '';
+	$mpCheck_01 = '';
 
 	//開始時刻の選択済み初期値を設定
 	if ( $begin === '14:00:00' ):

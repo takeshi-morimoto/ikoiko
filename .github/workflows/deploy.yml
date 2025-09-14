@@ -16,13 +16,12 @@ jobs:
         with:
           fetch-depth: 2  # 最新の2コミットのみ取得（高速化）
 
-      - name: Cache FTP Deploy State
-        uses: actions/cache@v3
+      - name: Download FTP Deploy State
+        uses: actions/download-artifact@v3
         with:
-          path: .ftp-deploy-sync-state.json
-          key: ftp-deploy-state-${{ github.sha }}
-          restore-keys: |
-            ftp-deploy-state-
+          name: ftp-deploy-state
+          path: ./
+        continue-on-error: true
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -93,3 +92,11 @@ jobs:
             **/Thumbs.db
             **/.DS_Store
             database_improvements.sql
+      
+      - name: Upload FTP Deploy State
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ftp-deploy-state
+          path: .ftp-deploy-sync-state.json
+          retention-days: 90

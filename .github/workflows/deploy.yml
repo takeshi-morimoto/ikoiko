@@ -16,13 +16,6 @@ jobs:
         with:
           fetch-depth: 2  # 最新の2コミットのみ取得（高速化）
 
-      - name: Download FTP Deploy State
-        uses: actions/download-artifact@v4
-        with:
-          name: ftp-deploy-state
-          path: ./
-        continue-on-error: true
-
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -36,7 +29,7 @@ jobs:
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
           log-level: minimal  # verboseからminimalに変更（ログ出力削減）
-          dangerous-clean-slate: false  # 差分デプロイを有効化
+          dangerous-clean-slate: true  # 一時的に完全同期を有効化
           exclude: |
             **/.git*
             **/.git*/**
@@ -92,11 +85,3 @@ jobs:
             **/Thumbs.db
             **/.DS_Store
             database_improvements.sql
-      
-      - name: Upload FTP Deploy State
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: ftp-deploy-state
-          path: .ftp-deploy-sync-state.json
-          retention-days: 90

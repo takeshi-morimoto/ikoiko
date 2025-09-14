@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./"
-          server-dir: "/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/"
+          server-dir: "/ikoiko/"
           protocol: "ftp"
           port: 21
           state-name: .ftp-deploy-sync-state.json

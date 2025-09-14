@@ -30,9 +30,9 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./"
-          server-dir: ${{ secrets.REMOTE_DIR || '/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/' }}
+          server-dir: "/home/users/1/lolipop.jp-30251d4519441da4/web/ikoiko/"
           protocol: "ftp"
-          port: ${{ secrets.FTP_PORT || 21 }}
+          port: 21
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
           log-level: minimal  # verboseからminimalに変更（ログ出力削減）

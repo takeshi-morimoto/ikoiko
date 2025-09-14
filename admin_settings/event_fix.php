@@ -7,6 +7,21 @@ error_reporting(E_ALL & ~E_NOTICE);
 //最終更新: 2025-09-14 13:45 - 診断モード追加
 //VERSION: 3.0
 
+
+//表示する内容の切り替え（編集画面、完了画面）
+if ( isset($_POST['submit']) ):
+	$pagePat = 1 ;//DBのデータを更新して完了画面を表示
+elseif ( isset($_POST['delete']) ):
+	$pagePat = 2 ;//削除ボタンが押された場合該当するイベントを削除
+else:
+	$pagePat = 0 ;//イベント編集画面
+endif;
+
+
+//データベースの初期化
+require_once("../db_data/db_init.php");
+$db->query("SET NAMES utf8");
+
 // 診断モード（URLに?debug=1がある場合）
 if (isset($_GET['debug']) && $_GET['debug'] == '1') {
     echo "<h2>eventsテーブル診断</h2>";
@@ -35,21 +50,6 @@ if (isset($_GET['debug']) && $_GET['debug'] == '1') {
     echo "</pre>";
     exit;
 }
-
-
-//表示する内容の切り替え（編集画面、完了画面）
-if ( isset($_POST['submit']) ):
-	$pagePat = 1 ;//DBのデータを更新して完了画面を表示
-elseif ( isset($_POST['delete']) ):
-	$pagePat = 2 ;//削除ボタンが押された場合該当するイベントを削除
-else:
-	$pagePat = 0 ;//イベント編集画面
-endif;
-
-
-//データベースの初期化
-require_once("../db_data/db_init.php");
-$db->query("SET NAMES utf8");
 
 ?>
 

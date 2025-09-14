@@ -4,8 +4,37 @@
 //Noticeエラーを非表示にする
 error_reporting(E_ALL & ~E_NOTICE);
 
-//最終更新: 2025-09-14 13:15 - 未定義変数の修正を強制適用
-//VERSION: 2.0
+//最終更新: 2025-09-14 13:45 - 診断モード追加
+//VERSION: 3.0
+
+// 診断モード（URLに?debug=1がある場合）
+if (isset($_GET['debug']) && $_GET['debug'] == '1') {
+    echo "<h2>eventsテーブル診断</h2>";
+    $stmt = $db->query("DESCRIBE events");
+    $columns = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    echo "<pre>";
+    echo "既存のカラム:\n";
+    print_r($columns);
+    
+    $required = ['state_m', 'state_w', 'meetingpoint'];
+    $missing = array_diff($required, $columns);
+    if (!empty($missing)) {
+        echo "\n不足しているカラム:\n";
+        print_r($missing);
+        echo "\n以下のSQLを実行してください:\n";
+        foreach ($missing as $col) {
+            if ($col === 'state_m' || $col === 'state_w') {
+                echo "ALTER TABLE events ADD COLUMN $col INT DEFAULT 0;\n";
+            } else if ($col === 'meetingpoint') {
+                echo "ALTER TABLE events ADD COLUMN $col INT DEFAULT 1;\n";
+            }
+        }
+    } else {
+        echo "\nすべての必要なカラムが存在します。";
+    }
+    echo "</pre>";
+    exit;
+}
 
 
 //表示する内容の切り替え（編集画面、完了画面）

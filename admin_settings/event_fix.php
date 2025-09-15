@@ -127,27 +127,10 @@ if ( $pagePat === 0 )://送信ボタンが押されてない場合編集画面
 	$endTimeCheck_00 = '';
 	$endTimeCheck_01 = '';
 	$endTimeCheck_02 = '';
-	$staCheck_m_00 = '';
-	$staCheck_m_01 = '';
-	$staCheck_m_02 = '';
-	$staCheck_m_03 = '';
-	$staCheck_m_04 = '';
-	$staCheck_w_00 = '';
-	$staCheck_w_01 = '';
-	$staCheck_w_02 = '';
-	$staCheck_w_03 = '';
-	$staCheck_w_04 = '';
 	$beginHour = '';
 	$beginMin = '';
 	$endHour = '';
 	$endMin = '';
-	$mpCheck_00 = '';
-	$mpCheck_01 = '';
-
-	// 未定義変数の初期化
-	$state_m = 0;
-	$state_w = 0;
-	$meetingpoint = 1;
 
 	//開始時刻の選択済み初期値を設定
 	if ( $begin === '14:00:00' ):
@@ -183,68 +166,6 @@ if ( $pagePat === 0 )://送信ボタンが押されてない場合編集画面
 
 	endif;
 
-	//フォームの稼働ステータスに合わせてチェック済みにする
-	switch ($state_m):
-
-		case 1 :
-
-			$staCheck_m_01 = " checked='checked'" ;
-			break;
-
-		case 2 :
-
-			$staCheck_m_02 = " checked='checked'" ;
-			break;
-
-		case 3 :
-
-			$staCheck_m_03 = " checked='checked'" ;
-			break;
-
-		case 4 :
-
-			$staCheck_m_04 = " checked='checked'" ;
-			break;
-
-		case 0 :
-		
-			$staCheck_m_00 = " checked='checked'" ;
-			break;
-
-	endswitch;
-
-	//フォームの稼働ステータスに合わせてチェック済みにする
-	switch ($state_w):
-
-		case 1 :
-
-			$staCheck_w_01 = " checked='checked'" ;
-			break;
-
-		case 2 :
-
-			$staCheck_w_02 = " checked='checked'" ;
-			break;
-
-		case 3 :
-
-			$staCheck_w_03 = " checked='checked'" ;
-			break;
-
-		case 4 :
-
-			$staCheck_w_04 = " checked='checked'" ;
-			break;
-
-		case 0 :
-		
-			$staCheck_w_00 = " checked='checked'" ;
-			break;
-
-	endswitch;
-
-	//集合場所の表示・非表示のチェック済みを選択
-	( $meetingpoint == 0 ) ? $mpCheck_00 = " checked='checked'" : $mpCheck_01 = " checked='checked'" ;
 
 
 print <<<end
@@ -291,26 +212,6 @@ print <<<end
 						<input type="radio" name="endTime" value="0"{$endTimeCheck_00} />
 						<input type="text" name="endTime_inp1" value="{$endHour}" size="2">：
 						<input type="text" name="endTime_inp2" value="{$endMin}" size="2">～
-					</td>
-				</tr>
-				<tr class="none">
-					<th>男性フォームのステータス
-					</th>
-					<td><input type="radio" name="state_m" value="1"{$staCheck_m_01} />募集中<br />
-					<input type="radio" name="state_m" value="2"{$staCheck_m_02} />早割中<br />
-					<input type="radio" name="state_m" value="3"{$staCheck_m_03} />キャンセル待ち<br />
-					<input type="radio" name="state_m" value="4"{$staCheck_m_04} />電話受付のみ<br />
-					<input type="radio" name="state_m" value="0"{$staCheck_m_00} />停止
-					</td>
-				</tr>
-				<tr class="none">
-					<th>女性フォームのステータス
-					</th>
-					<td><input type="radio" name="state_w" value="1"{$staCheck_w_01} />募集中<br />
-					<input type="radio" name="state_w" value="2"{$staCheck_w_02} />早割中<br />
-					<input type="radio" name="state_w" value="3"{$staCheck_w_03} />キャンセル待ち<br />
-					<input type="radio" name="state_w" value="4"{$staCheck_w_04} />電話受付のみ<br />
-					<input type="radio" name="state_w" value="0"{$staCheck_w_00} />停止
 					</td>
 				</tr>
 				<tr>

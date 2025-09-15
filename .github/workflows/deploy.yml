@@ -29,7 +29,7 @@ jobs:
           state-name: .ftp-deploy-sync-state.json
           dry-run: false
           log-level: minimal  # verboseからminimalに変更（ログ出力削減）
-          dangerous-clean-slate: true  # 一時的に完全同期を有効化
+          dangerous-clean-slate: false  # 差分デプロイを有効化
           exclude: |
             **/.git*
             **/.git*/**

@@ -91,10 +91,7 @@ if ( $pagePat === 0 )://送信ボタンが押されてない場合編集画面
 		events.pr_comment,
 		events.sale,
 		events.feature,
-		events.img_url,
-		events.state_m,
-		events.state_w,
-		events.meetingpoint
+		events.img_url
 		from events join area using(area) where events.find = '{$find}'");
 
 	// pr_commentは集合場所として使われています。
@@ -115,10 +112,7 @@ if ( $pagePat === 0 )://送信ボタンが押されてない場合編集画面
 		$pr_comment, // 集合場所として使われています。
 		$sale,
 		$feature,
-		$imgURL,
-		$state_m,
-		$state_w,
-		$meetingpoint,
+		$imgURL
 	) = $eventData ;
 
 	//$dateを年と月と日に分割

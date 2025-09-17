@@ -27,11 +27,18 @@
     RewriteCond %{REQUEST_URI} ^/ikoiko/event_m/[^/]+$
     RewriteRule ^(.*)$ $1/ [L,R=301]
     
-    # listディレクトリURLをlist_*.phpに転送（PATH_INFO付き）
-    # 内部リライトのみ、リダイレクトはしない
+    # listディレクトリURLをlist_*.phpに転送
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^list_1/?$ list_1.php [L]
+    
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^list_1/(.+)$ list_1.php/$1 [L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^list_2/?$ list_2.php [L]
     
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
@@ -39,7 +46,15 @@
     
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^list_3/?$ list_3.php [L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^list_3/(.+)$ list_3.php/$1 [L]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^list_4/?$ list_4.php [L]
     
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d

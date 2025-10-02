@@ -1,7 +1,9 @@
 <?php 
 
-error_reporting(E_ALL | E_STRICT);
-ini_set('display_errors', 'On');
+// エラー表示を一時的に無効化（デバッグ用）
+// error_reporting(E_ALL | E_STRICT);
+// ini_set('display_errors', 'On');
+error_reporting(E_ALL & ~E_NOTICE);
 
 // ▼ 1) 価格表示をテーブル形式にする関数を定義
 function buildPriceTable($price_m, $price_f) {
@@ -44,39 +46,46 @@ function buildPriceTable($price_m, $price_f) {
 <div id="searchResult">
 
   <?php 
-    $today = date("Y") . '-' . date("m") . '-' . date("j") ;
+    try {
+      $today = date("Y") . '-' . date("m") . '-' . date("j") ;
 
-    $result = $db->query("
-      SELECT
-        events.find,
-        events.title,
-        events.date,
-        events.week,
-        events.begin,
-        events.end,
-        events.pr_comment,
-        area.page,
-        area.place,
-        events.price_m,
-        events.price_f,
-        area.price_h,
-        area.area,
-        area.area_ja,
-        area.content,
-        events.img_url,
-        events.feature
-      FROM events
-      JOIN area USING(area)
-      WHERE date >= '$today'
-        AND area.page = 'ani'
-      ORDER BY events.date
-      LIMIT 6
-    ");
+      $result = $db->query("
+        SELECT
+          events.find,
+          events.title,
+          events.date,
+          events.week,
+          events.begin,
+          events.end,
+          events.pr_comment,
+          area.page,
+          area.place,
+          events.price_m,
+          events.price_f,
+          area.price_h,
+          area.area,
+          area.area_ja,
+          area.content,
+          events.img_url,
+          events.feature
+        FROM events
+        JOIN area USING(area)
+        WHERE date >= '$today'
+          AND area.page = 'ani'
+        ORDER BY events.date
+        LIMIT 6
+      ");
 
-    echo "<h2>本日以降開催の街コン情報</h2>";
-    echo "<div id='resultList'>";
+      if (!$result) {
+        throw new Exception("データベースクエリの実行に失敗しました: " . implode(', ', $db->errorInfo()));
+      }
 
-    while ($row = $result->fetch()) {
+      echo "<h2>本日以降開催の街コン情報</h2>";
+      echo "<div id='resultList'>";
+
+      $eventCount = 0;
+      while ($row = $result->fetch()) {
+        $eventCount++;
       list(
         $find,
         $title,
@@ -164,12 +173,25 @@ function buildPriceTable($price_m, $price_f) {
       ";
     }
 
-    echo "
-      <div class='btn_more_all'>
-        <a href='/ikoiko/list_1/'>もっと見る</a>
+      // イベントが表示されなかった場合のメッセージ
+      if ($eventCount == 0) {
+        echo "<p>現在、表示できるイベントがありません。</p>";
+      }
+
+      echo "
+        <div class='btn_more_all'>
+          <a href='/ikoiko/list_1/'>もっと見る</a>
+        </div>
       </div>
-    </div>
-    ";
+      ";
+      
+    } catch (Exception $e) {
+      echo "<p style='color:red;'>イベント情報の取得中にエラーが発生しました。</p>";
+      // デバッグ情報（本番環境では削除）
+      if (isset($_GET['debug']) && $_GET['debug'] == '1') {
+        echo "<p>エラー詳細: " . htmlspecialchars($e->getMessage()) . "</p>";
+      }
+    }
   ?>
 
 </div>

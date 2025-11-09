@@ -66,6 +66,61 @@
         </div>
     </div>
 
+    <!-- LINE公式アカウント -->
+    <div class="sidebar-card" style="padding: 10px 20px; text-align:center; background: linear-gradient(135deg, #fff9e6 0%, #fffef5 100%); border: 2px solid #ffcc00; border-radius: 15px; position: relative; overflow: hidden;">
+    
+    <!-- 期間限定ラベル -->
+    <div style="position: absolute; top: -5px; right: -30px; background: #ff3333; color: white; padding: 5px 40px; transform: rotate(15deg); font-size: 12px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+        期間限定
+    </div>
+
+    <h3 style="font-size:20px; color:#ff3333; margin-bottom:8px; font-weight:bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+        🎉 今だけ特別キャンペーン！ 🎉
+    </h3>
+    
+    <div style="background: #ff6b6b; color: white; padding: 12px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.2);">
+        <p style="font-size:18px; font-weight:bold; margin:0;">
+            LINE友だち追加で<br>
+            <span style="font-size:24px; color:#ffff00;">1,000円OFFクーポン</span><br>
+            即日プレゼント！
+        </p>
+    </div>
+
+    <a href="https://line.me/R/ti/p/@691grxcs"
+        target="_blank" rel="noopener noreferrer"
+        aria-label="こいこいイベント事務局のLINEを開く">
+        <img
+        src="https://qr-official.line.me/gs/M_691grxcs_GW.png?oat_content=qr"
+        alt="こいこいイベント事務局 LINE公式QRコード"
+        loading="lazy" decoding="async"
+        style="display:block; margin:auto; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.3); max-width:200px; width:100%; height:auto;">
+    </a>
+
+    <p style="font-size:14px; color:#333; line-height:1.6; margin-top:10px; font-weight:bold;">
+        スマホでQRを読み取るか<br>下のボタンをタップ！
+    </p>
+
+    <!-- 特典内容 -->
+    <div style="background: #f0f0f0; padding: 10px; border-radius: 8px; margin: 10px 0; text-align: left;">
+        <p style="font-size:13px; margin:5px 0; color:#333;">
+            ✅ <strong>全イベント対象</strong>の1,000円割引<br>
+            ✅ <strong>最新イベント情報</strong>をお届け<br>
+            ✅ <strong>お得なキャンペーン</strong>のお知らせ
+        </p>
+    </div>
+
+    <a href="https://line.me/R/ti/p/@691grxcs" target="_blank" rel="noopener noreferrer"
+        style="display:inline-block; padding:12px 30px; background:#06C755; color:#fff; border-radius:25px; text-decoration:none; margin-top:8px; font-weight:700; font-size:16px; box-shadow:0 4px 8px rgba(0,0,0,0.2); transform: scale(1); transition: all 0.3s ease;"
+        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        📱 今すぐ1,000円クーポンGET！
+    </a>
+    
+    <p style="font-size:11px; color:#666; margin-top:10px;">
+        ※クーポンは友だち追加後、自動配信されます
+    </p>
+    </div>
+
+
     <!-- SNSフォロー -->
     <div class="sidebar-card">
         <div class="sidebar-header">

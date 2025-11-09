@@ -12,53 +12,6 @@
         </a>
     </div>
 
-    <!-- おススメイベントピックアップ -->
-    <div class="banner" style="padding: 0 20px;">
-        <p class="sidebarstyle">
-            <img src="/ikoiko/img/sidebar/pickupevent600_100.jpg" alt="イベントピックアップ" title="イベントピックアップ" width="auto">
-            <b>月に1度、街コンジャパンとの共同大規模開催！<br>
-            <a href="https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes">
-                <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes80.jpg" alt="LOVE FES SENDAI" title="LOVE FES SENDAI" width="auto"><br>
-            </a>
-            <b>■LOVE FES HIROSHIMA<br>
-            <a href="https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes">お申し込みはこちら！</a>
-            </b>
-            <a href="https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes">
-                <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes100.jpg" alt="LOVE FES SENDAI" title="LOVE FES SENDAI" width="auto"><br>
-            </a>
-            <b>■LOVE FES SENDAI<br>
-            <a href="https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes">お申し込みはこちら！</a>
-            </b>
-        </p>
-    </div>
-
-    <!--<div class="banner" style="padding: 0 20px;">
-        <p class="sidebarstyle">
-            <img src="/ikoiko/img/sidebar/pickupevent600_100.jpg" alt="イベントピックアップ" title="イベントピックアップ" width="auto">
-            <a href="https://koikoi.co.jp/ikoiko/event/a_tokyo_hikawashrine_hiru">
-                <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/anime/other/anime_hikawa.jpg"
-                    alt="神社アニメコン in 東京/中野沼袋氷川神社" title="神社アニメコン in 東京/中野沼袋氷川神社" width="auto"><br>
-            </a>
-            <b>■神社コン in 東京/中野沼袋氷川神社<br>御祈祷、お守り、絵馬付き！<br>
-                5月20日(土) 13:45～16:00<br>
-                6月17日(土) 13:45～16:00<br>
-                <a href="https://koikoi.co.jp/ikoiko/event_m/tokyo_hikawashrine_yoru">お申し込みはこちら！</a><br><br></b>
-        </p>
-    </div> -->
-
-    <!-- メルマガ登録フォーム -->
-    <div class="banner" style="padding: 10px 20px" align="center">
-        <form method="post" action="https://d.bmb.jp/bm/p/f/tf.php?id=machikonkoikoi&task=regist">
-            <p class="sidebarstyle">
-                <a href="https://d.bmb.jp/bm/p/f/tf.php?id=machikonkoikoi&task=regist">
-                    <img src="/ikoiko/img/sidebar/merumaga300_200.jpg" alt="メルマガ登録" title="メルマガ登録" width="auto">
-                </a>
-                <input type='text' name='form[mail]' size='auto' />
-                <input type='submit' name='regist' value='登録'>
-            </p>
-        </form>
-    </div>
-
     <!-- LINE公式アカウント -->
     <div class="banner" style="padding: 10px 20px; text-align:center; background: linear-gradient(135deg, #fff9e6 0%, #fffef5 100%); border: 2px solid #ffcc00; border-radius: 15px; position: relative; overflow: hidden;">
     
@@ -111,6 +64,53 @@
     <p style="font-size:11px; color:#666; margin-top:10px;">
         ※クーポンは友だち追加後、自動配信されます
     </p>
+    </div>
+
+    <!-- おススメイベントピックアップ -->
+    <div class="banner" style="padding: 0 20px;">
+        <p class="sidebarstyle">
+            <img src="/ikoiko/img/sidebar/pickupevent600_100.jpg" alt="イベントピックアップ" title="イベントピックアップ" width="auto">
+            <b>月に1度、街コンジャパンとの共同大規模開催！<br>
+            <a href="https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes">
+                <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes80.jpg" alt="LOVE FES SENDAI" title="LOVE FES SENDAI" width="auto"><br>
+            </a>
+            <b>■LOVE FES HIROSHIMA<br>
+            <a href="https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes">お申し込みはこちら！</a>
+            </b>
+            <a href="https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes">
+                <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes100.jpg" alt="LOVE FES SENDAI" title="LOVE FES SENDAI" width="auto"><br>
+            </a>
+            <b>■LOVE FES SENDAI<br>
+            <a href="https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes">お申し込みはこちら！</a>
+            </b>
+        </p>
+    </div>
+
+    <!--<div class="banner" style="padding: 0 20px;">
+        <p class="sidebarstyle">
+            <img src="/ikoiko/img/sidebar/pickupevent600_100.jpg" alt="イベントピックアップ" title="イベントピックアップ" width="auto">
+            <a href="https://koikoi.co.jp/ikoiko/event/a_tokyo_hikawashrine_hiru">
+                <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/anime/other/anime_hikawa.jpg"
+                    alt="神社アニメコン in 東京/中野沼袋氷川神社" title="神社アニメコン in 東京/中野沼袋氷川神社" width="auto"><br>
+            </a>
+            <b>■神社コン in 東京/中野沼袋氷川神社<br>御祈祷、お守り、絵馬付き！<br>
+                5月20日(土) 13:45～16:00<br>
+                6月17日(土) 13:45～16:00<br>
+                <a href="https://koikoi.co.jp/ikoiko/event_m/tokyo_hikawashrine_yoru">お申し込みはこちら！</a><br><br></b>
+        </p>
+    </div> -->
+
+    <!-- メルマガ登録フォーム -->
+    <div class="banner" style="padding: 10px 20px" align="center">
+        <form method="post" action="https://d.bmb.jp/bm/p/f/tf.php?id=machikonkoikoi&task=regist">
+            <p class="sidebarstyle">
+                <a href="https://d.bmb.jp/bm/p/f/tf.php?id=machikonkoikoi&task=regist">
+                    <img src="/ikoiko/img/sidebar/merumaga300_200.jpg" alt="メルマガ登録" title="メルマガ登録" width="auto">
+                </a>
+                <input type='text' name='form[mail]' size='auto' />
+                <input type='submit' name='regist' value='登録'>
+            </p>
+        </form>
     </div>
 
     <!-- yoruuu -->

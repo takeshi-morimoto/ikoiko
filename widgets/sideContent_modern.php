@@ -12,60 +12,6 @@
         </a>
     </div>
 
-    <!-- おススメイベント -->
-    <div class="sidebar-card">
-        <div class="sidebar-header">
-            <h3>おすすめイベント</h3>
-        </div>
-        <div class="sidebar-content">
-            <div class="event-item">
-                <a href="https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes">
-                    <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes80.jpg" 
-                         alt="LOVE FES HIROSHIMA" class="event-image" loading="lazy">
-                    <h4>LOVE FES HIROSHIMA</h4>
-                    <p class="event-description">月に1度の大規模開催！</p>
-                    <span class="btn btn-primary btn-sm">詳細を見る</span>
-                </a>
-            </div>
-            
-            <div class="event-item">
-                <a href="https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes">
-                    <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes100.jpg" 
-                         alt="LOVE FES SENDAI" class="event-image" loading="lazy">
-                    <h4>LOVE FES SENDAI</h4>
-                    <p class="event-description">街コンジャパンとの共同開催</p>
-                    <span class="btn btn-primary btn-sm">詳細を見る</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- こいこいマンガ -->
-    <div class="sidebar-card">
-        <a href="/ikoiko/manga/" class="sidebar-link-card">
-            <img src="/ikoiko/img/manga/bnr_manga.jpg" alt="こいこいマンガ" class="sidebar-image" loading="lazy">
-            <div class="sidebar-overlay">
-                <span class="sidebar-cta">マンガを読む →</span>
-            </div>
-        </a>
-    </div>
-
-    <!-- メルマガ登録 -->
-    <div class="sidebar-card">
-        <div class="sidebar-header">
-            <h3>メルマガ登録</h3>
-        </div>
-        <div class="sidebar-content">
-            <form method="post" action="https://d.bmb.jp/bm/p/f/tf.php?id=machikonkoikoi&task=regist" class="newsletter-form">
-                <p class="form-description">最新イベント情報をお届け！</p>
-                <div class="form-group">
-                    <input type="email" name="form[mail]" placeholder="メールアドレス" class="form-control" required>
-                </div>
-                <button type="submit" name="regist" class="btn btn-primary w-100">登録する</button>
-            </form>
-        </div>
-    </div>
-
     <!-- LINE公式アカウント -->
     <div class="sidebar-card" style="padding: 10px 20px; text-align:center; background: linear-gradient(135deg, #fff9e6 0%, #fffef5 100%); border: 2px solid #ffcc00; border-radius: 15px; position: relative; overflow: hidden;">
     
@@ -120,6 +66,59 @@
     </p>
     </div>
 
+    <!-- おススメイベント -->
+    <div class="sidebar-card">
+        <div class="sidebar-header">
+            <h3>おすすめイベント</h3>
+        </div>
+        <div class="sidebar-content">
+            <div class="event-item">
+                <a href="https://koikoi.co.jp/ikoiko/event_m/hiroshima_hiroshima_hiru_lovefes">
+                    <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes80.jpg" 
+                         alt="LOVE FES HIROSHIMA" class="event-image" loading="lazy">
+                    <h4>LOVE FES HIROSHIMA</h4>
+                    <p class="event-description">月に1度の大規模開催！</p>
+                    <span class="btn btn-primary btn-sm">詳細を見る</span>
+                </a>
+            </div>
+            
+            <div class="event-item">
+                <a href="https://koikoi.co.jp/ikoiko/event_m/miyagi_sendai_hiru_lovefes">
+                    <img src="https://koikoi.co.jp/ikoiko/img/event_img/contents/lovefes/lovefes100.jpg" 
+                         alt="LOVE FES SENDAI" class="event-image" loading="lazy">
+                    <h4>LOVE FES SENDAI</h4>
+                    <p class="event-description">街コンジャパンとの共同開催</p>
+                    <span class="btn btn-primary btn-sm">詳細を見る</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- こいこいマンガ -->
+    <div class="sidebar-card">
+        <a href="/ikoiko/manga/" class="sidebar-link-card">
+            <img src="/ikoiko/img/manga/bnr_manga.jpg" alt="こいこいマンガ" class="sidebar-image" loading="lazy">
+            <div class="sidebar-overlay">
+                <span class="sidebar-cta">マンガを読む →</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- メルマガ登録 -->
+    <div class="sidebar-card">
+        <div class="sidebar-header">
+            <h3>メルマガ登録</h3>
+        </div>
+        <div class="sidebar-content">
+            <form method="post" action="https://d.bmb.jp/bm/p/f/tf.php?id=machikonkoikoi&task=regist" class="newsletter-form">
+                <p class="form-description">最新イベント情報をお届け！</p>
+                <div class="form-group">
+                    <input type="email" name="form[mail]" placeholder="メールアドレス" class="form-control" required>
+                </div>
+                <button type="submit" name="regist" class="btn btn-primary w-100">登録する</button>
+            </form>
+        </div>
+    </div>
 
     <!-- SNSフォロー -->
     <div class="sidebar-card">
